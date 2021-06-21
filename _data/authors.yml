@@ -1,0 +1,31 @@
+# /_data/authors.yml
+
+Zirui Li:
+  name             : "Zirui Li"
+  avatar           : "/assets/images/IMG_6176.JPG" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "PhD student @ IVRC in Beijing Institute of Technology and Visiting Researcher in TU Delft"
+  location         : "Beijing, China"
+  email            : 3120195255@bit.edu.cn
+  uri              : http://lzrbit.github.io
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  flickr           :
+  facebook         :
+  foursquare       :
+  github           : lzrbit
+  google_plus      :
+  keybase          :
+  instagram        :
+  lastfm           :
+  linkedin         :
+  pinterest        :
+  soundcloud       :
+  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
+  steam            :
+  tumblr           :
+  twitter          :
+  vine             :
+  weibo            :
+  xing             :
+  youtube          :
