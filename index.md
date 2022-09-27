@@ -4,7 +4,10 @@ layout: homepage
 
 ## About Me
 
-I am Zirui Li.
+Zirui Li received the B.S. degree from the Beijing Institute of Technology (BIT), Beijing, China, in 2019, where he is currently pursuing the Ph.D. degree in mechanical engineering under the supervision of Prof. Jianwei Gong. From June, 2021 to July, 2022, he was a visiting researcher in Delft University of Technology (TU Delft) with CSC funding from China under the supervision of Prof. Bart van Arem, Prof. Victor Knoop and Prof. Meng Wang. From Aug, 2022. He is the visiting researcher in the Chair of Traffic Process Automation at the Faculty of Transportation and Traffic Sciences "Friedrich List" of the TU Dresden under the supervision of Prof. Meng Wang. His research focuses on interactive behavior modeling, risk assessment and motion planning of automated vehicles. Any interest on my work you can drop me email (ziruili.work.bit@gmail.com)
+
+In my spare time, I like playing basketball and swimming. Looking forward to meeting you all. 
+
 
 ## Research Interests
 
@@ -28,23 +31,4 @@ I am Zirui Li.
   <br>
   [[PDF](https://arxiv.org/pdf/2002.10211.pdf)] [[Code](https://github.com/yaoyao-liu/mnemonics)] <strong><i style="color:#e74d3c">Oral Presentation</i></strong>
 
-- **Learning to Self-Train for Semi-Supervised Few-Shot Classification**
-  <br>
-  Xinzhe Li, Qianru Sun, **Yaoyao Liu**, Shibao Zheng, Qin Zhou, Tat-Seng Chua, Bernt Schiele
-  <br>
-  33rd Conference on Neural Information Processing Systems. **NeurIPS 2019**.
-  <br>
-  [[PDF](http://papers.nips.cc/paper/9216-learning-to-self-train-for-semi-supervised-few-shot-classification.pdf)] [[Code](https://github.com/xinzheli1217/learning-to-self-train)]
 
-- **Meta-Transfer Learning for Few-Shot Learning**
-  <br>
-  Qianru Sun\*, **Yaoyao Liu\***, Tat-Seng Chua, Bernt Schiele
-  <br>
-  IEEE Conference on Computer Vision and Pattern Recognition. **CVPR 2019**.
-  <br>
-  [[PDF](http://openaccess.thecvf.com/content_CVPR_2019/papers/Sun_Meta-Transfer_Learning_for_Few-Shot_Learning_CVPR_2019_paper.pdf)] [[Code](https://github.com/yaoyao-liu/meta-transfer-learning)] [[Project](https://mtl.yyliu.net/)]
-
-## Services
-
-- Conference Reviewers: NeurIPS 2020, CVPR 2020.
-- Journal Reviewers: T-PAMI, IJCV.
