@@ -112,8 +112,7 @@ For the full and newest publications, [[CLICK HERE](https://scholar.google.com/c
   
 
 ## Services
-###Academic
-I serve as the reviewer for following publications.
+### Reviewer
 - IEEE Intelligent Vehicles Symposium 2018-2022.
 - IEEE International Conference on Intelligent Transportation Systems 2018-2022.
 - IEEE Transactions on Vehicular Technology.
