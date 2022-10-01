@@ -47,7 +47,7 @@ For the full and newest publications, [[CLICK HERE](https://scholar.google.com/c
   <br>
   The 25th IEEE International Conference on Intelligent Transportation Systems. **IEEE ITSC 2022**.
   <br>
-  [[PDF](https://arxiv.org/pdf/2201.12776.pdf)]   <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong>
+  [[PDF](https://arxiv.org/pdf/2201.12776.pdf)] [[Code](https://github.com/Jacklinkk/TorchGRL)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong>
   
 
 
@@ -114,18 +114,18 @@ For the full and newest publications, [[CLICK HERE](https://scholar.google.com/c
 ## Services
 ###Academic
 I serve as the reviewer for following publications.
--IEEE Intelligent Vehicles Symposium 2018-2022.
--IEEE International Conference on Intelligent Transportation Systems 2018-2022.
--IEEE Transactions on Vehicular Technology.
--IEEE Transactions on Intelligent Transportation Systems.
--IEEE Transactions on Intelligent Vehicles.
--eTransportation.
--Geoscience and Remote Sensing Letters
--IET Intelligent Transport Systems.
--Journal of Transportation Engineering, Part A.
--Sensors.
--IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
--IEEE International Conference on Unmanned Systems (ICUS)
+- IEEE Intelligent Vehicles Symposium 2018-2022.
+- IEEE International Conference on Intelligent Transportation Systems 2018-2022.
+- IEEE Transactions on Vehicular Technology.
+- IEEE Transactions on Intelligent Transportation Systems.
+- IEEE Transactions on Intelligent Vehicles.
+- eTransportation.
+- Geoscience and Remote Sensing Letters
+- IET Intelligent Transport Systems.
+- Journal of Transportation Engineering, Part A.
+- Sensors.
+- IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
+- IEEE International Conference on Unmanned Systems (ICUS)
 
 
 ### Chair/Co-chairs
@@ -133,13 +133,13 @@ I serve as the reviewer for following publications.
 
 
 ## Talks
--Oct. 2022, **Graph Convolution-Based Deep Reinforcement Learning for Multi-Agent Decision-Making in Mixed Traffic environments** at IEEE ITSC 2022.
--June. 2022, **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at the Chair of Traffic Process Automation
+- Oct. 2022, **Graph Convolution-Based Deep Reinforcement Learning for Multi-Agent Decision-Making in Mixed Traffic environments** at IEEE ITSC 2022.
+- June. 2022, **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at the Chair of Traffic Process Automation
  TU Dresden. 
--Oct. 2021, **Defining the Interactive Behavior: A Mutual Information-based Approach** at hEAT Lab, TU Delft.
--June. 2021, **Graph Neural Network for Interactive behaviours: Modelling, Risk Assessment and Multi-task Prediction** at Traffic Dynamics, Modelling and Control lab, TU Delft. -April. 2021, **Graph Neural Network for Interactive behaviours: Modelling, Risk Assessment and Multi-task Prediction** at hEAT Lab, TU Delft.
--June. 2019, **Transferable Driver Behavior Learning via Distribution Adaption in the Lane Change Scenario** at IEEE IV 2019.
--June. 2018, **Development and Evaluation of Two Learning-Based Personalized Driver Model for Pure pursuit Path-Tracking Behaviors** at IEEE IV 2018.
+- Oct. 2021, **Defining the Interactive Behavior: A Mutual Information-based Approach** at hEAT Lab, TU Delft.
+- June. 2021, **Graph Neural Network for Interactive behaviours: Modelling, Risk Assessment and Multi-task Prediction** at Traffic Dynamics, Modelling and Control lab, TU Delft. -April. 2021, **Graph Neural Network for Interactive behaviours: Modelling, Risk Assessment and Multi-task Prediction** at hEAT Lab, TU Delft.
+- June. 2019, **Transferable Driver Behavior Learning via Distribution Adaption in the Lane Change Scenario** at IEEE IV 2019.
+- June. 2018, **Development and Evaluation of Two Learning-Based Personalized Driver Model for Pure pursuit Path-Tracking Behaviors** at IEEE IV 2018.
 
 ## Awards
--Two-Year Graduate Student Fellowship of China Scholarship Councils (CSC), China.
+- Two-Year Graduate Student Fellowship of China Scholarship Councils (CSC), China.
