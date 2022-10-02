@@ -118,6 +118,7 @@ For the full and newest publications, [[CLICK HERE](https://scholar.google.com/c
 - IEEE Transactions on Vehicular Technology.
 - IEEE Transactions on Intelligent Transportation Systems.
 - IEEE Transactions on Neural Networks and Learning Systems.
+- Frontiers of Information Technology & Electronic Engineering.
 - IEEE Transactions on Intelligent Vehicles.
 - eTransportation.
 - Geoscience and Remote Sensing Letters
