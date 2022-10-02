@@ -117,6 +117,7 @@ For the full and newest publications, [[CLICK HERE](https://scholar.google.com/c
 - IEEE International Conference on Intelligent Transportation Systems 2018-2022.
 - IEEE Transactions on Vehicular Technology.
 - IEEE Transactions on Intelligent Transportation Systems.
+- IEEE Transactions on Neural Networks and Learning Systems.
 - IEEE Transactions on Intelligent Vehicles.
 - eTransportation.
 - Geoscience and Remote Sensing Letters
