@@ -26,12 +26,22 @@ In my spare time, I like playing basketball and swimming. Looking forward to mee
 - **Interactive behavior definition, measurement and  detection**
 
 ## News
+- **[Oct. 2022]** I will give a talk with title **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 Workshop **Cooperative  and Automated Driving**
 - **[Oct. 2022]** We give a talk about graph reinforcement learning at IEEE ITSC 2022. 
 - **[Sep. 2022]** Welcome everyone, this is my homepage. You can find my updates here.
 
 ## Selected publications
 
-For the full and newest publications, [[CLICK HERE](https://scholar.google.com/citations?user=nCHChhsAAAAJ&hl=zh-CN)]. 
+For the full and newest publications [[CLICK HERE](https://scholar.google.com/citations?user=nCHChhsAAAAJ&hl=zh-CN)]. 
+
+- **A Transferable Energy Management Strategy for Hybrid Electric Vehicles via Dueling Deep Deterministic Policy Gradient**
+  <br>
+  Jingyi Xu#, **Zirui Li#**, Guodong Du, Qi Liu, Li Gao, Yanan Zhao,
+  <br>
+  Green Energy and Intelligent Transportation. **GEIT 2022**.
+  <br>
+  [[PDF](https://www.sciencedirect.com/science/article/pii/S2773153722000184)] [[Code](https://github.com/BIT-XJY/RL-based-Transferable-EMS)]
+  <br>(# donates equal contributions)
 
 - **Personalized Driver Braking Behavior Modelling in the Car-following Scenario: An Importance Weight-based Transfer Learning Approach**
   <br>
@@ -130,7 +140,7 @@ For the full and newest publications, [[CLICK HERE](https://scholar.google.com/c
 
 
 ### Chair/Co-chairs
--Chair, workshop on **Social and Interactive Behavior Modelling in Intelligent Transportation Systems** at IEEE ITSC 2021. [[Link](https://sites.google.com/view/itsc2021-social/)]
+- Chair, workshop on **Social and Interactive Behavior Modelling in Intelligent Transportation Systems** at IEEE ITSC 2021. [[Link](https://sites.google.com/view/itsc2021-social/)]
 
 
 ## Talks
@@ -143,4 +153,5 @@ For the full and newest publications, [[CLICK HERE](https://scholar.google.com/c
 - June. 2018, **Development and Evaluation of Two Learning-Based Personalized Driver Model for Pure pursuit Path-Tracking Behaviors** at IEEE IV 2018.
 
 ## Awards
-- Two-Year Graduate Student Fellowship of China Scholarship Councils (CSC), China.
+- Two-Year Graduate Student Fellowship of China Scholarship Councils (CSC), 2021-2023.
+- National Scholarship for College Student, Ministry of Education of China, 2021.
