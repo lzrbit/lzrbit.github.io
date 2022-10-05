@@ -135,12 +135,18 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 - IET Intelligent Transport Systems.
 - Journal of Transportation Engineering, Part A.
 - Sensors.
+- Remote Sensing.
 - IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
 - IEEE International Conference on Unmanned Systems (ICUS)
 
 
 ### Chair/Co-chairs
 - Chair, workshop on **Social and Interactive Behavior Modelling in Intelligent Transportation Systems** at IEEE ITSC 2021. [[Link](https://sites.google.com/view/itsc2021-social/)]
+
+### Membership
+- IEEE student member
+- SAE China student member
+- ITSS member
 
 
 ## Talks
@@ -155,3 +161,5 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 ## Awards
 - Two-Year Graduate Student Fellowship of China Scholarship Councils (CSC), 2021-2023.
 - National Scholarship for College Student, Ministry of Education of China, 2021.
+- Champions for Formula Student Driverless China, 2017&2018.
+- Innovation Scholarship, Ministry of Industry and Information Technology, 2018.
