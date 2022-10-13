@@ -136,8 +136,9 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 - Journal of Transportation Engineering, Part A.
 - Sensors.
 - Remote Sensing.
-- IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
-- IEEE International Conference on Unmanned Systems (ICUS)
+- IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).
+- IEEE International Conference on Unmanned Systems (ICUS).
+- IEEE International Conference on Robotics and Automation (ICRA).
 
 
 ### Chair/Co-chairs
