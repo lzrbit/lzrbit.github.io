@@ -26,8 +26,9 @@ In my spare time, I like playing basketball and swimming. Looking forward to mee
 - **Interactive behavior definition, measurement and  detection**
 
 ## News
-- **[Nov. 2022]** One paper related graph reinforcement learning for CAVs in mixed traffic is pre-print, See [[paper](https://github.com/Jacklinkk/Graph_CAVs)] and [[code](https://github.com/Jacklinkk/Graph_CAVs)] for details. Welcome star,comments and feedback.
-- **[Nov. 2022]** Our workshop proposal at IEEE IV 2023 is officially accepted. Here is the [[Link](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5)]. We invite many experienced researchers in this topic. Welcome to submit your workshop papers. Go to the link for detailed information and deadlines.
+- **[Nov. 2022]** One paper related **Multi-stream Information Fusion for Trajectory Prediction in Low-illumination Scenarios** is pre-printed, See [[paper](https://github.com/TommyGong08/MSIF)] and [[code](https://github.com/TommyGong08/MSIF)] for details. Welcome star,comments and feedback.
+- **[Nov. 2022]** One paper related **graph reinforcement learning for CAVs in mixed traffic** is pre-printed, See [[paper](https://github.com/Jacklinkk/Graph_CAVs)] and [[code](https://github.com/Jacklinkk/Graph_CAVs)] for details. Welcome star,comments and feedback.
+- **[Nov. 2022]** Our workshop proposal at IEEE IV 2023 titled **Social, Interactive and Safe Behaviors for Intelligent Vehicles: Benchmark, Models and Applications** is officially accepted. [[HERE](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5)] is the website. We invite many experienced researchers in this topic. Welcome to submit your workshop papers and click the link for detailed information and deadlines.
 - **[Oct. 2022]** I will give a talk with title **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 Workshop **Cooperative  and Automated Driving**
 - **[Oct. 2022]** We give a talk about graph reinforcement learning at IEEE ITSC 2022. 
 - **[Sep. 2022]** Welcome everyone, this is my homepage. You can find my updates here.
@@ -146,6 +147,7 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 ### Chair/Co-chairs
 - Chair, workshop on **Social, interactive and safe behaviors for AVs: benchmarks, models and applications
 ** at IEEE IV 2023. [[Link](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5)]
+- Organising committee, [[MFTS 2022](https://tu-dresden.de/bu/verkehr/veranstaltungen/mfts-2022/program)]
 - Chair, workshop on **Social and Interactive Behavior Modelling in Intelligent Transportation Systems** at IEEE ITSC 2021. [[Link](https://sites.google.com/view/itsc2021-social/)]
 
 ### Membership
@@ -165,6 +167,7 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 
 ## Awards
 - Two-Year Graduate Student Fellowship of China Scholarship Councils (CSC), 2021-2023.
+- Excellent Graduate Study Scholarship, 2021.
 - National Scholarship for College Student, Ministry of Education of China, 2021.
 - Champions for Formula Student Driverless China, 2017&2018.
-- Innovation Scholarship, Ministry of Industry and Information Technology, 2018.
+- Innovation Scholarship first prize, Ministry of Industry and Information Technology, 2018.
