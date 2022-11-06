@@ -26,6 +26,8 @@ In my spare time, I like playing basketball and swimming. Looking forward to mee
 - **Interactive behavior definition, measurement and  detection**
 
 ## News
+- **[Nov. 2022]** One paper related graph reinforcement learning for CAVs in mixed traffic is pre-print, See [[paper](https://github.com/Jacklinkk/Graph_CAVs)] and [[code](https://github.com/Jacklinkk/Graph_CAVs)] for details. Welcome star,comments and feedback.
+- **[Nov. 2022]** Our workshop proposal at IEEE IV 2023 is officially accepted. Here is the [[Link](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5)]. We invite many experienced researchers in this topic. Welcome to submit your workshop papers. Go to the link for detailed information and deadlines.
 - **[Oct. 2022]** I will give a talk with title **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 Workshop **Cooperative  and Automated Driving**
 - **[Oct. 2022]** We give a talk about graph reinforcement learning at IEEE ITSC 2022. 
 - **[Sep. 2022]** Welcome everyone, this is my homepage. You can find my updates here.
@@ -142,6 +144,8 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 
 
 ### Chair/Co-chairs
+- Chair, workshop on **Social, interactive and safe behaviors for AVs: benchmarks, models and applications
+** at IEEE IV 2023. [[Link](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5)]
 - Chair, workshop on **Social and Interactive Behavior Modelling in Intelligent Transportation Systems** at IEEE ITSC 2021. [[Link](https://sites.google.com/view/itsc2021-social/)]
 
 ### Membership
