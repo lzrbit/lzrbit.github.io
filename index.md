@@ -145,6 +145,7 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 
 
 ### Chair/Co-chairs
+- Associate Editor for IEEE IV 2023
 - Chair, workshop on **Social, interactive and safe behaviors for AVs: benchmarks, models and applications** at IEEE IV 2023. [[Link](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5)]
 - Organising committee, [[MFTS 2022](https://tu-dresden.de/bu/verkehr/veranstaltungen/mfts-2022/program)]
 - Chair, workshop on **Social and Interactive Behavior Modelling in Intelligent Transportation Systems** at IEEE ITSC 2021. [[Link](https://sites.google.com/view/itsc2021-social/)]
