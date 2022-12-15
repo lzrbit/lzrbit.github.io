@@ -14,11 +14,6 @@ From Aug, 2022. He is the visiting researcher
 in the Chair of Traffic Process Automation at the Faculty of Transportation and Traffic Sciences "Friedrich List" of the TU Dresden under the supervision of Prof. Meng Wang. His research focuses on interactive behavior modeling, risk assessment and motion planning of automated vehicles. Any interest on my work you can drop me email (zirui.li@mailbox.tu-dresden.de)
 
 
-In my spare time, I like playing basketball and swimming. Looking forward to meeting you all. 
-
-
-
-
 ## Research Interests
 
 - **Data-driven interactive behavior modeling for VRUs** 
@@ -27,15 +22,15 @@ In my spare time, I like playing basketball and swimming. Looking forward to mee
 
 ## News
 - **[Nov. 2022]** One paper related **Multi-stream Information Fusion for Trajectory Prediction in Low-illumination Scenarios** is pre-printed, See [paper](https://arxiv.org/abs/2211.10226) and [code](https://github.com/TommyGong08/MSIF) for details. Welcome star,comments and feedback.
-- **[Nov. 2022]** One paper related **graph reinforcement learning for CAVs in mixed traffic** is pre-printed, See [paper](https://arxiv.org/abs/2211.03005) and [[code](https://github.com/Jacklinkk/Graph_CAVs)] for details. Welcome star,comments and feedback.
-- **[Nov. 2022]** Our workshop proposal at IEEE IV 2023 titled **Social, Interactive and Safe Behaviors for Intelligent Vehicles: Benchmark, Models and Applications** is officially accepted. [[HERE](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5)] is the website. We invite many experienced researchers in this topic. Welcome to submit your workshop papers and click the link for detailed information and deadlines.
+- **[Nov. 2022]** One paper related **graph reinforcement learning for CAVs in mixed traffic** is pre-printed, See [paper](https://arxiv.org/abs/2211.03005) and [code](https://github.com/Jacklinkk/Graph_CAVs) for details. Welcome star,comments and feedback.
+- **[Nov. 2022]** Our workshop proposal at IEEE IV 2023 titled **Social, Interactive and Safe Behaviors for Intelligent Vehicles: Benchmark, Models and Applications** is officially accepted. [HERE](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5) is the website. We invite many experienced researchers in this topic. Welcome to submit your workshop papers and click the link for detailed information and deadlines.
 - **[Oct. 2022]** I will give a talk with title **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 Workshop **Cooperative  and Automated Driving**
 - **[Oct. 2022]** We give a talk about graph reinforcement learning at IEEE ITSC 2022. 
 - **[Sep. 2022]** Welcome everyone, this is my homepage. You can find my updates here.
 
 ## Selected publications
 
-For the full and newest publications [[CLICK HERE](https://scholar.google.com/citations?user=nCHChhsAAAAJ&hl=zh-CN)]. 
+For the full and newest publications [CLICK HERE](https://scholar.google.com/citations?user=nCHChhsAAAAJ&hl=zh-CN). 
 
 - **A Transferable Energy Management Strategy for Hybrid Electric Vehicles via Dueling Deep Deterministic Policy Gradient**
   <br>
@@ -43,8 +38,7 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
   <br>
   Green Energy and Intelligent Transportation. **GEIT 2022**.
   <br>
-  [[PDF](https://www.sciencedirect.com/science/article/pii/S2773153722000184)] [[Code](https://github.com/BIT-XJY/RL-based-Transferable-EMS)]
-  <br>(# donates equal contributions)
+  [[PDF](https://www.sciencedirect.com/science/article/pii/S2773153722000184)] [[Code](https://github.com/BIT-XJY/RL-based-Transferable-EMS)] <br>(# donates equal contributions)
 
 - **Personalized Driver Braking Behavior Modelling in the Car-following Scenario: An Importance Weight-based Transfer Learning Approach**
   <br>
@@ -146,9 +140,9 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 
 ### Chair/Co-chairs
 - Associate Editor for IEEE IV 2023
-- Chair, workshop on **Social, interactive and safe behaviors for AVs: benchmarks, models and applications** at IEEE IV 2023. [Link](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5)
+- Chair, workshop on **Social, interactive and safe behaviors for AVs: benchmarks, models and applications** at [IEEE IV 2023](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5). 
 - Organising committee, [MFTS 2022](https://tu-dresden.de/bu/verkehr/veranstaltungen/mfts-2022/program)
-- Chair, workshop on **Social and Interactive Behavior Modelling in Intelligent Transportation Systems** at IEEE ITSC 2021. [Link](https://sites.google.com/view/itsc2021-social/)
+- Chair, workshop on **Social and Interactive Behavior Modelling in Intelligent Transportation Systems** at [IEEE ITSC 2021](https://sites.google.com/view/itsc2021-social/).
 
 ### Membership
 - IEEE student member
