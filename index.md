@@ -56,12 +56,11 @@ For the full and newest publications [[CLICK HERE](https://scholar.google.com/ci
 
 - **Graph Convolution-Based Deep Reinforcement Learning for Multi-Agent Decision-Making in Mixed Traffic environments**
   <br>
-  Qi Liu, **Zirui Li**,  Jingda Wu, Xueyuan Li,
+  Qi Liu, **Zirui Li#**,  Jingda Wu, Xueyuan Li,
   <br>
   The 25th IEEE International Conference on Intelligent Transportation Systems. **IEEE ITSC 2022**.
   <br>
   [[PDF](https://arxiv.org/pdf/2201.12776.pdf)] [[Code](https://github.com/Jacklinkk/TorchGRL)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong>
-  
   
 
 - **Interactive Behaviour Prediction for Heterogeneous Traffic Participants In the Urban Road: A Graph Neural Network-based Multi-task Learning Framework**
