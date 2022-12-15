@@ -38,7 +38,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   Green Energy and Intelligent Transportation. **GEIT 2022**.
   <br>
-  [[PDF](https://www.sciencedirect.com/science/article/pii/S2773153722000184)] [[Code](https://github.com/BIT-XJY/RL-based-Transferable-EMS)] <br>(# donates equal contributions)
+  [[PDF](https://www.sciencedirect.com/science/article/pii/S2773153722000184)] [[Code](https://github.com/BIT-XJY/RL-based-Transferable-EMS)] (# donates equal contributions)
 
 - **Personalized Driver Braking Behavior Modelling in the Car-following Scenario: An Importance Weight-based Transfer Learning Approach**
   <br>
@@ -93,8 +93,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   The 22nd IEEE International Conference on Intelligent Transportation Systems	. **IEEE ITSC 2020**.
   <br>
-  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8916986)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong>
- <br>(# donates equal contributions)
+  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8916986)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong>(# donates equal contributions)
   
   
 - **Transferable Driver Behavior Learning via Distribution Adaption in the Lane Change Scenario**
@@ -103,8 +102,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   IEEE Intelligent Vehicles Symposium. **IEEE IV's 2019**.
   <br>
-  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8813781)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong>
-   <br>(# donates equal contributions)
+  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8813781)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong> (# donates equal contributions)
 
 
 - **Development and Evaluation of Two Learning-Based Personalized Driver Model for Pure pursuit Path-Tracking Behaviors**
