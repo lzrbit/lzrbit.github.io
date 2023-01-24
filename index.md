@@ -136,7 +136,8 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 - IEEE International Conference on Unmanned Systems (ICUS).
 - IEEE International Conference on Robotics and Automation (ICRA).
 - Applied Sciences.
-- Machines
+- Machines.
+- Electronics.
 
 
 ### Chair/Co-chairs
@@ -168,3 +169,18 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 - National Scholarship for College Student, Ministry of Education of China, 2021.
 - Champions for Formula Student Driverless China, 2017&2018.
 - Innovation Scholarship first prize, Ministry of Industry and Information Technology, 2018.
+
+
+## Mentorship Experience
+- Cheng Gong, Beijing Institute of Technology
+- Yunlong Lin, Beijing Institute of Technology
+- Chenxu Wen, Beijing Institute of Technology
+- Fanyi Wei, TU Dresden
+- Haowen Wang, Shanghai Jiaotong University
+- Hailong Gong, Beijing Institute of Technology
+- Lianzhen Wei,Beijing Institute of Technology
+- Yangtian Yi, Beijing Institute of Technology
+- Xianqi He, Beijing Institute of Technology
+- jingyi Xu, Beijing Institute of Technology
+- Yingqi Tan, Beijing Institute of Technology
+- Tanran Chen, Beijing Institute of Technology
