@@ -16,11 +16,16 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 
 ## Research Interests
 
-- **Data-driven interactive behavior modeling for VRUs** 
-- **The integration of behavior prediction and motion planning for AVs**
-- **Interactive behavior definition, measurement and  detection**
+- **Data-driven interactive behaviour modelling for VRUs** 
+- **The integration of behaviour prediction and motion planning for AVs**
+- **Interactive behaviour definition, measurement and  detection**
 
 ## News
+- **[June. 2023]** Our workshop proposal **Cooperative Decision-making for Connected and Automated Vehicles in Intelligent Transportation Systems** is accepted by IEEE ITSC 2023. Welcome your contributions.
+- **[June. 2023]** I start as Researcher in TU Dresden.
+- **[June. 2023]** Our workshop **Social, Interactive and Safe Behaviors for Intelligent Vehicles: Benchmark, Models and Applications** is successfully held at IEEE IV 2023.
+- **[May. 2023]** Our Proceedings of MFTS 2022, where I serve as one of the editors, is online published now, [download here](https://doi.org/10.25368/2023.9). 
+- **[May. 2023]** Two papers are accepted at IEEE T-ITS.
 - **[Dec. 2022]** The master student, Fanyi Wei, I serve as the daily supervisor, successfully defense the thesis with title **Optimization of Velocity for Eco-Driving using Reinforcement Learning based on Simulation Data of BMW i3**. Congratulations! 
 - **[Dec. 2022]** One paper entitled **Continual Interactive Behavior Learning With Traffic Divergence Measurement: A Dynamic Gradient Scenario Memory Approach** is pre-printed on ArXiv. Find [paper](https://github.com/BIT-Jack/D-GSM) and [code](https://github.com/BIT-Jack/D-GSM) here.
 - **[Dec. 2022]** One paper entitled **Multi-agent Trajectory Prediction in Continuous Scenarios: A Dynamic Memory Enhanced Lifelong Learning approach** is accepted by [TRB annual meeting](https://www.trb.org/AnnualMeeting/AnnualMeeting.aspx). We will give a poster at Vehicle-Highway Automation 2023, Part 3 (Part 1, Session 2228; Part 2, Session 2229).
@@ -138,6 +143,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 - Applied Sciences.
 - Machines.
 - Electronics.
+- Scientific report.
 
 
 ### Chair/Co-chairs
@@ -153,6 +159,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 
 ## Talks
+- Dec. 2022 **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 workshop** at TU Dresden.
 - Dec. 2022 **Towards Safe, efficient and Co-operative Decision-making for CAVs in Mixed Autonomy: An Attention-Enhanced Graphic Reinforcement Learning Approach** at MFTS 2022.
 - Nov. 2022 **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 workshop **Cooperative and Automated Driving**.
 - Oct. 2022, **Graph Convolution-Based Deep Reinforcement Learning for Multi-Agent Decision-Making in Mixed Traffic environments** at IEEE ITSC 2022.
