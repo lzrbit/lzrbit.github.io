@@ -6,12 +6,12 @@ layout: homepage
 
 Zirui Li received the 
 B.S. degree from the Beijing Institute of Technology (BIT), Beijing, China, in 2019, 
-where he is currently pursuing the Ph.D. degree in mechanical engineering under the supervision of Prof. Jianwei Gong. 
+where he is currently pursuing the Ph.D. degree in mechanical engineering under the supervision of Prof. Jianwei Gong. Now, Zirui is also a researcher in TU Dresden.
 From June, 2021 to July, 2022, 
 he was a visiting researcher in Delft University of Technology (TU Delft) with CSC funding from China 
 under the supervision of Prof. [Bart van Arem](https://www.tudelft.nl/en/ceg/about-faculty/departments/transport-planning/staff/personal-pages/arem-b-van/), Prof. [Victor Knoop](https://www.tudelft.nl/citg/over-faculteit/afdelingen/transport-planning/staff/persoonlijke-paginas/knoop-vl) and Prof. [Meng Wang](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/head-of-chair). 
 From Aug, 2022. He is the visiting researcher 
-in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/gastforscher-innen) at the Faculty of Transportation and Traffic Sciences "Friedrich List" of the TU Dresden under the supervision of Prof. [Meng Wang](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/head-of-chair). His research focuses on interactive behavior modeling, risk assessment and motion planning of automated vehicles. Any interest on my work you can drop me email (zirui.li@mailbox.tu-dresden.de)
+in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/gastforscher-innen) at the Faculty of Transportation and Traffic Sciences "Friedrich List" of the TU Dresden under the supervision of Prof. [Meng Wang](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/head-of-chair). His research focuses on interactive behavior modeling, risk assessment and motion planning of automated vehicles. Any interest on my work you can drop me email (zirui.li@tu-dresden.de)
 
 
 ## Research Interests
@@ -21,6 +21,8 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 - **Interactive behaviour definition, measurement and  detection**
 
 ## News
+- **[Aug. 2023]** One paper *Rate GQN* is accepted by IEEE T-ITS. The published version and open source code will be coming soon.
+- **[July. 2023]** Four papers are accepted by ITSC 2023.
 - **[June. 2023]** Our workshop proposal **Cooperative Decision-making for Connected and Automated Vehicles in Intelligent Transportation Systems** is accepted by IEEE ITSC 2023. Welcome your contributions.
 - **[June. 2023]** I start as Researcher in TU Dresden.
 - **[June. 2023]** Our workshop **Social, Interactive and Safe Behaviors for Intelligent Vehicles: Benchmark, Models and Applications** is successfully held at IEEE IV 2023.
@@ -124,8 +126,8 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 ## Services
 ### Reviewer
-- IEEE Intelligent Vehicles Symposium 2018-2022.
-- IEEE International Conference on Intelligent Transportation Systems 2018-2022.
+- IEEE Intelligent Vehicles Symposium 2018-2023.
+- IEEE International Conference on Intelligent Transportation Systems 2018-2023.
 - IEEE Transactions on Vehicular Technology.
 - IEEE Transactions on Intelligent Transportation Systems.
 - IEEE Transactions on Neural Networks and Learning Systems.
@@ -147,6 +149,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 
 ### Chair/Co-chairs
+- Co-chair, workshop on **Cooperative Decision-making for Connected and Automated Vehicles in Intelligent Transportation Systems** at IEEE ITSC 2023
 - Associate Editor for IEEE IV 2023
 - Chair, workshop on **Social, interactive and safe behaviors for AVs: benchmarks, models and applications** at [IEEE IV 2023](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5). 
 - Organising committee, [MFTS 2022](https://tu-dresden.de/bu/verkehr/veranstaltungen/mfts-2022/program)
@@ -156,10 +159,11 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 - IEEE student member
 - SAE China student member
 - ITSS member
+- IEEE ITSS Young Professionals Travelling Fellowship (2023) 
 
 
 ## Talks
-- Dec. 2022 **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 workshop** at TU Dresden.
+- Dec. 2022 **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 workshop.
 - Dec. 2022 **Towards Safe, efficient and Co-operative Decision-making for CAVs in Mixed Autonomy: An Attention-Enhanced Graphic Reinforcement Learning Approach** at MFTS 2022.
 - Nov. 2022 **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 workshop **Cooperative and Automated Driving**.
 - Oct. 2022, **Graph Convolution-Based Deep Reinforcement Learning for Multi-Agent Decision-Making in Mixed Traffic environments** at IEEE ITSC 2022.
