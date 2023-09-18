@@ -21,6 +21,8 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 - **Interactive behaviour definition, measurement and  detection**
 
 ## News
+- **[Sep. 2023]** Zirui will give a talk at IEEE ITSC 2023 Workshop with title **Continual Driver Behavior Learning in Interactive Urban Scenarios** (24 September, 2023 @ Bilbao, Bizkaia, Spain).
+- **[Sep. 2023]** Zirui won the IEEE ITSS Young Professionals Travelling Fellowship (2023).
 - **[Aug. 2023]** One paper *Rate GQN* is accepted by IEEE T-ITS. The published version and open source code will be coming soon.
 - **[July. 2023]** Four papers are accepted by ITSC 2023.
 - **[June. 2023]** Our workshop proposal **Cooperative Decision-making for Connected and Automated Vehicles in Intelligent Transportation Systems** is accepted by IEEE ITSC 2023. Welcome your contributions.
@@ -175,6 +177,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 - June. 2018, **Development and Evaluation of Two Learning-Based Personalized Driver Model for Pure pursuit Path-Tracking Behaviors** at IEEE IV 2018.
 
 ## Awards
+- IEEE ITSS Young Professionals Travelling Fellowship (2023).
 - Two-Year Graduate Student Fellowship of China Scholarship Councils (CSC), 2021-2023.
 - Excellent Graduate Study Scholarship, 2021.
 - National Scholarship for College Student, Ministry of Education of China, 2021.
