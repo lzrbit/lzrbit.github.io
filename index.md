@@ -30,7 +30,7 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 - **[June. 2023]** Our workshop **Social, Interactive and Safe Behaviors for Intelligent Vehicles: Benchmark, Models and Applications** is successfully held at IEEE IV 2023.
 - **[May. 2023]** Our Proceedings of MFTS 2022, where I serve as one of the editors, is online published now, [download here](https://doi.org/10.25368/2023.9). 
 - **[May. 2023]** Two papers are accepted at IEEE T-ITS.
-- **[Dec. 2022]** The master student, Fanyi Wei, I serve as the daily supervisor, successfully defense the thesis with title **Optimization of Velocity for Eco-Driving using Reinforcement Learning based on Simulation Data of BMW i3**. Congratulations! 
+<!-- - **[Dec. 2022]** The master student, Fanyi Wei, I serve as the daily supervisor, successfully defense the thesis with title **Optimization of Velocity for Eco-Driving using Reinforcement Learning based on Simulation Data of BMW i3**. Congratulations! 
 - **[Dec. 2022]** One paper entitled **Continual Interactive Behavior Learning With Traffic Divergence Measurement: A Dynamic Gradient Scenario Memory Approach** is pre-printed on ArXiv. Find [paper](https://github.com/BIT-Jack/D-GSM) and [code](https://github.com/BIT-Jack/D-GSM) here.
 - **[Dec. 2022]** One paper entitled **Multi-agent Trajectory Prediction in Continuous Scenarios: A Dynamic Memory Enhanced Lifelong Learning approach** is accepted by [TRB annual meeting](https://www.trb.org/AnnualMeeting/AnnualMeeting.aspx). We will give a poster at Vehicle-Highway Automation 2023, Part 3 (Part 1, Session 2228; Part 2, Session 2229).
 - **[Nov. 2022]** One paper related **Multi-stream Information Fusion for Trajectory Prediction in Low-illumination Scenarios** is pre-printed, See [paper](https://arxiv.org/abs/2211.10226) and [code](https://github.com/TommyGong08/MSIF) for details. Welcome star,comments and feedback.
@@ -38,19 +38,19 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 - **[Nov. 2022]** Our workshop proposal at IEEE IV 2023 titled **Social, Interactive and Safe Behaviors for Intelligent Vehicles: Benchmark, Models and Applications** is officially accepted. [HERE](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5) is the website. We invite many experienced researchers in this topic. Welcome to submit your workshop papers and click the link for detailed information and deadlines.
 - **[Oct. 2022]** I will give a talk with title **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 Workshop **Cooperative  and Automated Driving**
 - **[Oct. 2022]** We give a talk about graph reinforcement learning at IEEE ITSC 2022. 
-- **[Sep. 2022]** Welcome everyone, this is my homepage. You can find my updates here.
+- **[Sep. 2022]** Welcome everyone, this is my homepage. You can find my updates here. -->
 
 ## Selected publications
 
 For the full and newest publications [CLICK HERE](https://scholar.google.com/citations?user=nCHChhsAAAAJ&hl=zh-CN). 
 
-- **A Transferable Energy Management Strategy for Hybrid Electric Vehicles via Dueling Deep Deterministic Policy Gradient**
+<!-- - **A Transferable Energy Management Strategy for Hybrid Electric Vehicles via Dueling Deep Deterministic Policy Gradient**
   <br>
   Jingyi Xu#, **Zirui Li#**, Guodong Du, Qi Liu, Li Gao, Yanan Zhao,
   <br>
   Green Energy and Intelligent Transportation. **GEIT 2022**.
   <br>
-  [[PDF](https://www.sciencedirect.com/science/article/pii/S2773153722000184)] [[Code](https://github.com/BIT-XJY/RL-based-Transferable-EMS)] (# donates equal contributions)
+  [[PDF](https://www.sciencedirect.com/science/article/pii/S2773153722000184)] [[Code](https://github.com/BIT-XJY/RL-based-Transferable-EMS)] (# donates equal contributions) -->
 
 - **Personalized Driver Braking Behavior Modelling in the Car-following Scenario: An Importance Weight-based Transfer Learning Approach**
   <br>
@@ -60,13 +60,13 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9700778)] 
 
-- **Graph Convolution-Based Deep Reinforcement Learning for Multi-Agent Decision-Making in Mixed Traffic environments**
+<!-- - **Graph Convolution-Based Deep Reinforcement Learning for Multi-Agent Decision-Making in Mixed Traffic environments**
   <br>
   Qi Liu, **Zirui Li#**,  Jingda Wu, Xueyuan Li,
   <br>
   The 25th IEEE International Conference on Intelligent Transportation Systems. **IEEE ITSC 2022**.
   <br>
-  [[PDF](https://arxiv.org/pdf/2201.12776.pdf)] [[Code](https://github.com/Jacklinkk/TorchGRL)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong>
+  [[PDF](https://arxiv.org/pdf/2201.12776.pdf)] [[Code](https://github.com/Jacklinkk/TorchGRL)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong> -->
   
 
 - **Interactive Behaviour Prediction for Heterogeneous Traffic Participants In the Urban Road: A Graph Neural Network-based Multi-task Learning Framework**
@@ -99,7 +99,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   
   
 
-- **A Comparative Study on Transferable Driver Behavior Learning Methods in the Lane-Changing Scenario**
+<!-- - **A Comparative Study on Transferable Driver Behavior Learning Methods in the Lane-Changing Scenario**
   <br>
   Cheng Gong#, **Zirui Li#**,  Chao Lu, Fengqing  Hu,
   <br>
@@ -114,16 +114,16 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   IEEE Intelligent Vehicles Symposium. **IEEE IV's 2019**.
   <br>
-  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8813781)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong> (# donates equal contributions)
+  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8813781)] <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong> (# donates equal contributions) -->
 
 
-- **Development and Evaluation of Two Learning-Based Personalized Driver Model for Pure pursuit Path-Tracking Behaviors**
+<!-- - **Development and Evaluation of Two Learning-Based Personalized Driver Model for Pure pursuit Path-Tracking Behaviors**
   <br>
   **Zirui Li**, Boyang Wang,  Jianwei Gong, Tianyun Gao,  Chaolu, Gang Wang,
   <br>
   IEEE Intelligent Vehicles Symposium. **IEEE IV's 2018**.
   <br>
-  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8500618)]  <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong>
+  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8500618)]  <strong><i style="color:#e74d3c">Workshop oral presentation</i></strong> -->
   
 
 ## Services
@@ -161,7 +161,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 - IEEE student member
 - SAE China student member
 - ITSS member
-- IEEE ITSS Young Professionals Travelling Fellowship (2023) 
+<!-- - IEEE ITSS Young Professionals Travelling Fellowship (2023)  -->
 
 
 ## Talks
