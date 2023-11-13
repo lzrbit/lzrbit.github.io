@@ -21,8 +21,10 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 - **Interactive behaviour definition, measurement and  detection**
 
 ## News
+- **[Nov. 2023]** Zirui will give a talk at 2023 ITS WiE/YP Workshop & Research Forum with title **Towards integrating subjective and objective risks in human-centric automated driving** (20-21 Nov, 2023 @ Cairo, Egypt).
+- **[Nov. 2023]** One paper about Multi-stream Information Fusion in Low-illumination Scenarios is accepted by IEEE T-ITS. Find [code](https://github.com/TommyGong08/MSIF) and [paper](https://ieeexplore.ieee.org/document/10310658) here.
 - **[Oct. 2023]** One paper about reachable set based risk assessment is accepted by Engineeing. The online version will come soon.
-- **[Oct. 2023]** One paper about continual driver behavior learning is accepted by IEEE T-ITS. Code and paper coming soon.
+- **[Oct. 2023]** One paper about continual driver behavior learning is accepted by IEEE T-ITS. Find [code](https://github.com/BIT-Jack/D-GSM) and [paper](https://ieeexplore.ieee.org/document/10299595) here.
 - **[Sep. 2023]** Zirui will give a talk at IEEE ITSC 2023 Workshop with title **Continual Driver Behavior Learning in Interactive Urban Scenarios** (24 September, 2023 @ Bilbao, Bizkaia, Spain).
 - **[Sep. 2023]** Zirui won the IEEE ITSS Young Professionals Travelling Fellowship (2023).
 - **[Aug. 2023]** One paper *Rate GQN* is accepted by IEEE T-ITS. The published version and open source code will be coming soon.
