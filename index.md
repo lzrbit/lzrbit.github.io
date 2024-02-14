@@ -21,6 +21,7 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 - **Interactive behaviour definition, measurement and  detection**
 
 ## News
+- **[Dec. 2023]** Zirui is appointed as the working group leader of intelligent vehicle risk assessment under IEEE Standard Assosiation (SA) and is leading the development of **Standard for driving risk assessment procedure in SAE Level 1-3**. Welcome to join the group. 
 - **[Nov. 2023]** Zirui will give a talk at 2023 ITS WiE/YP Workshop & Research Forum with title **Towards integrating subjective and objective risks in human-centric automated driving** (20-21 Nov, 2023 @ Cairo, Egypt).
 - **[Nov. 2023]** One paper about Multi-stream Information Fusion in Low-illumination Scenarios is accepted by IEEE T-ITS. Find [code](https://github.com/TommyGong08/MSIF) and [paper](https://ieeexplore.ieee.org/document/10310658) here.
 - **[Oct. 2023]** One paper about reachable set based risk assessment is accepted by Engineeing. The online version will come soon.
@@ -132,7 +133,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 ## Services
 ### Reviewer
-- IEEE Intelligent Vehicles Symposium 2018-2023.
+- IEEE Intelligent Vehicles Symposium 2018-2024.
 - IEEE International Conference on Intelligent Transportation Systems 2018-2023.
 - IEEE Transactions on Vehicular Technology.
 - IEEE Transactions on Intelligent Transportation Systems.
@@ -155,6 +156,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 
 ### Chair/Co-chairs
+- Working group leader, intelligent vehicle risk assessment under IEEE Standard Assosiation (SA).
 - Co-chair, workshop on **Cooperative Decision-making for Connected and Automated Vehicles in Intelligent Transportation Systems** at IEEE ITSC 2023
 - Associate Editor for IEEE IV 2023
 - Chair, workshop on **Social, interactive and safe behaviors for AVs: benchmarks, models and applications** at [IEEE IV 2023](https://sites.google.com/view/iv2023-social/%E9%A6%96%E9%A1%B5). 
@@ -169,6 +171,8 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 
 ## Talks
+- Nov, 2023 **Towards integrating subjective and objective risks in human-centric automated driving** at 2023 ITS WiE/YP Workshop & Research Forum, Cairo, Egypt.
+- Sep. 2023 **Continual Driver Behavior Learning in Interactive Urban Scenarios** at ITSC 2023, Bilbao, Bizkaia, Spain.
 - Dec. 2022 **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 workshop.
 - Dec. 2022 **Towards Safe, efficient and Co-operative Decision-making for CAVs in Mixed Autonomy: An Attention-Enhanced Graphic Reinforcement Learning Approach** at MFTS 2022.
 - Nov. 2022 **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 workshop **Cooperative and Automated Driving**.
