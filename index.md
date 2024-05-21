@@ -147,6 +147,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 
 ## Talks
+- Apr, 2024 **ArrivalNet: Multi-step Bus/tram Arrival time Prediction in Dresden** at 2024 TUD-KTH joint workshop.
 - Nov, 2023 **Towards integrating subjective and objective risks in human-centric automated driving** at 2023 ITS WiE/YP Workshop & Research Forum, Cairo, Egypt.
 - Sep. 2023 **Continual Driver Behavior Learning in Interactive Urban Scenarios** at ITSC 2023, Bilbao, Bizkaia, Spain.
 - Dec. 2022 **Interactive Behavior Modeling for Vulnerable Road Users with Risk-taking Styles in Urban Scenarios: A Heterogeneous Graph Learning Approach** at IEEE ITSC 2022 workshop.
@@ -161,6 +162,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 - June. 2018, **Development and Evaluation of Two Learning-Based Personalized Driver Model for Pure pursuit Path-Tracking Behaviors** at IEEE IV 2018.
 
 ## Awards
+- TRA Vision 2024, third place in raod section. 
 - IEEE ITSS Young Professionals Travelling Fellowship (2023).
 - Two-Year Graduate Student Fellowship of China Scholarship Councils (CSC), 2021-2023.
 - Excellent Graduate Study Scholarship, 2021.
