@@ -21,7 +21,10 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 - **Interactive behaviour definition, measurement and  detection**
 
 ## News
-- **[Dec. 2023]** Zirui is appointed as the working group leader of intelligent vehicle risk assessment under IEEE Standard Assosiation (SA) and is leading the development of **Standard for driving risk assessment procedure in SAE Level 1-3**. Welcome to join the group. 
+- **[May. 2024]** Several papers about motion prediction, risk assessment and uncertainty estimation are accepted in T-ITS, TR Part C. Please find them in my [google shcolar](https://scholar.google.com/citations?hl=zh-CN&user=nCHChhsAAAAJ&sortby=pubdate&scilu=&scisig=ANVigOsAAAAAZkyMPz_OFdh83AggCcd7CxizAUk&gmla=ABOlHiwISKNyrVvUR9TSinoUhbinp_3fdPP3z3Tit00S9c3xxBF7_7ux8QkjtBJCteW59jL-YOdSxCyFNLgTE7qrHovPL2JWUMvYT51KeXc&sciund=9230500403994875208).
+- **[Apr. 2024]** One paper is accepted by hEART 24. See you all in Finland. 
+- **[Apr. 2024]** Xiaolin and I are awarded the third place of TRA Vision 2024 Road Section. 
+<!-- - **[Dec. 2023]** Zirui is appointed as the working group leader of intelligent vehicle risk assessment under IEEE Standard Assosiation (SA) and is leading the development of **Standard for driving risk assessment procedure in SAE Level 1-3**. Welcome to join the group. 
 - **[Nov. 2023]** Zirui will give a talk at 2023 ITS WiE/YP Workshop & Research Forum with title **Towards integrating subjective and objective risks in human-centric automated driving** (20-21 Nov, 2023 @ Cairo, Egypt).
 - **[Nov. 2023]** One paper about Multi-stream Information Fusion in Low-illumination Scenarios is accepted by IEEE T-ITS. Find [code](https://github.com/TommyGong08/MSIF) and [paper](https://ieeexplore.ieee.org/document/10310658) here.
 - **[Oct. 2023]** One paper about reachable set based risk assessment is accepted by Engineeing. The online version will come soon.
@@ -34,7 +37,7 @@ in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vi
 - **[June. 2023]** I start as Researcher in TU Dresden.
 - **[June. 2023]** Our workshop **Social, Interactive and Safe Behaviors for Intelligent Vehicles: Benchmark, Models and Applications** is successfully held at IEEE IV 2023.
 - **[May. 2023]** Our Proceedings of MFTS 2022, where I serve as one of the editors, is online published now, [download here](https://doi.org/10.25368/2023.9). 
-- **[May. 2023]** Two papers are accepted at IEEE T-ITS.
+- **[May. 2023]** Two papers are accepted at IEEE T-ITS. -->
 <!-- - **[Dec. 2022]** The master student, Fanyi Wei, I serve as the daily supervisor, successfully defense the thesis with title **Optimization of Velocity for Eco-Driving using Reinforcement Learning based on Simulation Data of BMW i3**. Congratulations!  -->
 <!-- - **[Dec. 2022]** One paper entitled **Continual Interactive Behavior Learning With Traffic Divergence Measurement: A Dynamic Gradient Scenario Memory Approach** is pre-printed on ArXiv. Find [paper](https://github.com/BIT-Jack/D-GSM) and [code](https://github.com/BIT-Jack/D-GSM) here. -->
 <!-- - **[Dec. 2022]** One paper entitled **Multi-agent Trajectory Prediction in Continuous Scenarios: A Dynamic Memory Enhanced Lifelong Learning approach** is accepted by [TRB annual meeting](https://www.trb.org/AnnualMeeting/AnnualMeeting.aspx). We will give a poster at Vehicle-Highway Automation 2023, Part 3 (Part 1, Session 2228; Part 2, Session 2229). -->
@@ -61,9 +64,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   **Zirui Li**, Jianwei Gong, Chao Lu, Jinghang Li,
   <br>
-  IEEE Transactions on Industrial Electronics	. **IEEE T-IE 2022**.
-  <br>
-  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9700778)] 
+  IEEE Transactions on Industrial Electronics	. **IEEE T-IE 2022**. [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9700778)] 
 
 <!-- - **Graph Convolution-Based Deep Reinforcement Learning for Multi-Agent Decision-Making in Mixed Traffic environments**
   <br>
@@ -78,9 +79,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   **Zirui Li**, Jianwei Gong, Chao Lu, Yangtian Yi,
   <br>
-  IEEE/ASME Transactions on Mechatronics. **IEEE/ASME T-MECH 2021**.
-  <br>
-  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9406384)]
+  IEEE/ASME Transactions on Mechatronics. **IEEE/ASME T-MECH 2021**. [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9406384)]
   
 
 
@@ -88,9 +87,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   **Zirui Li**, Chao Lu, Yangtian Yi, Jianwei Gong, 
   <br>
-  IEEE Transactions on Intelligent Transportation Systems. **IEEE T-ITS 2021**.
-  <br>
-  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9468360)]
+  IEEE Transactions on Intelligent Transportation Systems. **IEEE T-ITS 2021**. [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9468360)]
   
 
 
@@ -98,9 +95,7 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
   <br>
   **Zirui Li**, Jianwei Gong,  Chao Lu, Junqiang Xi,
   <br>
-  IEEE Transactions on Vehicular Technology. **IEEE T-VT 2020**.
-  <br>
-  [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9186674)]
+  IEEE Transactions on Vehicular Technology. **IEEE T-VT 2020**. [[PDF](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9186674)]
   
   
 
@@ -133,27 +128,8 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 ## Services
 ### Reviewer
-- IEEE Intelligent Vehicles Symposium 2018-2024.
-- IEEE International Conference on Intelligent Transportation Systems 2018-2023.
-- IEEE Transactions on Vehicular Technology.
-- IEEE Transactions on Intelligent Transportation Systems.
-- IEEE Transactions on Neural Networks and Learning Systems.
-- Frontiers of Information Technology & Electronic Engineering.
-- IEEE Transactions on Intelligent Vehicles.
-- eTransportation.
-- Geoscience and Remote Sensing Letters.
-- IET Intelligent Transport Systems.
-- Journal of Transportation Engineering, Part A.
-- Sensors.
-- Remote Sensing.
-- IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).
-- IEEE International Conference on Unmanned Systems (ICUS).
-- IEEE International Conference on Robotics and Automation (ICRA).
-- Applied Sciences.
-- Machines.
-- Electronics.
-- Scientific report.
-
+- Journal: IEEE Transactions on Vehicular Technology, IEEE Transactions on Intelligent Transportation Systems, IEEE Transactions on Neural Networks and Learning Systems, Frontiers of Information Technology & Electronic Engineering, IEEE Transactions on Intelligent Vehicles, eTransportation, Geoscience and Remote Sensing Letters, IET Intelligent Transport Systems, Journal of Transportation Engineering Part A, Sensors,Remote Sensing, Applied Sciences, Machines, Electronics, Scientific report.
+- Conference: IEEE Intelligent Vehicles Symposium 2018-2024, IEEE International Conference on Intelligent Transportation Systems 2018-2024, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), IEEE International Conference on Unmanned Systems (ICUS), IEEE International Conference on Robotics and Automation (ICRA).
 
 ### Chair/Co-chairs
 - Working group leader, intelligent vehicle risk assessment under IEEE Standard Assosiation (SA).
@@ -194,15 +170,5 @@ For the full and newest publications [CLICK HERE](https://scholar.google.com/cit
 
 
 ## Mentorship Experience
-- Cheng Gong, Beijing Institute of Technology
-- Yunlong Lin, Beijing Institute of Technology
-- Chenxu Wen, Beijing Institute of Technology
-- Fanyi Wei, TU Dresden
-- Haowen Wang, Shanghai Jiaotong University
-- Hailong Gong, Beijing Institute of Technology
-- Lianzhen Wei,Beijing Institute of Technology
-- Yangtian Yi, Beijing Institute of Technology
-- Xianqi He, Beijing Institute of Technology
-- jingyi Xu, Beijing Institute of Technology
-- Yingqi Tan, Beijing Institute of Technology
-- Tanran Chen, Beijing Institute of Technology
+- Beijing Institute of Technology: Cheng Gong, Yunlong Lin, Chenxu Wen, Haowen Wang, Hailong Gong, Lianzhen Wei, Yangtian Yi, Xianqi He, jingyi Xu, Yingqi Tan,Tanran Chen.
+- TU Dresden: Fanyi Wei. 
