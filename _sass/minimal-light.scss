@@ -379,24 +379,24 @@ footer {
 
 
 
-// @media print, screen and (max-width: 960px) {
-//   body {
-//     word-wrap:break-word;
-//     padding:15px;
-//   }
+@media print, screen and (max-width: 960px) {
+  body {
+    word-wrap:break-word;
+    padding:15px;
+  }
 
-//   header {
-//     padding:0;
-//   }
+  header {
+    padding:0;
+  }
 
-//   header ul, header p.view {
+  header ul, header p.view {
     
-//   }
+  }
 
-//   pre, code {
-//     word-wrap:normal;
-//   }
-// }
+  pre, code {
+    word-wrap:normal;
+  }
+}
 
 @media print, screen and (max-width: 480px) {
   body {
