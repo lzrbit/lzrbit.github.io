@@ -11,7 +11,7 @@ From June, 2021 to July, 2022,
 he was a visiting researcher in Delft University of Technology (TU Delft) with CSC funding from China 
 under the supervision of Prof. [Bart van Arem](https://www.tudelft.nl/en/ceg/about-faculty/departments/transport-planning/staff/personal-pages/arem-b-van/), Prof. [Victor Knoop](https://www.tudelft.nl/citg/over-faculteit/afdelingen/transport-planning/staff/persoonlijke-paginas/knoop-vl) and Prof. [Meng Wang](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/head-of-chair). 
 From Aug, 2022. He is the visiting researcher 
-in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/gastforscher-innen) at the Faculty of Transportation and Traffic Sciences "Friedrich List" of the TU Dresden under the supervision of Prof. [Meng Wang](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/head-of-chair). His research focuses on interactive behavior modeling, risk assessment and motion planning of automated vehicles. Any interest on my work you can drop me email (zirui.li@tu-dresden.de)
+in the Chair of [Traffic Process Automation](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/gastforscher-innen) at the Faculty of Transportation and Traffic Sciences "Friedrich List" of the TU Dresden under the supervision of Prof. [Meng Wang](https://tu-dresden.de/bu/verkehr/vis/vpa/die-professur/head-of-chair). His research focuses on interactive behavior modeling, risk assessment and motion planning of automated vehicles. Any interest on my work you can drop me email (zirui.work.bit@gmail.com)
 
 
 ## Research Interests
