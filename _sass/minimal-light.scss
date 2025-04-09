@@ -454,6 +454,13 @@ footer {
 }
 
 
+
+
+
+
+
+
+
 @media print, screen and (max-width: 960px) {
 
   .pub-row {
@@ -461,7 +468,7 @@ footer {
   align-items: center;}
 
   div.wrapper {
-    width:auto;
+    width:800px;
     margin:0;
   }
 
