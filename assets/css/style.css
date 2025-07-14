@@ -10,17 +10,31 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #272829;
+  color: #333;
 }
 
+/* 默认状态 */
 a {
-  color: #149ddd;
+  color: #007bff; /* 蓝色 */
+  text-decoration: none; /* 去掉下划线（可选） */
 }
 
+/* 鼠标悬停时 */
 a:hover {
-  color: #37b3ed;
-  text-decoration: none;
+  color: #ff6600; /* 橙色 */
+  text-decoration: underline; /* 悬停时显示下划线（可选） */
 }
+
+/* 点击后的访问过的链接 */
+a:visited {
+  color: #551a8b; /* 紫色 */
+}
+
+/* 鼠标点击时 */
+a:active {
+  color: #cc0000; /* 红色 */
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
@@ -294,7 +308,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: #007bff;
 }
 
 .section-title h2::after {
@@ -318,7 +332,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: #333;
 }
 
 .about .content ul {
