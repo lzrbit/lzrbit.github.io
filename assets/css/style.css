@@ -36,6 +36,11 @@ a:active {
 }
 
 
+.icofont-rounded-right {
+  color: #151514 !important; /* 你想要的颜色 */
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
