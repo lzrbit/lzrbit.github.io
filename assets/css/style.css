@@ -40,6 +40,12 @@ a:active {
   color: #151514 !important; /* 你想要的颜色 */
 }
 
+/* Larger body copy used in About / Research / Publications.
+   Replaces the deprecated <font size="4" color="black"> tags. */
+.body-text {
+  font-size: 18px;
+  color: #000;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
