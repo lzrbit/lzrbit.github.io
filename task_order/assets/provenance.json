@@ -1,0 +1,41 @@
+{
+  "figure_sources": {
+    "teaser": {
+      "source": "figures/fig_teaser.pdf",
+      "sha256": "a4fa2c0584ab1acc4168c733cbb47acf0f5faf12f757b58fe6e8f32fa393cf75",
+      "web_asset": "teaser.webp",
+      "web_sha256": "799747d5cc495e19b24ab322b8d14e2d39919ada8e57fd8ac14ae430cb68b568"
+    },
+    "framework": {
+      "source": "figures/fig0_pipeline.pdf",
+      "sha256": "dd863072b4443123246b5a834a5876c41d202bcec40336b19e9d2a29f44f563d",
+      "web_asset": "framework.webp",
+      "web_sha256": "6ece6dc37c810a3c3698f14415a371702b09167aec254cf36f4a72ab8f6b3719"
+    },
+    "distributions": {
+      "source": "figures/fig_task_distributions.pdf",
+      "sha256": "182c24efc3f88fb7969a1a3a656bad99198df1d57d67696734193c6bcf80f510",
+      "web_asset": "distributions.webp",
+      "web_sha256": "f418bf548b845fca0c3e4fb86a1c4d29d93e79f96f54f3f690b28816c98da348"
+    },
+    "correlations": {
+      "source": "figures/fig_unified_D_main.pdf",
+      "sha256": "6cb8e9f3e69511c38d9381b9c5b2dc80de680e077c1d123780392cad1bb581f6",
+      "web_asset": "correlations.webp",
+      "web_sha256": "8fa3ef27698459ca27cf1961d05a599dcf145e1242a42ab2576e95e13bb16821"
+    }
+  },
+  "data_sources": {
+    "inputs/performance_per_seed.csv": "c89b8c6de474ad0171c47a60370c88cef741f61c9123b8fc1fb25e987be79457",
+    "inputs/orders.csv": "f1ea3203c19fd11c38901f16879cf411570ce8c988461184263e498d65c74dae",
+    "results/per_order.csv": "7707048468b8f62ba390c83bca954baa0da000c3c7a710ad87ff46bb64746a19"
+  },
+  "note": "Teaser ranking values are measured; its lower summary is schematic. The entire framework illustration is schematic.",
+  "manuscript": {
+    "source": "bare_adv.pdf",
+    "sha256": "5e858177a1d75745b6abe1f7078dbad8ddfa4d28e8b18328eac2a59d77d82cc6",
+    "pages": 13
+  },
+  "results_json_sha256": "8c0750efbb0505881ab3592ee52fb88e3cc040f25c89a3dab6cf2f62e7a78ff4",
+  "updated": "2026-10-09"
+}
