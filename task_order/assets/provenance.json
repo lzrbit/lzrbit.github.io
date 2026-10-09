@@ -1,10 +1,10 @@
 {
   "figure_sources": {
     "teaser": {
-      "source": "figures/fig_teaser.pdf",
-      "sha256": "a4fa2c0584ab1acc4168c733cbb47acf0f5faf12f757b58fe6e8f32fa393cf75",
+      "source": "figures/fig_teaser_v2.pdf",
+      "sha256": "00ed14207184e6ed5b984e08caab360543b8340297d49ad21dc189e6b91e870f",
       "web_asset": "teaser.webp",
-      "web_sha256": "799747d5cc495e19b24ab322b8d14e2d39919ada8e57fd8ac14ae430cb68b568"
+      "web_sha256": "f0ee3af573ac7f511708cd27397450dd5bedc2e89f4ac91a8c9f6efdc6067682"
     },
     "framework": {
       "source": "figures/fig0_pipeline.pdf",
@@ -14,15 +14,15 @@
     },
     "distributions": {
       "source": "figures/fig_task_distributions.pdf",
-      "sha256": "182c24efc3f88fb7969a1a3a656bad99198df1d57d67696734193c6bcf80f510",
+      "sha256": "213ccc2da923928b90c3281b7a08e0757428daf5a3717d858611c711e6b1b78b",
       "web_asset": "distributions.webp",
-      "web_sha256": "f418bf548b845fca0c3e4fb86a1c4d29d93e79f96f54f3f690b28816c98da348"
+      "web_sha256": "bdc4dfc62622585340f869e2609b959c7b2d0cb05668056301e1409ab77af591"
     },
     "correlations": {
       "source": "figures/fig_unified_D_main.pdf",
-      "sha256": "6cb8e9f3e69511c38d9381b9c5b2dc80de680e077c1d123780392cad1bb581f6",
+      "sha256": "44f7acd87ffa79daae64cf5b929003c847ca03b363fe994ae3b630d28f3a7420",
       "web_asset": "correlations.webp",
-      "web_sha256": "8fa3ef27698459ca27cf1961d05a599dcf145e1242a42ab2576e95e13bb16821"
+      "web_sha256": "a87401a6f7e632f39ab3f6ac8f7b8c58f0971fd77be3545eac7fdb09b3b1233e"
     }
   },
   "data_sources": {
@@ -30,10 +30,10 @@
     "inputs/orders.csv": "f1ea3203c19fd11c38901f16879cf411570ce8c988461184263e498d65c74dae",
     "results/per_order.csv": "7707048468b8f62ba390c83bca954baa0da000c3c7a710ad87ff46bb64746a19"
   },
-  "note": "Teaser ranking values are measured; its lower summary is schematic. The entire framework illustration is schematic.",
+  "note": "Teaser panel (a) shows measured mean FDE-CT with replicate spread; panel (b) splits the same runs into first-stage and warm-start errors. The framework illustration is schematic.",
   "manuscript": {
     "source": "bare_adv.pdf",
-    "sha256": "5e858177a1d75745b6abe1f7078dbad8ddfa4d28e8b18328eac2a59d77d82cc6",
+    "sha256": "344500641e4f62934b348451bbfab420412fb16a12afcbe9365d8ddaf0387bbd",
     "pages": 13
   },
   "results_json_sha256": "8c0750efbb0505881ab3592ee52fb88e3cc040f25c89a3dab6cf2f62e7a78ff4",

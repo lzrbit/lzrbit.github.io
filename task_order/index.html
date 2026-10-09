@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#ffffff">
   <title>Task Order in Continual Learning · Zirui Li et al.</title>
   <meta name="description" content="An empirical study of task-order sensitivity in continual motion forecasting, with an order-aware evaluation framework and an interactive comparison across task sequences.">
-  <meta property="og:title" content="What is the Influence of Task Order in Continual Learning?">
+  <meta property="og:title" content="What Is the Influence of Task Order in Continual Learning?">
   <meta property="og:description" content="The same tasks can yield different algorithm rankings. Explore an empirical study and order-aware evaluation for motion forecasting.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lzrbit.github.io/task_order/">
@@ -35,8 +35,8 @@
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="container hero-content">
         <p class="eyebrow">Continual learning <span>·</span> Motion forecasting</p>
-        <h1>What is the Influence of <span>Task Order</span> in Continual Learning?</h1>
-        <p class="paper-subtitle">An Empirical Study and Order-aware Evaluation for Motion Forecasting</p>
+        <h1>What Is the Influence of <span>Task Order</span> in Continual Learning?</h1>
+        <p class="paper-subtitle">An Empirical Study and Order-Aware Evaluation for Motion Forecasting</p>
         <div class="authors">
           <a href="https://lzrbit.github.io/">Zirui Li<sup>1</sup></a>
           <span>Yunlong Lin<sup>2,3</sup></span>
@@ -63,11 +63,11 @@
     <section class="container teaser-section" aria-labelledby="teaser-heading">
       <div class="teaser-intro"><span class="small-rule"></span><h2 id="teaser-heading">Same tasks. Different order. Different ranking.</h2></div>
       <figure class="paper-figure teaser-figure">
-        <button class="figure-button" data-zoom="assets/teaser.webp" data-caption="Task-order sensitivity and a common evaluation policy" aria-label="Enlarge the task-order teaser">
-          <img src="assets/teaser.webp" width="1800" height="1407" alt="GSM ranks first for A–B–C–D, while Vanilla ranks first for A–B–D–C. A schematic below illustrates shared order weights for algorithm comparison." fetchpriority="high">
+        <button class="figure-button" data-zoom="assets/teaser.webp" data-caption="Task-order sensitivity and its first-stage origin" aria-label="Enlarge the task-order teaser">
+          <img src="assets/teaser.webp" width="1800" height="1620" alt="SyReM ranks first for A–C–B–D while DER ranks first for A–C–D–B; a second panel shows that the reversal arises in the first learning stage and that the warm-start errors of the four algorithms are not separable." fetchpriority="high">
           <span class="zoom-hint" aria-hidden="true">↗ Enlarge</span>
         </button>
-        <figcaption>The upper panel reports measured mean current-task FDE in metres; lower is better. The lower panel illustrates the evaluation concept schematically.</figcaption>
+        <figcaption>Panel (a) reports measured mean current-task FDE in metres with replicate spread; lower is better. Panel (b) splits the same runs into the first-stage error and the warm-start error.</figcaption>
       </figure>
     </section>
 
@@ -75,7 +75,7 @@
       <div class="section-heading"><p class="eyebrow">Overview</p><h2>An algorithm’s advantage depends on its learning history.</h2></div>
       <div class="overview-copy">
         <p>Continual learning asks a model to acquire new knowledge while retaining what it has already learned. But the same tasks can arrive in different sequences—and an algorithm that leads on one sequence may fall behind on another.</p>
-        <p>We study this dependence in motion forecasting. Algorithms share the task set, prediction backbone, and evaluated orders. Uniform averages provide a reference, while results for individual orders reveal variation and ranking reversals. A task-distribution descriptor adds a common, explicitly defined weighting policy.</p>
+        <p>We study this dependence in motion forecasting. Algorithms share the task set, prediction backbone, and evaluated orders. Across all 24 orders of four tasks, task order accounts for 65 to 91 percent of the variation in current-task error and backward transfer, but 90 to 99 percent of that share is the identity of the starting task, which acts through the cold start of the smallest task. Beyond the first stage, the order effect is comparable to training variability. A transition-direction descriptor adds a common weighting policy; on this task set it mainly indexes where the smallest task is placed.</p>
       </div>
       <div class="finding-grid">
         <article class="finding"><span class="finding-index">01</span><h3>Evaluate across orders</h3><p>Repeated training within one sequence does not measure variation between sequences.</p></article>
@@ -112,7 +112,7 @@
       </div>
       <figure class="paper-figure task-figure">
         <button class="figure-button" data-zoom="assets/distributions.webp" data-caption="Empirical task feature distributions" aria-label="Enlarge the task feature distributions">
-          <img src="assets/distributions.webp" width="2200" height="2106" loading="lazy" alt="Speed and acceleration distributions across the four tasks, displaying medians, interquartile ranges, and 5th–95th percentiles.">
+          <img src="assets/distributions.webp" width="2200" height="1635" loading="lazy" alt="Speed and acceleration distributions across the four tasks, displaying medians, interquartile ranges, and 5th–95th percentiles.">
           <span class="zoom-hint" aria-hidden="true">↗ Enlarge</span>
         </button>
         <figcaption>Median, 25th–75th percentile interval, and 5th–95th percentile range of the measured features.</figcaption>
@@ -134,10 +134,10 @@
           <noscript><p class="explorer-note">Enable JavaScript to explore the orders, or view the full tables in the <a href="assets/paper.pdf">paper</a> and <a href="https://github.com/lzrbit/task_order">released results</a>.</p></noscript>
         </div>
         <div class="results-context">
-          <article><h3>Different metrics answer different questions.</h3><p>SyReM has the lowest uniform-order final FDE and miss rate, while GSM has the lowest FDE backward-transfer score. Improvement relative to the initial checkpoint and final prediction quality can therefore produce different comparisons.</p></article>
-          <article><h3>Weighting changes the comparison, not the training.</h3><p>The selected descriptor weighting changes the aggregate scores but preserves each metric’s leading algorithm. The descriptor and weighting direction were selected exploratorily on this task set.</p></article>
+          <article><h3>Different metrics answer different questions.</h3><p>SyReM has the lowest uniform-order final FDE and miss rate (bootstrap probability 1.00), whereas the FDE backward-transfer lead of GSM over Vanilla is within 0.03 m and comes entirely from the orders that start with the smallest task. Improvement relative to the initial checkpoint and final prediction quality can therefore produce different comparisons.</p></article>
+          <article><h3>Weighting changes the comparison, not the training.</h3><p>The selected descriptor weighting changes the aggregate scores but preserves the full ranking of the four algorithms. The descriptor and weighting direction were selected exploratorily on this task set.</p></article>
         </div>
-        <details class="evidence-detail"><summary>View descriptor–performance associations <span aria-hidden="true">+</span></summary><figure class="paper-figure"><button class="figure-button" data-zoom="assets/correlations.webp" data-caption="Descriptor associations for every algorithm and metric" aria-label="Enlarge the descriptor correlation figure"><img src="assets/correlations.webp" width="2400" height="1727" loading="lazy" alt="Sixteen scatter plots show the transition descriptor against four metrics, separately for Vanilla, DER, GSM, and SyReM."><span class="zoom-hint" aria-hidden="true">↗ Enlarge</span></button><figcaption>Each point represents an individual order averaged over repetitions. Spearman correlations describe this benchmark; they are not independent validation of the selected descriptor.</figcaption></figure></details>
+        <details class="evidence-detail"><summary>View descriptor–performance associations <span aria-hidden="true">+</span></summary><figure class="paper-figure"><button class="figure-button" data-zoom="assets/correlations.webp" data-caption="Descriptor associations for every algorithm and metric" aria-label="Enlarge the descriptor correlation figure"><img src="assets/correlations.webp" width="2400" height="932" loading="lazy" alt="Sixteen scatter plots show the transition descriptor against four metrics, separately for Vanilla, DER, SyReM, and GSM, with points coloured by the position of task A."><span class="zoom-hint" aria-hidden="true">↗ Enlarge</span></button><figcaption>Each point represents an individual order averaged over repetitions, coloured by the position of task A. Spearman correlations describe this benchmark; the position of task A alone correlates more strongly than the descriptor.</figcaption></figure></details>
         <a class="text-link" href="https://github.com/lzrbit/task_order" target="_blank" rel="noopener">Explore the complete results and analysis <span aria-hidden="true">↗</span></a>
       </div>
     </section>
@@ -145,8 +145,8 @@
     <section class="section container citation-section" id="citation">
       <div class="section-heading"><p class="eyebrow">Citation</p><h2>BibTeX</h2><p>Research manuscript, 2026.</p></div>
       <div class="citation-box"><div class="citation-toolbar"><span>li2026taskorder</span><button id="copy-citation" type="button">Copy BibTeX</button></div><pre><code id="citation-text">@misc{li2026taskorder,
-  title  = {What is the Influence of Task Order in Continual Learning?
-            An Empirical Study and Order-aware Evaluation for Motion Forecasting},
+  title  = {What Is the Influence of Task Order in Continual Learning?
+            An Empirical Study and Order-Aware Evaluation for Motion Forecasting},
   author = {Zirui Li and Yunlong Lin and Haohan Yang and Xiaocong Zhao and Chen Lv},
   year   = {2026},
   note   = {Research manuscript},
