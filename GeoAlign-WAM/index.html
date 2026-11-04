@@ -7,10 +7,10 @@
   <link rel="canonical" href="https://lzrbit.github.io/GeoAlign-WAM/">
   <meta property="og:image" content="https://lzrbit.github.io/GeoAlign-WAM/assets/fig1_motivation.webp">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using a Video Foundation Prior">
+  <meta property="og:title" content="GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using Video Foundation Prior">
   <meta property="og:url" content="https://lzrbit.github.io/GeoAlign-WAM/">
   <meta name="theme-color" content="#ffffff">
-  <title>GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using a Video Foundation Prior</title>
+  <title>GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using Video Foundation Prior</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
@@ -21,7 +21,7 @@
     <header class="publication-header" id="top">
       <div class="container">
         <h1 class="publication-title"><span>GeoAlign</span>-WAM</h1>
-        <h2 class="publication-subtitle">A 4D World Action Model for Generalizable and Robust Robot Manipulation Using a Video Foundation Prior</h2>
+        <h2 class="publication-subtitle">A 4D World Action Model for Generalizable and Robust Robot Manipulation Using Video Foundation Prior</h2>
         <p class="publication-authors"><span>Zirui Li<sup>†</sup></span> <span>Yujie Yan<sup>†</sup></span> <span>Runjia Tan</span> <span>Lei Yang</span> <span>Yangang Ren</span> <span>Ziwei Liu<sup>*</sup></span> <span>Chen Lv<sup>*</sup></span></p>
         <p class="author-notes"><sup>†</sup> Equal contribution &nbsp; <sup>*</sup> Corresponding authors</p>
         <p class="publication-status">Preprint · 2026</p>
@@ -33,13 +33,13 @@
     </header>
 
     <section class="section container teaser-section" id="overview" aria-label="Geometry-aligned world-action modeling overview">
-      <figure class="architecture"><a href="assets/fig1_motivation.pdf" target="_blank" rel="noopener" aria-label="Open full-size figure as PDF"><img src="assets/fig1_motivation.webp" width="1938" height="473" alt="Motivation for aligning robot-frame 3D scene geometry over time with action modeling." loading="eager"></a><figcaption>Pixel coordinates do not uniquely determine metric position. Robot-frame pointmaps provide 3D geometry; its evolution over time forms a 4D representation.</figcaption></figure>
+      <figure class="architecture"><a href="assets/fig1_motivation.pdf" target="_blank" rel="noopener" aria-label="Open full-size figure as PDF"><img src="assets/fig1_motivation.webp" width="1938" height="886" alt="Side-by-side comparison of pixel-level WAM and GeoAlign-WAM. RGB image planes contrast with a time sequence of three-dimensional XYZ scene schematics. GeoAlign-WAM aligns future-derived auxiliary actions with the action expert; dashed paths are used only during training." loading="eager"></a><figcaption>Pixel-level and 4D world supervision. GeoAlign-WAM represents robot-frame geometry over time and aligns future-derived auxiliary actions with the action expert. Dashed paths denote training-only computation.</figcaption></figure>
     </section>
 
     <section class="section abstract-section" id="abstract" aria-labelledby="abstract-title">
       <div class="container reading-width">
         <h2 id="abstract-title">Abstract</h2>
-        <div class="abstract-text"><p>Video foundation models provide temporal priors for learning robot manipulation policies, but predicting plausible image sequences does not explicitly constrain the relationship between visible scene geometry and Cartesian control. A pixel identifies a viewing ray rather than a unique metric location, whereas end-effector commands must resolve spatial relationships in the robot&#x27;s workspace. We present GeoAlign-WAM, a geometry-aware world action model that combines a pretrained video prior with pixel-aligned pointmaps expressed in the robot base frame. RGB and pointmap sequences are encoded into compatible latent grids and fused along the spatial width dimension, enabling joint learning of appearance, three-dimensional structure, and their evolution over time. An action expert learns executable action chunks from the current multimodal context. To connect future world representations with control, a lightweight convolutional head predicts an auxiliary action chunk from the predicted future latent, and a symmetric geometry–action alignment loss penalizes disagreement with the action expert. Structured attention prevents the action branch from reading future tokens, allowing the future-generation branch and auxiliary head to be removed during deployment. The model achieves 97.4% success on LIBERO, 83.1% on LIBERO-Occ, and 84.0% across three real-robot tasks. Relative to Fast-WAM, the mean success rate increases by 11.9 percentage points under occlusion and 13.3 points on the real robot; LIBERO-Plus results show substantial gains under camera shifts, with remaining weaknesses under some language and lighting perturbations.</p></div>
+        <div class="abstract-text"><p>Video foundation models provide temporal priors for robot manipulation, but plausible image prediction does not explicitly constrain the relationship between scene geometry and Cartesian control. Image pixels identify viewing rays rather than unique metric locations, whereas end-effector commands must resolve spatial relationships in the robot workspace. We present GeoAlign-WAM, a geometry-aware world action model that combines a pretrained video prior with pixel-aligned pointmaps in the robot base frame. RGB and pointmap sequences are encoded into compatible latent grids and concatenated along the spatial width dimension to jointly represent appearance, three-dimensional structure, and temporal evolution. An action expert predicts executable action chunks from the current multimodal context. A lightweight convolutional head reads the predicted future latent to produce an auxiliary action chunk, and a symmetric geometry–action alignment loss penalizes disagreement between the two predictions. Structured attention prevents the action branch from accessing future tokens, allowing the future-generation branch and auxiliary head to be removed at deployment. GeoAlign-WAM achieves 97.4% success on LIBERO, 83.1% on LIBERO-Occ, and 84.0% across three real-robot tasks. Compared with Fast-WAM, mean success increases by 11.9 percentage points under occlusion and 13.3 points on the real robot. LIBERO-Plus results show substantial gains under camera shifts, although weaknesses remain under some language and lighting perturbations.</p></div>
       </div>
     </section>
 
@@ -96,7 +96,7 @@
         <ol>
           <li><strong>Robot-frame geometry:</strong> RGB observations and pixel-aligned XYZ pointmaps in the robot base frame are encoded into compatible latent grids and fused along the spatial width dimension.</li>
           <li><strong>World and action modeling:</strong> a pretrained video backbone learns future RGB and XYZ prediction, while the action expert produces action chunks from the current multimodal context.</li>
-          <li><strong>Geometry–action alignment:</strong> a lightweight convolutional head predicts an auxiliary action chunk from the estimated clean future latent. A symmetric alignment loss penalizes disagreement with the action expert.</li>
+          <li><strong>Geometry–action alignment:</strong> a lightweight convolutional head reads the clean width-fused future latent directly and predicts an auxiliary action chunk. A symmetric alignment loss penalizes disagreement with the action expert.</li>
         </ol>
         <p>Structured attention prevents the action branch from reading future tokens. Deployment uses the current-context action path; future RGB/XYZ generation and the auxiliary head are removed.</p>
       </div>
@@ -119,14 +119,13 @@
         <table class="results-table">
           <thead><tr><th scope="col">Method</th><th scope="col">Pick Cup</th><th scope="col">Stack Cup</th><th scope="col">Color Match</th><th scope="col">Average</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Diffusion Policy</th><td>84</td><td>72</td><td>—</td><td>—</td></tr>
             <tr><th scope="row">π<sub>0.5</sub></th><td>64</td><td>48</td><td>76</td><td>62.7</td></tr>
             <tr><th scope="row">Fast-WAM</th><td>72</td><td>68</td><td>72</td><td>70.7</td></tr>
             <tr class="ours"><th scope="row">GeoAlign-WAM</th><td>80</td><td>84</td><td>88</td><td>84.0</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="caption-note">Averages are unweighted across the three tasks. “—” indicates an unreported result; no three-task average is computed for Diffusion Policy.</p>
+      <p class="caption-note">Averages are unweighted across the three tasks.</p>
       <h3>LIBERO-Occ</h3>
       <div class="table-scroll" role="region" aria-label="LIBERO-Occ success rates" tabindex="0">
         <table class="results-table">
@@ -153,14 +152,14 @@
         </table>
       </div>
       <p class="caption-note">The equal-weight overall success rate is <strong>81.0%</strong> across all 28 suite–perturbation entries (four suites × seven perturbations, excluding Original). It is computed directly from those entries, without rounding the intermediate column means or weighting by episode counts.</p>
-      <p class="caption-note">Original: unperturbed LIBERO. Camera: viewpoint changes. Robot: initial-state changes. Background: texture changes. Noise: sensor noise. Layout: object-layout changes. Performance varies across conditions, including lower results for some language and lighting perturbations.</p>
+      <p class="caption-note">Original: unperturbed LIBERO. Camera: viewpoint changes. Robot: initial-state changes. Background: texture changes. Noise: external-camera RGB noise. Layout: object-layout changes. Performance varies across conditions, including lower results for some language and lighting perturbations.</p>
       <h3>LIBERO</h3>
       <p>GeoAlign-WAM obtains an average success rate of <strong>97.4%</strong> on LIBERO.</p>
     </section>
     <section class="section container reading-width" id="bibtex" aria-labelledby="bibtex-title">
       <h2 id="bibtex-title">BibTeX</h2>
       <div class="code-block"><pre><code>@misc{li2026geoalignwam,
-  title  = {GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using a Video Foundation Prior},
+  title  = {GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using Video Foundation Prior},
   author = {Li, Zirui and Yan, Yujie and Tan, Runjia and Yang, Lei
             and Ren, Yangang and Liu, Ziwei and Lv, Chen},
   year   = {2026},
