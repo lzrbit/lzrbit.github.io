@@ -139,7 +139,7 @@
       </div>
       <p class="caption-note">Averages are unweighted across the four suites and rounded to one decimal place.</p>
       <h3>LIBERO-Plus</h3>
-      <p>GeoAlign-WAM success rates by task suite and perturbation. The table reports each measured condition without combining them into an aggregate score.</p>
+      <p>GeoAlign-WAM success rates by task suite and perturbation. The Mean row weights the four task suites equally for each condition.</p>
       <div class="table-scroll" role="region" aria-label="GeoAlign-WAM LIBERO-Plus success rates by suite and perturbation" tabindex="0">
         <table class="results-table">
           <thead><tr><th scope="col">Suite</th><th scope="col">Original</th><th scope="col">Camera</th><th scope="col">Robot</th><th scope="col">Language</th><th scope="col">Lighting</th><th scope="col">Background</th><th scope="col">Noise</th><th scope="col">Layout</th></tr></thead>
@@ -148,9 +148,11 @@
             <tr><th scope="row">LIBERO-Object</th><td>98.3</td><td>94.5</td><td>71.8</td><td>98.8</td><td>100.0</td><td>95.8</td><td>97.3</td><td>72.8</td></tr>
             <tr><th scope="row">LIBERO-Goal</th><td>96.9</td><td>95.4</td><td>89.3</td><td>58.4</td><td>63.1</td><td>98.2</td><td>89.6</td><td>59.6</td></tr>
             <tr><th scope="row">LIBERO-Long</th><td>96.3</td><td>54.3</td><td>49.3</td><td>58.2</td><td>64.3</td><td>87.4</td><td>83.2</td><td>75.6</td></tr>
+            <tr class="ours"><th scope="row">Mean</th><td>97.4</td><td>79.4</td><td>72.2</td><td>77.7</td><td>81.4</td><td>95.2</td><td>88.6</td><td>72.5</td></tr>
           </tbody>
         </table>
       </div>
+      <p class="caption-note">The equal-weight overall success rate is <strong>81.0%</strong> across all 28 suite–perturbation entries (four suites × seven perturbations, excluding Original). It is computed directly from those entries, without rounding the intermediate column means or weighting by episode counts.</p>
       <p class="caption-note">Original: unperturbed LIBERO. Camera: viewpoint changes. Robot: initial-state changes. Background: texture changes. Noise: sensor noise. Layout: object-layout changes. Performance varies across conditions, including lower results for some language and lighting perturbations.</p>
       <h3>LIBERO</h3>
       <p>GeoAlign-WAM obtains an average success rate of <strong>97.4%</strong> on LIBERO.</p>
