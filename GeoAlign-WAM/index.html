@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GeoAlign-WAM: geometry-aligned world-action modeling for robotic manipulation.">
+  <link rel="canonical" href="https://lzrbit.github.io/GeoAlign-WAM/">
+  <meta property="og:image" content="https://lzrbit.github.io/GeoAlign-WAM/assets/fig1_motivation.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using a Video Foundation Prior">
+  <meta property="og:url" content="https://lzrbit.github.io/GeoAlign-WAM/">
+  <meta name="theme-color" content="#ffffff">
+  <title>GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using a Video Foundation Prior</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#abstract">Skip to content</a>
+  <main>
+    <header class="publication-header" id="top">
+      <div class="container">
+        <h1 class="publication-title"><span>GeoAlign</span>-WAM</h1>
+        <h2 class="publication-subtitle">A 4D World Action Model for Generalizable and Robust Robot Manipulation Using a Video Foundation Prior</h2>
+        <p class="publication-authors"><span>Zirui Li<sup>†</sup></span> <span>Yujie Yan<sup>†</sup></span> <span>Runjia Tan</span> <span>Lei Yang</span> <span>Yangang Ren</span> <span>Ziwei Liu<sup>*</sup></span> <span>Chen Lv<sup>*</sup></span></p>
+        <p class="author-notes"><sup>†</sup> Equal contribution &nbsp; <sup>*</sup> Corresponding authors</p>
+        <p class="publication-status">Preprint · 2026</p>
+        <div class="publication-links" aria-label="Project resources">
+          <a class="resource" href="assets/paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg>Paper</a>
+          <span class="resource unavailable" aria-disabled="true" title="The code repository is not publicly accessible"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg>Code</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section container teaser-section" id="overview" aria-label="Geometry-aligned world-action modeling overview">
+      <figure class="architecture"><a href="assets/fig1_motivation.pdf" target="_blank" rel="noopener" aria-label="Open full-size figure as PDF"><img src="assets/fig1_motivation.webp" width="1938" height="473" alt="Motivation for aligning robot-frame 3D scene geometry over time with action modeling." loading="eager"></a><figcaption>Pixel coordinates do not uniquely determine metric position. Robot-frame pointmaps provide 3D geometry; its evolution over time forms a 4D representation.</figcaption></figure>
+    </section>
+
+    <section class="section abstract-section" id="abstract" aria-labelledby="abstract-title">
+      <div class="container reading-width">
+        <h2 id="abstract-title">Abstract</h2>
+        <div class="abstract-text"><p>Video foundation models provide temporal priors for learning robot manipulation policies, but predicting plausible image sequences does not explicitly constrain the relationship between visible scene geometry and Cartesian control. A pixel identifies a viewing ray rather than a unique metric location, whereas end-effector commands must resolve spatial relationships in the robot&#x27;s workspace. We present GeoAlign-WAM, a geometry-aware world action model that combines a pretrained video prior with pixel-aligned pointmaps expressed in the robot base frame. RGB and pointmap sequences are encoded into compatible latent grids and fused along the spatial width dimension, enabling joint learning of appearance, three-dimensional structure, and their evolution over time. An action expert learns executable action chunks from the current multimodal context. To connect future world representations with control, a lightweight convolutional head predicts an auxiliary action chunk from the predicted future latent, and a symmetric geometry–action alignment loss penalizes disagreement with the action expert. Structured attention prevents the action branch from reading future tokens, allowing the future-generation branch and auxiliary head to be removed during deployment. The model achieves 97.4% success on LIBERO, 83.1% on LIBERO-Occ, and 84.0% across three real-robot tasks. Relative to Fast-WAM, the mean success rate increases by 11.9 percentage points under occlusion and 13.3 points on the real robot; LIBERO-Plus results show substantial gains under camera shifts, with remaining weaknesses under some language and lighting perturbations.</p></div>
+      </div>
+    </section>
+
+    <!-- Real-world demonstrations -->
+    <section class="section container" id="real-world-demos" aria-labelledby="real-world-title">
+      <h2 id="real-world-title">Real-World Demos</h2>
+      <div class="video-grid real-world-grid">
+        <figure class="demo-figure">
+          <video controls muted playsinline loop preload="metadata" poster="assets/real-stack-cup-poster.jpg" aria-label="Stack Cup real-world robot demonstration"><source src="assets/real-stack-cup.mp4" type="video/mp4">Your browser does not support video playback.</video>
+          <figcaption><strong>Stack Cup</strong></figcaption>
+        </figure>
+        <figure class="demo-figure">
+          <video controls muted playsinline loop preload="metadata" poster="assets/real-color-match-poster.jpg" aria-label="Color Match real-world robot demonstration"><source src="assets/real-color-match.mp4" type="video/mp4">Your browser does not support video playback.</video>
+          <figcaption><strong>Color Match</strong></figcaption>
+        </figure>
+        <figure class="demo-figure">
+          <video controls muted playsinline loop preload="metadata" poster="assets/real-pick-cup-poster.jpg" aria-label="Pick Cup real-world robot demonstration"><source src="assets/real-pick-cup.mp4" type="video/mp4">Your browser does not support video playback.</video>
+          <figcaption><strong>Pick Cup</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Simulation demonstrations -->
+    <section class="section container" id="demos" aria-labelledby="demos-title">
+      <h2 id="demos-title">Simulation Demos</h2>
+      <p class="section-description">The same manipulation task under a standard scene, a viewpoint shift, and occlusion.</p>
+      <p class="task-instruction">“Pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate.”</p>
+      <h3>Camera Rollouts</h3>
+      <div class="video-grid">
+        <figure class="demo-figure"><video controls muted playsinline loop preload="metadata" poster="assets/libero-poster.jpg" aria-label="Standard scene camera rollout"><source src="assets/libero.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption><strong>Standard Scene</strong><span>LIBERO spatial · Task 4 · Trial 1</span></figcaption></figure>
+        <figure class="demo-figure"><video controls muted playsinline loop preload="metadata" poster="assets/viewpoint-poster.jpg" aria-label="Viewpoint shift camera rollout"><source src="assets/viewpoint.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption><strong>Viewpoint Shift</strong><span>LIBERO-plus · Task 742 · Trial 0</span></figcaption></figure>
+        <figure class="demo-figure"><video controls muted playsinline loop preload="metadata" poster="assets/occlusion-poster.jpg" aria-label="Occlusion camera rollout"><source src="assets/occlusion.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption><strong>Occlusion</strong><span>LIBERO-Occ · Task 2 · Trial 1</span></figcaption></figure>
+      </div>
+      <h3 class="subsection-title">4D Reconstructions</h3>
+      <p class="section-description">The recorded episodes reconstructed from simulator depth, with the robot trajectory.</p>
+      <div class="video-grid reconstruction-grid">
+        <figure class="demo-figure"><video controls muted playsinline loop preload="none" poster="assets/libero-cloud-poster.jpg" aria-label="Standard scene 4D reconstruction"><source src="assets/libero-cloud.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption><strong>Standard Scene</strong><span>Base-frame geometry + trajectory</span></figcaption></figure>
+        <figure class="demo-figure"><video controls muted playsinline loop preload="none" poster="assets/viewpoint-cloud-poster.jpg" aria-label="Viewpoint shift 4D reconstruction"><source src="assets/viewpoint-cloud.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption><strong>Viewpoint Shift</strong><span>Base-frame geometry + trajectory</span></figcaption></figure>
+        <figure class="demo-figure"><video controls muted playsinline loop preload="none" poster="assets/occlusion-cloud-poster.jpg" aria-label="Occlusion 4D reconstruction"><source src="assets/occlusion-cloud.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption><strong>Occlusion</strong><span>Base-frame geometry + trajectory</span></figcaption></figure>
+      </div>
+      <p class="caption-note">Selected successful simulation episodes; they do not represent aggregate success rates. The base instruction is shown above; LIBERO-plus also supplies its perturbation suffix to the model.</p>
+    </section>
+
+    <!-- Future predictions -->
+    <section class="section container" id="visualization" aria-labelledby="visualization-title">
+      <h2 id="visualization-title">Future Prediction Visualization</h2>
+      <p class="section-description">A qualitative comparison of imagined futures and the recorded rollout, including RGB and geometry.</p>
+      <figure class="prediction-figure"><video controls muted playsinline loop preload="none" poster="assets/imagination-poster.jpg" aria-label="Archived model predictions compared with recorded future observations"><source src="assets/imagination.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption><strong>Imagined and recorded futures.</strong> A selected archived simulation episode compares predicted RGB and geometry with recorded observations.</figcaption></figure>
+    </section>
+
+    <section class="section container" id="method" aria-labelledby="method-title">
+      <h2 id="method-title">Method</h2>
+      <div class="method-text">
+        <ol>
+          <li><strong>Robot-frame geometry:</strong> RGB observations and pixel-aligned XYZ pointmaps in the robot base frame are encoded into compatible latent grids and fused along the spatial width dimension.</li>
+          <li><strong>World and action modeling:</strong> a pretrained video backbone learns future RGB and XYZ prediction, while the action expert produces action chunks from the current multimodal context.</li>
+          <li><strong>Geometry–action alignment:</strong> a lightweight convolutional head predicts an auxiliary action chunk from the estimated clean future latent. A symmetric alignment loss penalizes disagreement with the action expert.</li>
+        </ol>
+        <p>Structured attention prevents the action branch from reading future tokens. Deployment uses the current-context action path; future RGB/XYZ generation and the auxiliary head are removed.</p>
+      </div>
+
+      <figure class="architecture"><a href="assets/fig2_architecture.pdf" target="_blank" rel="noopener" aria-label="Open full-size figure as PDF"><img src="assets/fig2_architecture.webp" width="1938" height="904" alt="GeoAlign-WAM architecture: current RGB and XYZ context, future world prediction, auxiliary action readout, and the deployed action expert." loading="lazy"></a><figcaption>The Wan video backbone denoises future RGB/XYZ latents; an auxiliary readout aligns their action prediction with the action expert. Deployment uses only the current-context action path.</figcaption></figure>
+      <details class="method-details"><summary>RGB–XYZ fusion</summary>
+        <figure class="architecture"><a href="assets/fig3_fusion.pdf" target="_blank" rel="noopener" aria-label="Open full-size figure as PDF"><img src="assets/fig3_fusion.webp" width="1938" height="952" alt="Alternative RGB and pointmap fusion layouts, including the selected width-wise packing for two camera views." loading="lazy"></a><figcaption>RGB–pointmap fusion layouts and the selected width-wise packing of two camera views. Paired RGB and XYZ retain pixel correspondence.</figcaption></figure>
+      </details>
+      <details class="method-details"><summary>Training and deployment attention</summary>
+        <figure class="architecture"><a href="assets/fig4_attention.pdf" target="_blank" rel="noopener" aria-label="Open full-size figure as PDF"><img src="assets/fig4_attention.webp" width="1938" height="945" alt="Attention patterns separate current context, future world tokens and actions during training, while deployment keeps the current-context action path." loading="lazy"></a><figcaption>Training separates future-world and action tokens; inference removes future tokens and reuses cached current-context keys and values for action denoising.</figcaption></figure>
+      </details>
+    </section>
+
+    <section class="section container" id="results" aria-labelledby="results-title">
+      <h2 id="results-title">Results</h2>
+      <p class="section-description">Success rates (%) on simulation benchmarks and real-world manipulation tasks.</p>
+      <h3>Real-World Manipulation</h3>
+      <p>Each task is evaluated over 25 trials.</p>
+      <div class="table-scroll" role="region" aria-label="Real-world success rates" tabindex="0">
+        <table class="results-table">
+          <thead><tr><th scope="col">Method</th><th scope="col">Pick Cup</th><th scope="col">Stack Cup</th><th scope="col">Color Match</th><th scope="col">Average</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Diffusion Policy</th><td>84</td><td>72</td><td>—</td><td>—</td></tr>
+            <tr><th scope="row">π<sub>0.5</sub></th><td>64</td><td>48</td><td>76</td><td>62.7</td></tr>
+            <tr><th scope="row">Fast-WAM</th><td>72</td><td>68</td><td>72</td><td>70.7</td></tr>
+            <tr class="ours"><th scope="row">GeoAlign-WAM</th><td>80</td><td>84</td><td>88</td><td>84.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption-note">Averages are unweighted across the three tasks. “—” indicates an unreported result; no three-task average is computed for Diffusion Policy.</p>
+      <h3>LIBERO-Occ</h3>
+      <div class="table-scroll" role="region" aria-label="LIBERO-Occ success rates" tabindex="0">
+        <table class="results-table">
+          <thead><tr><th scope="col">Method</th><th scope="col">Spatial</th><th scope="col">Goal</th><th scope="col">Object</th><th scope="col">LIBERO-10</th><th scope="col">Average</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Fast-WAM</th><td>74.4</td><td>73.3</td><td>67.3</td><td>69.8</td><td>71.2</td></tr>
+            <tr class="ours"><th scope="row">GeoAlign-WAM</th><td>84.3</td><td>85.2</td><td>79.3</td><td>83.7</td><td>83.1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption-note">Averages are unweighted across the four suites and rounded to one decimal place.</p>
+      <h3>LIBERO-Plus</h3>
+      <p>GeoAlign-WAM success rates by task suite and perturbation. The table reports each measured condition without combining them into an aggregate score.</p>
+      <div class="table-scroll" role="region" aria-label="GeoAlign-WAM LIBERO-Plus success rates by suite and perturbation" tabindex="0">
+        <table class="results-table">
+          <thead><tr><th scope="col">Suite</th><th scope="col">Original</th><th scope="col">Camera</th><th scope="col">Robot</th><th scope="col">Language</th><th scope="col">Lighting</th><th scope="col">Background</th><th scope="col">Noise</th><th scope="col">Layout</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">LIBERO-Spatial</th><td>98.1</td><td>73.4</td><td>78.3</td><td>95.5</td><td>98.0</td><td>99.4</td><td>84.3</td><td>81.8</td></tr>
+            <tr><th scope="row">LIBERO-Object</th><td>98.3</td><td>94.5</td><td>71.8</td><td>98.8</td><td>100.0</td><td>95.8</td><td>97.3</td><td>72.8</td></tr>
+            <tr><th scope="row">LIBERO-Goal</th><td>96.9</td><td>95.4</td><td>89.3</td><td>58.4</td><td>63.1</td><td>98.2</td><td>89.6</td><td>59.6</td></tr>
+            <tr><th scope="row">LIBERO-Long</th><td>96.3</td><td>54.3</td><td>49.3</td><td>58.2</td><td>64.3</td><td>87.4</td><td>83.2</td><td>75.6</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="caption-note">Original: unperturbed LIBERO. Camera: viewpoint changes. Robot: initial-state changes. Background: texture changes. Noise: sensor noise. Layout: object-layout changes. Performance varies across conditions, including lower results for some language and lighting perturbations.</p>
+      <h3>LIBERO</h3>
+      <p>GeoAlign-WAM obtains an average success rate of <strong>97.4%</strong> on LIBERO.</p>
+    </section>
+    <section class="section container reading-width" id="bibtex" aria-labelledby="bibtex-title">
+      <h2 id="bibtex-title">BibTeX</h2>
+      <div class="code-block"><pre><code>@misc{li2026geoalignwam,
+  title  = {GeoAlign-WAM: A 4D World Action Model for Generalizable and Robust Robot Manipulation Using a Video Foundation Prior},
+  author = {Li, Zirui and Yan, Yujie and Tan, Runjia and Yang, Lei
+            and Ren, Yangang and Liu, Ziwei and Lv, Chen},
+  year   = {2026},
+  url    = {https://lzrbit.github.io/GeoAlign-WAM/}
+}</code></pre></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container reading-width"><p>This page follows the academic project-page layout of <a href="https://fitz135.github.io/thinkingvla.github.io/" target="_blank" rel="noopener">ThinkingVLA</a>, which is based on the <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> template. Project figures and videos shown here are GeoAlign-WAM materials.</p><p class="footer-status">GeoAlign-WAM · 2026 · <a href="../">Zirui Li’s homepage</a></p></div></footer>
+</body>
+</html>
