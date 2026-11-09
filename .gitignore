@@ -5,3 +5,7 @@ Gemfile.lock
 .DS_Store
 .jekyll-cache
 git-update.sh
+
+# Unpublished project pages (surveys not yet published): kept locally, never pushed (author request 2026-11-09)
+wm-eai/
+cl-eai/
