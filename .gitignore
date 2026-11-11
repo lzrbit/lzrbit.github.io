@@ -6,6 +6,6 @@ Gemfile.lock
 .jekyll-cache
 git-update.sh
 
-# Unpublished project pages (surveys not yet published): kept locally, never pushed (author request 2026-11-09)
-wm-eai/
+# Unpublished project page (survey not yet published): kept locally, never pushed (author request 2026-11-09;
+# wm-eai was published on 2026-11-11 at the author's request)
 cl-eai/

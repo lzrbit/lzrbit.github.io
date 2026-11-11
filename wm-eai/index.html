@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Models Across the Embodied Loop</title>
+  <meta name="description" content="Project page of the survey World Models Across the Embodied Loop: A Survey from Agent-Centric Prediction to Environment-Enhanced Adaptation. Abstract, figures, taxonomy, evidence map of environment-enhanced world models, evaluation protocol and a searchable library of the cited works.">
+  <meta property="og:title" content="World Models Across the Embodied Loop: A Survey from Agent-Centric Prediction to Environment-Enhanced Adaptation">
+  <meta property="og:description" content="Agent-centric world models, learned worlds and environment-enhanced world models in one loop with two decision-makers, with a coded evidence map, an evaluation protocol and a library of the cited works.">
+  <meta property="og:image" content="https://lzrbit.github.io/wm-eai/assets/img/og-teaser.jpg">
+  <meta property="og:url" content="https://lzrbit.github.io/wm-eai/">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- BEGIN:meta -->
+  <meta name="citation_title" content="World Models Across the Embodied Loop: A Survey from Agent-Centric Prediction to Environment-Enhanced Adaptation">
+  <meta name="citation_author" content="Zirui Li">
+  <meta name="citation_author" content="Boyu Ma">
+  <meta name="citation_author" content="Haochen Liu">
+  <meta name="citation_author" content="Zhehao Jin">
+  <meta name="citation_author" content="Zhidong Wang">
+  <meta name="citation_author" content="Lei Yang">
+  <meta name="citation_author" content="Xiaocong Zhao">
+  <meta name="citation_author" content="Zitong Shan">
+  <meta name="citation_author" content="Jingsong Liang">
+  <meta name="citation_author" content="Lan Yu">
+  <meta name="citation_author" content="Xuesong Tian">
+  <meta name="citation_author" content="Guang Chen">
+  <meta name="citation_author" content="Yang Guan">
+  <meta name="citation_author" content="Shengbo Eben Li">
+  <meta name="citation_author" content="Chenguang Yang">
+  <meta name="citation_author" content="Jianfei Yang">
+  <meta name="citation_author" content="Ziwei Liu">
+  <meta name="citation_author" content="Chen Lv">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_abstract_html_url" content="https://lzrbit.github.io/wm-eai/">
+  <!-- END:meta -->
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <!-- KaTeX styles load without blocking the first render; app.js typesets formulas once they have arrived. -->
+  <link rel="stylesheet" id="katex-css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css" media="print" onload="this.media='all'" onerror="this.dataset.failed='1'">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#abstract">Skip to the abstract</a>
+
+<header class="masthead">
+  <div class="container">
+    <h1 class="title">World Models Across the Embodied Loop:<span class="title-sub">A Survey from Agent-Centric Prediction to <span class="nowrap">Environment-Enhanced</span> Adaptation</span></h1>
+    <!-- Byline, affiliations, logos, abstract and BibTeX are written by Draft/process/website/build_site_data.py. -->
+    <!-- BEGIN:byline -->
+    <p class="authors">
+      <span class="author">Zirui Li<sup>1</sup></span>,
+      <span class="author">Boyu Ma<sup>1</sup></span>,
+      <span class="author">Haochen Liu<sup>2</sup></span>,
+      <span class="author">Zhehao Jin<sup>3</sup></span>,
+      <span class="author">Zhidong Wang<sup>1</sup></span>,
+      <span class="author">Lei Yang<sup>1</sup></span>,
+      <span class="author">Xiaocong Zhao<sup>4</sup></span>,
+      <span class="author">Zitong Shan<sup>1</sup></span>,
+      <span class="author">Jingsong Liang<sup>1</sup></span>,
+      <span class="author">Lan Yu<sup>5</sup></span>,
+      <span class="author">Xuesong Tian<sup>5</sup></span>,
+      <span class="author">Guang Chen<sup>2</sup></span>,
+      <span class="author">Yang Guan<sup>6</sup></span>,
+      <span class="author">Shengbo Eben Li<sup>6</sup></span>,
+      <span class="author">Chenguang Yang<sup>7</sup></span>,
+      <span class="author">Jianfei Yang<sup>1</sup></span>,
+      <span class="author">Ziwei Liu<sup>1</sup></span>,
+      <span class="author">Chen Lv<sup>1,*</sup><span class="sr-only"> (corresponding author)</span></span>
+    </p>
+    <p class="affils">
+      <span class="affil"><sup>1</sup>Nanyang Technological University</span>
+      <span class="affil"><sup>2</sup>Xiaomi EV</span>
+      <span class="affil"><sup>3</sup>University of Liverpool</span>
+      <span class="affil"><sup>4</sup>Tongji University</span>
+      <span class="affil"><sup>5</sup>Guangzhou Cloudbutterfly Technology Co., Ltd.</span>
+      <span class="affil"><sup>6</sup>Tsinghua University</span>
+      <span class="affil"><sup>7</sup>The Hong Kong Polytechnic University</span>
+    </p>
+    <!-- END:byline -->
+    <p class="corr"><span aria-hidden="true">*</span> Corresponding author</p>
+    <!-- BEGIN:logos -->
+    <ul class="logos" aria-label="Institutions">
+      <li><img class="logo-ntu" src="assets/img/logos/ntu.webp" alt="Nanyang Technological University logo" title="Nanyang Technological University" width="123" height="44" decoding="async"></li>
+      <li><img class="logo-xiaomi" src="assets/img/logos/xiaomi.svg" alt="Xiaomi logo" title="Xiaomi EV" width="165" height="44" decoding="async"></li>
+      <li><img class="logo-liverpool" src="assets/img/logos/liverpool.svg" alt="University of Liverpool logo" title="University of Liverpool" width="172" height="44" decoding="async"></li>
+      <li><img class="logo-tongji" src="assets/img/logos/tongji.svg" alt="Tongji University logo" title="Tongji University" width="44" height="44" decoding="async"></li>
+      <li><img class="logo-tsinghua" src="assets/img/logos/tsinghua.svg" alt="Tsinghua University logo" title="Tsinghua University" width="140" height="44" decoding="async"></li>
+      <li><img class="logo-polyu" src="assets/img/logos/polyu.svg" alt="The Hong Kong Polytechnic University logo" title="The Hong Kong Polytechnic University" width="231" height="44" decoding="async"></li>
+    </ul>
+    <!-- END:logos -->
+    <div class="buttons">
+      <button type="button" class="btn" disabled>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z M9.5 1.5V5H13"/></svg>
+        Paper (arXiv, coming soon)
+      </button>
+      <button type="button" class="btn" disabled>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><ellipse cx="8" cy="3.5" rx="5" ry="2"/><path d="M3 3.5v9c0 1.1 2.2 2 5 2s5-.9 5-2v-9 M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/></svg>
+        Data (coming soon)
+      </button>
+      <a class="btn" href="#citation">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5 2 8l3.5 4.5 M10.5 3.5 14 8l-3.5 4.5"/></svg>
+        BibTeX
+      </a>
+    </div>
+    <noscript><p class="corr">The assignment rule, taxonomy, evidence map, evaluator chart and library need JavaScript.</p></noscript>
+    <nav class="toc" aria-label="Sections">
+      <a href="#abstract">Abstract</a>
+      <a href="#placements">Three placements</a>
+      <a href="#taxonomy">Taxonomy</a>
+      <a href="#evidence">Evidence map</a>
+      <a href="#evaluators">Learned evaluators</a>
+      <a href="#protocol">Evaluation protocol</a>
+      <a href="#library">Library</a>
+      <a href="#citation">Citation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ======================================================= teaser -->
+  <div class="container">
+    <figure class="figure teaser">
+      <img src="assets/img/fig01_teaser-2400.webp" srcset="assets/img/fig01_teaser-1200.webp 1200w, assets/img/fig01_teaser-2400.webp 2400w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 48px), 1052px" width="2400" height="1008" fetchpriority="high"
+           alt="Survey Fig. 1 in three panels. (a) Stacked bars of world model works per year from 2016 to 2026 by document type, rising steeply after 2023, with a line for arXiv cs.* submissions. (b) Bubble matrix of what world model benchmarks and validated learned policy evaluators score by half-year: visual quality, physical plausibility, action following, closed-loop task and agreement with real outcomes are populated; the bottom row, this robot under intervention, reads none found. (c) A scene with a robot that imagines inside its own model (I), a glass cube standing in for the world (II) and a workcell that watches the robot and serves it (III).">
+      <figcaption>
+        <p>The world model literature has grown rapidly since 2023 (a), yet its benchmarks do not yet test the third placement: none of the <span data-n="bench">42</span> world model benchmarks and validated learned policy evaluators reviewed scores prediction of a particular robot under interventions chosen for it (b). The survey places a world model inside the robot (I), in place of the world (II) or with an environment side that serves the robot (III), its focus (c).</p>
+        <p class="fig-note">Fig. 1 of the survey. (a) OpenAlex works in computer science, robotics and driving whose title or abstract contains &ldquo;world model(s)&rdquo;, by the document type of their primary location; the line counts matching arXiv cs.* submissions; 2026 runs to October 16, and its type split reflects indexing lag. (b) Bubble area gives the works per half-year of first release (arXiv v1 or publication) that score each criterion; one work can score several; task-stream benchmarks such as LIBERO are not counted. <a href="assets/img/fig01_teaser-2400.webp">Full-size image</a></p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- ======================================================= abstract -->
+  <section class="section" id="abstract" aria-labelledby="h-abstract">
+    <div class="container">
+      <div class="prose">
+        <h2 id="h-abstract">Abstract</h2>
+        <!-- BEGIN:abstract -->
+        <p class="abstract">Robots now plan and act with world models, learned predictors of how the world evolves under actions and interventions, and are trained and evaluated inside them. World model related surveys take the robot’s viewpoint, leave each use’s requirements implicit and overlook environments that predict and adapt to the robot; such assistance can be mistaken for robot competence. This survey makes four contributions. First, it places world models in one loop with two decision-makers, where an assignment rule separates agent-centric world models inside the robot, learned worlds in place of the world, and environment-enhanced world models that the environment queries for this robot. Second, it reviews the first two paradigms by query and use: in reported results, usefulness tracks action-faithful, closed-loop prediction more than visual realism, and learned evaluators are validated mainly by rank agreement on a few fixed policies. Third, its coded evidence map of environment-enhanced world models shows that environments predict the robot mainly with outcome critics and preview changes with physics engines and digital twins, rarely with learned world models. Fourth, it proposes a research agenda and an evaluation protocol separating robot learning from environmental assistance, even in learned worlds refit on the robot’s rollouts.</p>
+        <!-- END:abstract -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= three placements -->
+  <section class="section" id="placements" aria-labelledby="h-placements">
+    <div class="container">
+      <div class="prose">
+        <h2 id="h-placements">Three placements of a world model in one loop</h2>
+        <p>The survey describes embodied systems as one loop with two decision-makers: the robot’s policy <span class="tex" data-tex="\pi_\theta"></span> chooses actions <span class="tex" data-tex="a_t"></span>, and the environment side’s rule <span class="tex" data-tex="\rho_\phi"></span> chooses interventions <span class="tex" data-tex="u_t"></span>, such as what the robot experiences, how its world is configured or what it is told. The same kind of predictor can sit inside the robot, in place of the world, or with an environment side that predicts this robot and adapts to it. Each placement owes its own guarantee.</p>
+      </div>
+
+      <figure class="figure">
+        <img src="assets/img/fig03_loop-2400.webp" srcset="assets/img/fig03_loop-1200.webp 1200w, assets/img/fig03_loop-2400.webp 2400w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 48px), 1052px" width="2400" height="929" loading="lazy"
+             alt="Survey Fig. 3 in two panels. (a) The loop: the robot’s policy sends actions a_t to the world P and receives observations; the environment side’s rule sends interventions u_t, badged Q1, and observes the world. A world model can sit inside the robot (I, queried for a), replace P (II), or sit with the environment side (III, queried for u), where Q2 predicts the robot, Q3 previews changes and Q4 sends a message m_t to the robot; a bar beneath shows the shared objective J of theta and phi. (b) The assignment rule as a first-match decision tree of three questions asked in order. Part of the robot? Yes gives Paradigm I, agent-centric (Dreamer, RWM, DiWA). Otherwise, stands in for P? Yes gives Paradigm II, learned worlds, at L0 (VLA-RFT, RISE, Ctrl-World), or Paradigm III, Q1 choose experience, at L1 to L3 (IMAC, WMPO and VLAW, the last two with fidelity tracking). Otherwise, queried to choose u? Yes gives Paradigm III at L0 to L3: Q2 predict the robot, Q3 preview changes, Q4 share predictions. A use that fails all three is a contrast or out of scope.">
+        <figcaption>
+          <p>One loop, three placements (a), and the assignment rule that classifies each use of a world model by three questions asked in order (b).</p>
+          <p class="fig-note">Fig. 3 of the survey. Uses, not models, are classified; the order is conceptual, not a ranking. <a href="assets/img/fig03_loop-2400.webp">Full-size image</a></p>
+        </figcaption>
+      </figure>
+
+      <div class="paradigms">
+        <article class="paradigm p1" aria-labelledby="h-p1">
+          <h3 id="h-p1"><span class="sr-only">Paradigm </span><span class="pbadge">I</span><span class="sr-only">:</span> Agent-centric world models</h3>
+          <p class="where">Inside the robot</p>
+          <p class="formula"><span class="tex" data-tex="\widehat P_A(x'\mid x,a)"></span></p>
+          <p class="gloss"><span class="tex" data-tex="x"></span>: the joint physical and task state; <span class="tex" data-tex="a"></span>: the robot’s action. The robot’s own learning algorithm maintains the model.</p>
+          <dl>
+            <dt>Queries</dt><dd>Learning in imagination; planning, verifying and scoring; acting through the model.</dd>
+            <dt>Must guarantee</dt><dd>Respond faithfully to the robot’s actions, accurate where errors would change its decisions.</dd>
+            <dt>Example</dt><dd>V-JEPA 2-AC plans pick-and-place zero-shot on real Franka arms from image goals, a preprint reports.</dd>
+          </dl>
+        </article>
+        <article class="paradigm p2" aria-labelledby="h-p2">
+          <h3 id="h-p2"><span class="sr-only">Paradigm </span><span class="pbadge">II</span><span class="sr-only">:</span> Learned worlds</h3>
+          <p class="where">In place of the world</p>
+          <p class="formula"><span class="tex" data-tex="\widehat P(x'\mid x,a,\bar u)"></span></p>
+          <p class="gloss">The conditions <span class="tex" data-tex="\bar u"></span> are fixed or chosen by humans; the model does not condition on this robot.</p>
+          <dl>
+            <dt>Uses</dt><dd>Training inside the model; data engines; policy evaluation; scenario generation; twins and physics hybrids; rewards and judges.</dd>
+            <dt>Must guarantee</dt><dd>Reproduce the outcomes that training or evaluation relies on, such as how real policies rank.</dd>
+            <dt>Example</dt><dd>A Veo-based simulator evaluates Gemini Robotics policies; its preprint checks the predicted rankings against <span data-n="veo_trials">more than 1,600</span> real trials.</dd>
+          </dl>
+        </article>
+        <article class="paradigm p3" aria-labelledby="h-p3">
+          <h3 id="h-p3"><span class="sr-only">Paradigm </span><span class="pbadge">III</span><span class="sr-only">:</span> <span class="nowrap">Environment-enhanced</span> world models</h3>
+          <p class="where">With the environment side, serving the robot</p>
+          <p class="formula"><span class="tex" data-tex="q_\psi(c\mid h^E,m),\quad \widehat P_E(x'\mid x,a,u)"></span></p>
+          <p class="gloss"><span class="tex" data-tex="c"></span>: robot variables such as competence; <span class="tex" data-tex="m"></span>: embodiment; <span class="tex" data-tex="h^E"></span>: the environment side’s history (its evidence about the robot).</p>
+          <dl>
+            <dt>Prediction questions</dt><dd>Choose experience (Q1); predict the robot (Q2); preview changes (Q3); share predictions (Q4).</dd>
+            <dt>Must guarantee</dt><dd>Predict conditioned on this robot and on interventions chosen for it.</dd>
+            <dt>Example</dt><dd>Sirius-Fleet’s monitor requests human help on real robots where a visual world model predicts failure under the fleet’s shared policy.</dd>
+          </dl>
+        </article>
+      </div>
+      <p class="objective">Both rules are judged by one competence objective, <span class="tex" data-tex="J(\theta,\phi)=\mathbb{E}\left[Y\mid \pi_\theta,\rho_\phi\right]"></span>, with the task outcome <span class="tex" data-tex="Y"></span> measured outside the adapting system: robot learning moves <span class="tex" data-tex="\theta"></span>, and environment adaptation moves <span class="tex" data-tex="\phi"></span>.</p>
+
+      <div class="prose">
+        <h3 id="rule">Classify a use with the assignment rule</h3>
+        <p>Answer the three questions in order; the first match decides. You can also load a system from the taxonomy to see how the survey classifies it.</p>
+      </div>
+      <form class="rule" id="ruleForm" novalidate>
+        <div class="rule-questions">
+          <fieldset class="rq" data-q="0">
+            <legend>Is the model part of the robot?</legend>
+            <p class="hint" id="rq0-hint">It is an inner component of the robot’s own learning or control algorithm, for example a model the learner updates every iteration or whose uncertainty it penalizes; a model used only through its outputs and refit, if at all, in discrete rounds is not.</p>
+            <div class="options">
+              <label><input type="radio" name="rq0" value="yes" aria-describedby="rq0-hint"> <span>Yes</span></label>
+              <label><input type="radio" name="rq0" value="no" aria-describedby="rq0-hint"> <span>No</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="rq" data-q="1" disabled>
+            <legend>Does it stand in for the world <span class="tex" data-tex="P"></span>?</legend>
+            <p class="hint" id="rq1-hint">Its output serves as the robot’s experience or as the outcome by which the robot is judged.</p>
+            <div class="options">
+              <label><input type="radio" name="rq1" value="L0" aria-describedby="rq1-hint"> <span>Yes, without conditioning on this robot (L0)</span></label>
+              <label><input type="radio" name="rq1" value="L1" aria-describedby="rq1-hint"> <span>Yes, and a rule conditions its output or refits on evidence about this robot <span class="nowrap">(L1&ndash;L3)</span></span></label>
+              <label><input type="radio" name="rq1" value="no" aria-describedby="rq1-hint"> <span>No</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="rq" data-q="2" disabled>
+            <legend>Is it queried to choose an intervention <span class="tex" data-tex="u"></span> for this robot?</legend>
+            <p class="hint" id="rq2-hint">The environment side uses its predictions to decide what to do for this robot.</p>
+            <div class="options">
+              <label><input type="radio" name="rq2" value="yes" aria-describedby="rq2-hint"> <span>Yes</span></label>
+              <label><input type="radio" name="rq2" value="no" aria-describedby="rq2-hint"> <span>No</span></label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="rule-side">
+          <label class="field">
+            <span class="field-label">Load a system from the taxonomy</span>
+            <select id="ruleExample"><option value="">Choose a system</option></select>
+          </label>
+          <div class="rule-out" id="ruleOut" role="status" aria-live="polite"></div>
+          <button type="reset" class="btn-plain" id="ruleReset">Start again</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======================================================= taxonomy -->
+  <section class="section" id="taxonomy" aria-labelledby="h-taxonomy">
+    <div class="container">
+      <div class="prose">
+        <h2 id="h-taxonomy">Taxonomy of representative works</h2>
+        <p>The <span data-n="leaves">69</span> leaves of the survey’s taxonomy (Fig. 5 of the survey), grouped by placement and by query, use or prediction question; representative works, not a census. Select a work to see where it sits and how to cite it.</p>
+      </div>
+      <div class="toolbar">
+        <label class="field grow">
+          <span class="field-label">Filter by name</span>
+          <input type="search" id="taxSearch" placeholder="For example Dreamer, Ctrl-World or VLAW" autocomplete="off">
+        </label>
+        <label class="field">
+          <span class="field-label">Order</span>
+          <select id="taxSort"><option value="year">By year</option><option value="name">Alphabetical</option></select>
+        </label>
+      </div>
+      <p class="legend-line"><span class="mark">&dagger;</span> preprint &nbsp;&middot;&nbsp; <span class="mark">&#9733;</span> strict core &nbsp;&middot;&nbsp; <span class="tag-mini">FT</span> fidelity tracking &nbsp;&middot;&nbsp; <span class="tag-mini">L2</span> adaptation ladder level (Paradigm III) &nbsp;&middot;&nbsp; <span class="mark">&#8596;</span> the same work, model or model family appears in two places</p>
+      <p class="tax-count" id="taxStatus" aria-live="polite"></p>
+      <div class="tax" id="tax"></div>
+      <div class="detail" id="taxDetail" tabindex="-1" hidden></div>
+    </div>
+  </section>
+
+  <!-- ======================================================= evidence -->
+  <section class="section" id="evidence" aria-labelledby="h-evidence">
+    <div class="container">
+      <div class="prose">
+        <h2 id="h-evidence">Evidence on <span class="nowrap">environment-enhanced</span> world models</h2>
+        <p>An environment-enhanced world model is a predictive model held by the environment side, a rule other than the robot’s own policy update; in the strict core, this model is a learned world model. It is queried to choose an intervention meant to improve this robot’s learning, safety or task success: what the robot experiences, how its world is configured or what it is told. The term denotes neither data or environment augmentation nor a world model enhanced with environment information.</p>
+        <p>The survey groups these uses by four prediction questions: Q1 choose experience (what should this robot experience next?), Q2 predict the robot (how will it perform, and where will it fail?), Q3 preview changes (what follows if the environment changes?) and Q4 share predictions (what should the environment tell this robot?).</p>
+
+        <h3>Evidence map</h3>
+        <p>The evidence map (Fig. 9 of the survey) places <span data-n="coded">67</span> coded papers by prediction question and by the type of model the environment side queries. They are the papers that answer one of the four questions among <span data-n="source_papers">122</span> papers on environment adaptation, each coded twice independently and adjudicated (searches of <span data-n="search_dates">October 12 and 13, 2026</span>): a coded set, not a census. Of the <span data-n="coded">67</span>, <span data-n="paradigm3">59</span> are Paradigm III entries; the other <span data-n="q1_l0">8</span>, Q1 entries at L0, do not condition on the robot and are reviewed as learned worlds. Only the first column passes the strict world model test.</p>
+        <p>The survey’s first finding concerns placement: learned world models are rare where the environment side predicts the robot (Q2) or previews changes (Q3). There they account for <span data-n="q2_wm">2</span> of <span data-n="q2_n">21</span> and <span data-n="q3_wm">3</span> of <span data-n="q3_n">18</span> entries, against <span data-n="q2_os">16</span> surrogates or critics and <span data-n="q3_sim">11</span> engines, twins or analytic models. An updated search in which learned world models reach parity with surrogates in Q2, or with engines and twins in Q3, would refute this finding.</p>
+        <p>Select a cell to list its entries.</p>
+      </div>
+      <fieldset class="filters">
+        <legend>Show</legend>
+        <label><input type="checkbox" id="evCore"> <span>Strict core only (marked <span aria-hidden="true">&#9733;</span><span class="sr-only">with a star</span>)</span></label>
+        <label><input type="checkbox" id="evReal"> <span>Papers that report real robot or vehicle tests</span></label>
+        <label><input type="checkbox" id="evL0" checked> <span>Q1 entries at L0 (reviewed as learned worlds)</span></label>
+      </fieldset>
+      <div class="table-scroll" data-scroll-label="Evidence map, scrolls sideways">
+        <table class="evmap" id="evMap">
+          <caption class="sr-only">Coded entries by prediction question (rows) and by the type of model the environment side queries (columns)</caption>
+        </table>
+      </div>
+      <p class="evkey small">On narrow screens the columns are abbreviated: WM world model, Critic surrogate or critic, Beh. behavior model, Eng. engine or twin.</p>
+      <p class="sr-only" id="evStatus" role="status" aria-live="polite"></p>
+      <div class="ev-list" id="evList"></div>
+
+      <h3 id="ladder">Adaptation ladder</h3>
+      <div class="ladder">
+        <figure class="figure ladder-fig">
+          <img src="assets/img/fig04_ladder-1400.webp" srcset="assets/img/fig04_ladder-700.webp 700w, assets/img/fig04_ladder-1400.webp 1400w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 900px) calc(100vw - 48px), 640px" width="1400" height="794" loading="lazy"
+               alt="Survey Fig. 4: four panels of equal width for ladder levels L0 to L3, each with a robot arm and a glass cube. L0 ignores this robot (example Ctrl-World, Q1); L1 selects for this robot (SAFE-SIM, Q1); L2 updates belief online (Sirius-Fleet, Q2); L3 learns with this robot (asymmetric self-play, Q1). A dashed line after L0 marks the border between Paradigm II and Paradigm III for Q1; a band below notes that Q2 to Q4 are Paradigm III at every level. A side rail marks fidelity tracking, a refit for accuracy, with WMPO and VLAW at L2.">
+          <figcaption><p>The adaptation ladder grades what the environment side conditions on and learns; fidelity tracking is a flag, not a rung.</p>
+            <p class="fig-note">Fig. 4 of the survey. <a href="assets/img/fig04_ladder-1400.webp">Full-size image</a></p></figcaption>
+        </figure>
+        <div>
+          <dl class="rungs" id="rungs"></dl>
+          <p class="note">On Q1, the line between L0 and L1 separates Paradigms II and III; Q2&ndash;Q4 are Paradigm III at every level. A higher level is not intrinsically better: fixed, verified infrastructure may suit settings where continual change would harm reliability.</p>
+        </div>
+      </div>
+      <h4 class="sub">Ladder level of the coded entries, by question</h4>
+      <p class="small">Follows the filters of the evidence map above.</p>
+      <div class="ladbars" id="ladBars"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================= evaluators -->
+  <section class="section" id="evaluators" aria-labelledby="h-evaluators">
+    <div class="container">
+      <div class="prose">
+        <h2 id="h-evaluators">Learned policy evaluators</h2>
+        <p><span data-n="evaluators_word">Eleven</span> representative learned policy evaluators (Fig. 8 of the survey), not a census, placed by the number of policies or checkpoints validated and the reported Pearson <i>r</i> with ground-truth success (for RoboWorld, RoboArena leaderboard scores). Values are taken unimputed from the primary papers; protocols differ, so markers are not a ranking. Validation is mostly rank or correlation agreement over a few fixed policies.</p>
+      </div>
+      <figure class="figure chart-fig">
+        <ul class="chart-legend" aria-label="Legend">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" class="lg-real"/></svg>Filled: real-robot ground truth</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" class="lg-sim"/></svg>Open: simulator ground truth</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="3.2" cy="10.5" r="2.4" class="lg-real"/><circle cx="11" cy="8" r="4.6" class="lg-real"/></svg>Circle area: real trials</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2 14 8 8 14 2 8z" class="lg-real"/></svg>Diamond: no real-trial total reported</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.8" class="lg-ring"/></svg>Dashed ring: partly calibrated absolute success</li>
+        </ul>
+        <p class="scroll-hint small">The chart scrolls sideways on narrow screens.</p>
+        <div class="chart-scroll" data-scroll-label="Evaluator chart, scrolls sideways"><div id="evalChart" class="chart" role="img" aria-label="Scatter plot of learned policy evaluators: reported Pearson r with ground truth against the number of policies or checkpoints validated. The values are listed in the table below the chart."></div></div>
+        <figcaption><p id="evalSummary"></p></figcaption>
+      </figure>
+      <details class="data-table" id="evalDetails">
+        <summary>Show the values as a table</summary>
+        <div class="table-scroll" data-scroll-label="Evaluator values, scrolls sideways"><table id="evalTable"></table></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ======================================================= protocol -->
+  <section class="section" id="protocol" aria-labelledby="h-protocol">
+    <div class="container">
+      <div class="prose">
+        <h2 id="h-protocol">Evaluation protocol</h2>
+        <p>If an environment helps, a rising success rate cannot show that the robot learned. Where the environment side can be frozen or swapped while the robot is held fixed, the survey proposes to cross robot learning, which moves <span class="tex" data-tex="\theta"></span>, with environment adaptation, which moves <span class="tex" data-tex="\phi"></span>, and to read the interaction. The protocol is a proposed reporting standard, not a validated experiment.</p>
+      </div>
+      <figure class="figure">
+        <img src="assets/img/fig11_protocol-2400.webp" srcset="assets/img/fig11_protocol-1200.webp 1200w, assets/img/fig11_protocol-2400.webp 2400w" sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 48px), 1052px" width="2400" height="624" loading="lazy"
+             alt="Survey Fig. 11 in four panels. (a) A two-by-two factorial: robot frozen or learning against environment side fixed or adaptive, cells Y00, Y01, Y10 and Y11, with I_Y equal to Y11 minus Y10 minus Y01 plus Y00. (b) Assistance removal: the same robot theta-11 with support on and with support off, safety barriers stay on, scored as J of theta-11 and phi-minus. (c) Cross-play: robots and environment sides from sites A and B exchanged. (d) World model update audit: the same policy pi-k scored in model versions P-hat-k and P-hat-k-plus-1 and against a reference.">
+        <figcaption>
+          <p>Four checks that separate robot learning from environmental assistance: a 2&times;2 factorial (a), assistance removal (b), cross-play (c) and a world model update audit (d).</p>
+          <p class="fig-note">Fig. 11 of the survey. Chips under each panel mark the paradigms a check applies to; (d) applies to I and III only in refit loops. <a href="assets/img/fig11_protocol-2400.webp">Full-size image</a></p>
+        </figcaption>
+      </figure>
+      <dl class="checks">
+        <div>
+          <dt>2&times;2 factorial</dt>
+          <dd>Switch robot learning off or on and hold the environment side fixed or let it adapt, from matched checkpoints. Arm <span class="tex" data-tex="(i,j)"></span> yields <span class="tex" data-tex="Y_{ij}"></span>, and the interaction is <span class="tex" data-tex="I_Y=Y_{11}-Y_{10}-Y_{01}+Y_{00}"></span>. The cells are experimental conditions, not reported results. <span class="tex" data-tex="I_Y"></span> is non-additivity on the chosen scale, not a mechanism. Report intervals over runs under equal-total and component-matched budgets.</dd>
+        </div>
+        <div>
+          <dt>Assistance removal</dt>
+          <dd>Score <span class="tex" data-tex="J(\theta_{11},\phi^{-})"></span>: withdraw reversible support to separate retained competence from supplied support. Never disable a safety barrier.</dd>
+        </div>
+        <div>
+          <dt>Cross-play</dt>
+          <dd>Exchange robots and environment sides adapted to other robots, seeds or facilities, and score <span class="tex" data-tex="J(\theta_A,\phi_B)"></span> and <span class="tex" data-tex="J(\theta_B,\phi_A)"></span>.</dd>
+        </div>
+        <div>
+          <dt>World model update audit</dt>
+          <dd>Score the same policy <span class="tex" data-tex="\pi_k"></span> in <span class="tex" data-tex="\widehat P_k"></span> and <span class="tex" data-tex="\widehat P_{k+1}"></span> against a real or independent reference, so that a refit on the robot’s rollouts is not mistaken for robot progress.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ======================================================= library -->
+  <section class="section" id="library" aria-labelledby="h-library">
+    <div class="container">
+      <div class="prose">
+        <h2 id="h-library">Library of cited works</h2>
+        <p>All <span data-n="references">304</span> works the survey cites, checked against their primary pages. Filter by where the survey discusses them, by type or by year, and copy a BibTeX entry.</p>
+      </div>
+      <div class="toolbar">
+        <label class="field grow">
+          <span class="field-label">Search</span>
+          <input type="search" id="libSearch" placeholder="Title, author, venue or year" autocomplete="off">
+        </label>
+        <label class="field">
+          <span class="field-label">Discussed in</span>
+          <select id="libSection"><option value="">All sections</option></select>
+        </label>
+        <label class="field">
+          <span class="field-label">Type</span>
+          <select id="libType">
+            <option value="">All types</option><option value="journal">Journal article</option><option value="conference">Conference paper</option><option value="preprint">Preprint or other</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field-label">Year</span>
+          <select id="libYear"><option value="">All years</option></select>
+        </label>
+      </div>
+      <p class="lib-count" id="libCount" aria-live="polite"></p>
+      <ol class="lib" id="libList"></ol>
+      <button type="button" class="btn-plain" id="libMore">Show more</button>
+    </div>
+  </section>
+
+  <!-- ======================================================= citation -->
+  <section class="section" id="citation" aria-labelledby="h-citation">
+    <div class="container">
+      <div class="prose">
+        <h2 id="h-citation">Citation</h2>
+        <p>If you find the survey useful, please cite it as follows.</p>
+      </div>
+      <div class="bib">
+        <div class="bib-bar"><span>BibTeX</span><button type="button" class="btn-small" id="copyBib">Copy BibTeX</button></div>
+        <!-- BEGIN:bibtex -->
+        <pre class="bib-pre" data-scroll-label="BibTeX entry, scrolls sideways"><code id="bibtex">@misc{li2026worldmodels,
+  title  = {{World Models Across the Embodied Loop: A Survey from
+            Agent-Centric Prediction to Environment-Enhanced Adaptation}},
+  author = {Li, Zirui and Ma, Boyu and Liu, Haochen and Jin, Zhehao and
+            Wang, Zhidong and Yang, Lei and Zhao, Xiaocong and
+            Shan, Zitong and Liang, Jingsong and Yu, Lan and
+            Tian, Xuesong and Chen, Guang and Guan, Yang and
+            Li, Shengbo Eben and Yang, Chenguang and Yang, Jianfei and
+            Liu, Ziwei and Lv, Chen},
+  year   = {2026},
+  url    = {https://lzrbit.github.io/wm-eai/},
+  note   = {Preprint}
+}</code></pre>
+        <!-- END:bibtex -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 the authors &middot; <a href="../">Zirui Li’s homepage</a> &middot; Page data generated from the manuscript sources on <span data-n="updated">2026-11-11</span>.</p>
+    <p>Counts follow the survey’s coded evidence ledger and audits.</p>
+  </div>
+</footer>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script defer src="data/site-data.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="assets/js/app.js"></script>
+<script defer src="assets/js/charts.js"></script>
+</body>
+</html>
