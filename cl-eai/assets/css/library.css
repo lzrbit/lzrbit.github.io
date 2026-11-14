@@ -1,0 +1,253 @@
+/* Library module (assets/js/library.js): the benchmark explorer (#benchmark-explorer) and the library of cited works
+   (#library-browser). Layout for these two views only; tokens and shared components (chip, badge, field, toolbar,
+   facet, show-more, readout, empty, tooltip) come from style.css. Light theme only. Transitions are short, follow a
+   user action, and are removed under prefers-reduced-motion by style.css. */
+
+/* ======================================================================= shared pieces */
+.bx-filters, .lib-filters {
+  background: var(--bg-soft); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 14px 18px 16px;
+}
+.bx-filters .toolbar, .lib-filters .toolbar { margin: 0; }
+.bx-status, .lib-status {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px;
+  min-height: 36px; margin: 10px 2px 0;
+}
+.bx-status .readout, .lib-status .readout { margin: 0; font-size: var(--fs-sm); color: var(--text-2); }
+.chip.is-zero { opacity: .55; cursor: default; }   /* also aria-disabled: inactive until another filter changes */
+.chip .bx-key { width: 10px; height: 10px; }
+.chip .bx-chip-icon { width: 18px; height: 18px; margin: -3px 0 -3px -4px; flex: none; }
+
+/* venue and year badges (library rows, benchmark rows and details) */
+.lib-venue, .lib-year {
+  display: inline-block; padding: 2px 7px; border-radius: var(--r-xs); vertical-align: 1px;
+  font: 700 var(--fs-2xs)/1.3 var(--font-sans); white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+.lib-venue { background: var(--gray); color: var(--slate); border: 1px solid rgba(62, 74, 89, .28); }
+.lib-venue.is-pre { background: #fff; border-style: dashed; border-color: var(--rule-3); }
+.lib-year { background: #fff; color: var(--text-2); border: 1px solid var(--rule-2); font-weight: 600; }
+
+/* group marks shared by the chart legend, the list rows and the library marks:
+   dark circle = continual protocol (Table 12), blue circle = reusable resource, outlined square = simulator */
+.bx-key { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: var(--slate); flex: none; }
+.bx-key.g-resource { background: var(--sky); }
+.bx-key.g-simulator { border-radius: 2px; background: #fff; box-shadow: inset 0 0 0 1.6px var(--slate); }
+.bx-key.is-dim { opacity: .22; }
+
+/* search matches */
+.bx mark, .lib mark { background: var(--amber-light); color: inherit; border-radius: 2px; box-shadow: 0 0 0 1px rgba(245, 179, 53, .45); }
+
+/* ======================================================================= benchmark explorer */
+.bx-facets { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); margin-top: 14px; }
+.bx-note { margin: 12px 0 0; font-size: var(--fs-xs); color: var(--text-3); }
+/* below 600 px of module width the facets fold behind a "Filters" button (class is-narrow set by library.js) */
+.bx-ftoggle { display: none; }
+.bx-fcount:empty { display: none; }
+.bx-fcount {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 6px; margin-left: 2px;
+  border-radius: var(--r-pill); background: var(--teal-ink); color: #fff; font: 700 var(--fs-2xs)/1 var(--font-sans);
+}
+.bx.is-narrow .bx-toolbar { flex-wrap: nowrap; gap: 10px; }
+.bx.is-narrow .bx-toolbar .grow { flex: 1 1 auto; }
+.bx.is-narrow .bx-ftoggle { display: inline-flex; flex: none; min-height: 40px; padding: 8px 14px; }
+.bx.is-narrow .bx-filters:not(.is-open) .bx-facets-wrap { display: none; }
+
+.bx-chart-card {
+  margin-top: 12px; padding: 14px 18px 10px; background: #fff; border: 1px solid var(--rule);
+  border-radius: var(--r-lg); box-shadow: var(--sh-1);
+}
+.bx-chart-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 18px; margin: 0 0 8px; }
+.bx-chart-title { font: 600 1.05rem/1.3 var(--font-serif); font-variation-settings: 'opsz' 18; color: var(--ink); margin: 0; }
+.bx-legend { list-style: none; margin: 0; padding: 0; gap: 4px 14px; }
+.bx-legend .legend-item { gap: 7px; }
+.bx-chart { min-height: 60px; }
+.bx-chart-hint { margin: 6px 0 0; font-size: var(--fs-xs); color: var(--text-3); }
+.bx-nochart { margin: 0; padding: 18px 4px; font-size: var(--fs-sm); color: var(--text-3); }
+
+.bx-chart .bx-row-bg { fill: #fff; }
+.bx-chart .bx-row-bg.is-alt { fill: var(--bg-soft); }
+.bx-chart .bx-grid { stroke: var(--rule); stroke-width: 1; }
+.bx-chart .bx-row-label { font-size: 13px; fill: var(--text-2); }
+.bx-chart .bx-year { font-size: 12px; fill: var(--text-3); font-variant-numeric: tabular-nums; }
+.bx-chart .bx-mark { cursor: pointer; transition: opacity var(--dur-1); }
+.bx-chart .bx-mark:focus { outline: none; }
+.bx-chart .bx-hit { fill: transparent; }
+.bx-chart .bx-dot { stroke: #fff; stroke-width: 1.5; }
+.bx-chart .bx-dot.g-native { fill: var(--slate); }
+.bx-chart .bx-dot.g-resource { fill: var(--sky); }
+.bx-chart .bx-dot.g-simulator { fill: #fff; stroke: var(--slate); stroke-width: 1.6; }
+.bx-chart .bx-mark:hover .bx-dot { stroke: var(--ink); stroke-width: 2; }
+.bx-chart .bx-ring { fill: none; stroke: var(--teal-dark); stroke-width: 2.5; opacity: 0; }
+.bx-chart .bx-mark.is-selected .bx-ring { opacity: 1; }
+.bx-chart .bx-focus { fill: none; stroke: var(--focus); stroke-width: 2; stroke-dasharray: 3 2.5; opacity: 0; }
+.bx-chart .bx-mark:focus-visible .bx-focus { opacity: 1; }
+.bx-chart .bx-mark.is-dim { opacity: .16; pointer-events: none; }
+.bx-chart .bx-sel-label {
+  font-size: 13px; font-weight: 600; fill: var(--ink); pointer-events: none;
+  paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round;
+}
+
+/* list and detail: one column; from 820 px of module width (class set by library.js) a sticky detail column */
+.bx-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 16px; align-items: start; }
+.bx.is-wide .bx-body { grid-template-columns: minmax(0, 1fr) 300px; }
+.bx.is-wide .bx-list { grid-column: 1; grid-row: 1; }
+.bx.is-wide .bx-detail { grid-column: 2; grid-row: 1; position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow-y: auto; overscroll-behavior: contain; }
+
+.bx-detail {
+  min-width: 0; padding: 16px 18px 14px; background: #fff; border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg); box-shadow: var(--sh-1); scroll-margin-top: 72px;
+}
+.bx-detail.is-empty { background: var(--bg-soft); border: 1px dashed var(--rule-2); box-shadow: none; }
+.bx-detail.is-inline { margin: 10px 0 4px; box-shadow: none; }
+.bx-detail-empty { display: flex; align-items: flex-start; gap: 10px; font-size: var(--fs-sm); color: var(--text-3); }
+.bx-detail-empty .i { width: 18px; height: 18px; margin-top: 3px; }
+.bx-detail-empty p { margin: 0; }
+.bx-detail-head { display: flex; align-items: flex-start; gap: 10px; }
+.bx-detail-titles { flex: 1; min-width: 0; }
+.bx-detail-kicker { margin: 0 0 4px; font: 600 var(--fs-xs)/1.35 var(--font-sans); color: var(--teal-ink); }
+.bx-detail-title { margin: 0; font: 600 1.25rem/1.3 var(--font-serif); font-variation-settings: 'opsz' 18; color: var(--ink); }
+.bx-detail-title:focus { outline: none; }
+.bx-detail-title:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+.bx-detail-cite { margin: 6px 0 0; font-size: var(--fs-sm); color: var(--text-3); display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.bx-detail-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 14px; }
+.bx-tag {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 2px 10px 2px 6px;
+  border-radius: var(--r-pill); background: var(--gray); color: var(--slate); font: 600 var(--fs-xs)/1.3 var(--font-sans);
+}
+.bx-tag img { width: 20px; height: 20px; }
+.bx-tag .bx-key { margin-left: 3px; }
+.bx-kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px 20px; margin: 0; }
+.bx-kv > div { min-width: 0; }
+.bx-kv dt { margin: 0 0 2px; font: 600 var(--fs-xs)/1.3 var(--font-sans); color: var(--text-3); }
+.bx-kv dd { margin: 0; font-size: var(--fs-sm); line-height: 1.5; color: var(--text); }
+.bx-kv dd .badge { margin-right: 2px; }
+.bx-gloss { display: block; font-size: var(--fs-xs); color: var(--text-3); }
+.bx-gloss-inline { color: var(--text-3); }
+.bx-code-line { display: block; margin: 0 0 3px; }
+.bx-detail-acts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule-2); }
+
+/* list grouped as in Tables 12 and 13 */
+.bx-group { margin: 0 0 22px; }
+.bx-group.is-native { --g: var(--slate); --g-l: var(--gray); --g-i: var(--slate); }
+.bx-group.is-resource { --g: var(--sky); --g-l: var(--sky-light); --g-i: var(--sky-ink); }
+.bx-gbar, .lib-gbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0; padding: 10px 14px;
+  background: var(--g-l); border-left: 5px solid var(--g); border-radius: var(--r-md);
+  font: 600 1.02rem/1.35 var(--font-serif); font-variation-settings: 'opsz' 18; color: var(--ink);
+}
+.bx-gnum, .lib-gnum {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 26px; padding: 0 9px; flex: none;
+  border-radius: var(--r-pill); background: var(--g-i); color: #fff; font: 700 var(--fs-xs)/1 var(--font-sans);
+}
+.bx-gtitle, .lib-gtitle { flex: 1 1 14rem; min-width: 0; }
+.bx-gcount, .lib-gcount { font: 600 var(--fs-xs)/1.3 var(--font-sans); color: var(--g-i); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.bx-dom { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px 2px; font: 600 var(--fs-sm)/1.3 var(--font-sans); color: var(--text-2); }
+.bx-dom-icon { width: 24px; height: 24px; flex: none; }
+.bx-items { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.bx-item {
+  padding: 10px 10px 10px 11px; border-bottom: 1px solid var(--rule); border-left: 3px solid transparent;
+  scroll-margin-top: 80px; transition: background-color var(--dur-1), border-color var(--dur-1);
+}
+.bx-item.is-selected { background: var(--bg-tint); border-left-color: var(--teal-dark); }
+.bx-item-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.bx-item-head .bx-key { margin-right: -2px; }
+.bx-name {
+  padding: 2px 0; border: 0; background: none; text-align: left; cursor: pointer;
+  font: 600 var(--fs-base)/1.3 var(--font-sans); color: var(--ink);
+  text-decoration: underline; text-decoration-color: var(--rule-2); text-decoration-thickness: 1px; text-underline-offset: 3px;
+}
+.bx-name:hover { text-decoration-color: currentColor; }
+.bx-name[aria-pressed="true"] { color: var(--teal-ink); text-decoration-color: currentColor; }
+.bx-item-cite { font-size: var(--fs-sm); }
+.bx-item-badges { display: inline-flex; gap: 5px; }
+.bx-facts { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin: 7px 0 0 19px; }
+.bx-fact {
+  display: inline-flex; align-items: center; min-height: 22px; padding: 1px 8px; border: 1px solid var(--rule-2);
+  border-radius: var(--r-pill); background: #fff; color: var(--text-2); font-size: var(--fs-xs); line-height: 1.3;
+}
+.bx-facts-label { margin: 0 1px 0 6px; font-size: var(--fs-xs); color: var(--text-3); }
+.bx-facts .badge { cursor: default; }
+.bx-slot:empty { display: none; }
+/* the codes of the list spelled out once (Tables 12 and 13 notes) */
+.bx-keyline { max-width: var(--w-text); margin: 10px 2px 0; font-size: var(--fs-xs); line-height: 1.55; color: var(--text-3); }
+
+/* ======================================================================= library */
+.lib-toolbar .lib-year-field { flex: 0 0 108px; }
+.lib-toolbar .lib-sort-field { flex: 0 0 196px; }
+/* below 760 px of module width (class is-narrow set by library.js) the range, histogram and chips fold away */
+.lib-ftoggle { display: none; }
+.lib.is-narrow .lib-ftoggle { display: inline-flex; flex: none; min-height: 40px; padding: 8px 14px; }
+.lib.is-narrow .lib-filters:not(.is-open) .lib-fold { display: none; }
+.lib-ftoggle[aria-expanded="true"] { background: var(--teal-light); border-color: var(--teal-dark); color: var(--teal-ink); }
+.lib-hist { margin: 14px 0 0; }
+.lib-hist svg { touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.lib-hist .lib-band { fill: var(--gray); }
+.lib-hist .lib-base { stroke: var(--rule-3); stroke-width: 1; }
+.lib-hist .lib-bar { fill: var(--rule-2); }
+.lib-hist .lib-bar.is-in { fill: var(--slate); }
+.lib-hist .lib-hyear { font-size: 12px; fill: var(--text-3); font-variant-numeric: tabular-nums; }
+.lib-hist .lib-hyear.is-strong { fill: var(--ink); font-weight: 600; }
+.lib-hist .lib-hit { fill: transparent; pointer-events: all; cursor: pointer; }
+.lib-facets { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px 20px; margin-top: 12px; }
+.lib-secs { margin-top: 12px; }
+.lib-sec-num { font-weight: 700; margin-right: -2px; }
+
+.lib-groups { margin-top: 6px; }
+.lib-group { margin: 22px 0 0; }
+.lib-list { list-style: none; margin: 0; padding: 0; }
+/* one reference in three lines: badges, title and compact links; authors; venue, type, sections, key and marks */
+.lib-item { padding: 10px 8px 10px 6px; border-bottom: 1px solid var(--rule); scroll-margin-top: 80px; }
+.lib-item:focus { outline: none; }
+.lib-item:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; border-radius: var(--r-xs); }
+.lib-title { margin: 0; font-weight: 600; line-height: 1.45; color: var(--ink); }
+.lib-title .lib-venue, .lib-title .lib-year { margin-right: 6px; }
+.lib-authors { margin: 2px 0 0; font-size: var(--fs-sm); line-height: 1.45; color: var(--text-2); }
+.lib-meta { margin: 2px 0 0; font-size: var(--fs-xs); line-height: 1.6; color: var(--text-3); }
+.lib-sep { color: var(--rule-3); }
+.lib-key { font-size: 12px; color: var(--text-3); overflow-wrap: anywhere; }
+.lib-acts { display: inline; margin-left: 8px; white-space: normal; }
+.lib-act {
+  display: inline-flex; align-items: center; gap: 3px; margin-right: 10px; padding: 0; border: 0; background: none;
+  color: var(--teal-ink); font: 600 var(--fs-xs)/1.4 var(--font-sans); text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-thickness: 1px; white-space: nowrap; cursor: pointer; vertical-align: 1px;
+}
+.lib-act:last-child { margin-right: 0; }
+.lib-act .i { width: 12px; height: 12px; }
+.lib-act:hover { text-decoration-thickness: 2px; }
+.lib-act.is-copied { color: var(--teal-ink); text-decoration: none; }
+.lib-marks { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-left: 10px; vertical-align: middle; }
+.lib-mark {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 24px; padding: 1px 9px;
+  border: 1px solid var(--rule-2); border-radius: var(--r-pill); background: #fff; color: var(--text-2);
+  font: 600 var(--fs-xs)/1.2 var(--font-sans); text-decoration: none; white-space: nowrap; cursor: pointer;
+  transition: background-color var(--dur-1), border-color var(--dur-1), color var(--dur-1);
+}
+button.lib-mark:hover { background: var(--bg-soft); border-color: var(--rule-3); color: var(--ink); text-decoration: none; }
+.lib-mark.is-study { background: var(--bg-tint); border-color: rgba(19, 138, 138, .35); color: var(--teal-ink); }
+.lib-mark.is-bench { background: var(--bg-soft); }
+.lib-mark .badge { padding: .1em .36em; }
+.lib-mark.is-static { cursor: default; }
+.lib-gsub { display: block; font: 400 var(--fs-xs)/1.35 var(--font-sans); color: var(--text-3); }   /* the paper's heading */
+
+/* ======================================================================= responsive */
+@media (max-width: 1099.98px) {
+  .bx.is-wide .bx-detail { top: 64px; max-height: calc(100vh - 80px); }
+}
+@media (max-width: 600px) {
+  .bx-filters, .lib-filters { padding: 12px 12px 14px; }
+  .bx-facets { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .lib-toolbar { gap: 10px 12px; }
+  .lib-toolbar .lib-search-field { flex: 1 1 100%; }
+  .lib-toolbar .lib-year-field { flex: 1 1 calc(50% - 6px); }
+  .lib-toolbar .lib-sort-field { flex: 1 1 100%; }
+  .lib-facets { grid-template-columns: minmax(0, 1fr); }
+  .bx-chart-card { padding: 12px 10px 10px; }
+  .bx-chart-head { margin-bottom: 6px; }
+  .bx-facts { margin-left: 0; }
+  .bx-detail { padding: 14px 14px 12px; }
+  .bx-gbar, .lib-gbar { padding: 9px 12px; font-size: .98rem; }
+  .lib-item { padding: 12px 2px; }
+}
+@media print {
+  .bx-filters, .lib-filters, .bx-status, .lib-status, .bx-chart-hint, .show-more, .lib-acts, .lib-marks { display: none !important; }
+  .bx.is-wide .bx-detail { position: static; max-height: none; }
+}

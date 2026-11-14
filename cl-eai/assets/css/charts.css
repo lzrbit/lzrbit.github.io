@@ -1,0 +1,291 @@
+/* Continual Learning for Embodied AI: charts module styles (charts.css).
+   Growth and forgetting panels (Figure 1a and 1b), the evaluation pyramid (Section 9.4), the interactive taxonomy
+   (Figure 2) and the evidence profiles of the settings tabs. Tokens and shared components (legend, swatch, seg, field,
+   badge, kv, tooltip) come from style.css; see ../../DESIGN.md. Transitions use --dur-1 only and are removed under
+   prefers-reduced-motion by style.css. */
+
+/* sprite icons keep their size inside .chart containers (style.css sizes every .chart svg to the full width) */
+.chart svg.i { display: inline-block; width: 1em; height: 1em; overflow: hidden; }
+
+/* ======================================================================= growth chart (#growth-chart, Figure 1a) */
+.cg-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 10px; }
+.cg-legend { list-style: none; padding: 0; margin: 0 0 4px; gap: 4px 14px; }
+.cg-sw.t-conference { --sw: var(--teal); }
+.cg-sw.t-journal { --sw: var(--amber); }
+.cg-sw.t-arxiv { --sw: var(--slate); }
+.cg-sw.is-pale { opacity: .45; }
+.cg-sw-hatch { background: repeating-linear-gradient(135deg, var(--slate) 0 2px, #fff 2px 4px); }
+.cg-key-ms { width: 8px; height: 8px; margin: 0 2px; flex: none; background: var(--ink); transform: rotate(45deg); }
+.cg-plot { position: relative; }
+
+.chart .cg-seg.t-conference { fill: var(--teal); }
+.chart .cg-seg.t-journal { fill: var(--amber); }
+.chart .cg-seg.t-arxiv { fill: var(--slate); }
+.chart .cg-seg.is-pale { opacity: .45; }
+.chart .cg-hl { fill: var(--gray); opacity: 0; transition: opacity var(--dur-1); }
+.chart .cg-hl.is-on { opacity: .8; }
+.chart .cg-base { stroke: var(--rule-3); }
+.chart .cg-hit { fill: transparent; }
+.chart .cg-ring { fill: none; stroke: none; }
+.chart .cg-col { outline: none; }
+.chart .cg-col:focus-visible .cg-ring { stroke: var(--focus); stroke-width: 2px; }
+.chart .cg-ms-mark path { fill: var(--ink); }
+.chart .cg-ms-text { font-size: 12px; fill: var(--text-2); }
+.chart .cg-partial, .chart .cg-ytitle { font-size: 12px; fill: var(--text-3); }
+
+.cg-notes { margin: 6px 0 0; font-size: var(--fs-xs); line-height: 1.5; color: var(--text-3); }
+.cg-notes-label { color: var(--text-2); }   /* a label in running text, not a bold run-in head */
+.cg-ms-y { font-variant-numeric: tabular-nums; color: var(--text-2); }
+
+/* growth readout inside the shared tooltip */
+.cg-tt-h { margin: 0 0 4px; }
+.cg-tt-grid { display: grid; grid-template-columns: 10px auto auto auto; align-items: center; column-gap: 8px; row-gap: 1px; margin: 0 0 3px; }
+.cg-tt-sw { width: 10px; height: 10px; border-radius: 2px; }
+.cg-tt-sw.t-conference { background: var(--teal); }
+.cg-tt-sw.t-journal { background: var(--amber); }
+.cg-tt-sw.t-arxiv { background: var(--slate); }
+.cg-tt-n { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+.cg-tt-p { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-3); }
+
+/* ======================================================================= forgetting chart (#forgetting-chart, Figure 1b) */
+.fg-legend { list-style: none; padding: 0; margin: 0 0 2px; gap: 4px 16px; }
+.fg-key { width: 11px; height: 11px; flex: none; border-radius: 50%; }
+.fg-key-before { background: #fff; border: 2px solid var(--slate); }
+.fg-key-after { background: var(--slate); }
+
+.fg-group { --gc: var(--slate); --gi: var(--slate); }
+.fg-gh { display: flex; align-items: center; gap: 10px; margin: 10px 0 2px; font: 600 var(--fs-xs)/1.3 var(--font-sans); color: var(--gi); }
+.fg-gh::after { content: ""; flex: 1 1 auto; height: 1px; background: var(--gc); opacity: .5; }
+.fg-list { list-style: none; margin: 0; padding: 0; }
+.fg-row {
+  display: block; width: 100%; margin: 0; padding: 5px 6px 2px; border: 0; border-radius: var(--r-sm);
+  background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer;
+  transition: background-color var(--dur-1), box-shadow var(--dur-1);
+}
+.fg-row:hover { background: var(--bg-soft); }
+.fg-row.is-pinned { background: var(--bg-tint); box-shadow: inset 3px 0 0 var(--gc); }
+/* row label as in Figure 1b: learner (bold), setting (gray); the unit after it in small gray type */
+.fg-label { display: block; font-size: var(--fs-sm); line-height: 1.35; }
+.fg-name { font-weight: 600; color: var(--ink); }
+.fg-set { color: var(--text-3); }
+.fg-unit { font-size: var(--fs-xs); color: var(--text-3); }
+.fg-plot, .fg-axis, .fg-colhead { display: grid; grid-template-columns: minmax(0, 1fr) 62px; align-items: center; column-gap: 4px; }
+.fg-track, .fg-axis-track { display: block; min-width: 0; }
+.fg-track { height: 24px; }
+.fg-axis-track { height: 20px; }
+.fg-drop { font: 700 var(--fs-sm)/1 var(--font-sans); color: var(--coral-ink); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.fg-colhead { padding: 0 6px; margin: 6px 0 -6px; }
+.fg-colhead-drop { font-size: var(--fs-xs); font-weight: 600; color: var(--coral-ink); text-align: right; }
+.fg-axis { padding: 0 6px; margin-top: 4px; }
+.fg-axis-title { margin: 1px 72px 0 6px; font-size: var(--fs-xs); line-height: 1.4; color: var(--text-3); text-align: center; }
+
+.chart .fg-base { stroke: var(--gray); stroke-width: 6px; stroke-linecap: round; }
+.chart .fg-link { stroke: var(--coral); stroke-width: 3px; }
+.chart .fg-head { fill: var(--coral); }
+.chart .fg-before { fill: #fff; stroke: var(--gc); stroke-width: 2px; }
+.chart .fg-after { fill: var(--gc); stroke: #fff; stroke-width: 1px; }
+.chart .fg-val { font-size: 12px; fill: var(--text-2); font-variant-numeric: tabular-nums; }
+.chart .fg-axis-line, .chart .fg-tick { stroke: var(--rule-3); }
+.chart .fg-tick-label { font-size: 12px; fill: var(--text-3); }
+
+.fg-detail { margin-top: 12px; padding: 10px 12px; border: 1px dashed var(--rule-2); border-radius: var(--r-md); }
+.fg-detail.is-open { border: 1px solid var(--rule); border-left: 3px solid var(--gc, var(--slate)); background: var(--bg-soft); }
+.fg-hint { margin: 0; font-size: var(--fs-xs); line-height: 1.5; color: var(--text-3); }
+.fg-d-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin: 0 0 8px; }
+.fg-d-titles { min-width: 0; }
+.fg-d-kicker { margin: 0 0 2px; font: 600 var(--fs-xs)/1.3 var(--font-sans); color: var(--text-3); }
+.fg-d-title { margin: 0; font: 600 var(--fs-sm)/1.35 var(--font-sans); color: var(--ink); }
+.fg-close { flex: none; }
+.fg-kv { gap: 5px 12px; font-size: var(--fs-xs); line-height: 1.5; }
+.fg-kv dd { color: var(--text); overflow-wrap: anywhere; }
+.fg-d-note { margin: 8px 0 0; font-size: var(--fs-xs); font-weight: 600; color: var(--text-2); }
+
+/* the forgetting readout: row, values and drop, unit and source (the metric and locator are in the pinned details) */
+.fg-tip p { margin: 0; }
+.fg-tip .fg-tip-v { margin-top: 2px; font-variant-numeric: tabular-nums; }
+.fg-tip-drop { font-weight: 700; color: var(--coral-ink); }
+
+/* ======================================================================= evaluation pyramid (#eval-pyramid, Section 9.4) */
+.ep { container-type: inline-size; }
+.ep-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; gap: 20px 28px; }
+@container (max-width: 660px) {
+  .ep-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.ep-figure { min-width: 0; }
+.ep-svg { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--font-sans); }
+.ep-level { cursor: pointer; outline: none; }
+.ep-hit { fill: transparent; }
+.ep-shape { fill: var(--lc); opacity: .55; stroke: #fff; stroke-width: 1.5px; stroke-linejoin: round; transition: opacity var(--dur-1); }
+.ep-level:hover .ep-shape { opacity: .8; }
+.ep-level.is-selected .ep-shape { opacity: 1; stroke: var(--ink); stroke-width: 2px; }
+.ep-level:focus-visible .ep-shape { opacity: 1; stroke: var(--focus); stroke-width: 3.5px; }
+.ep-pill { fill: #fff; stroke: rgba(31, 41, 51, .2); }
+.ep-code { font-size: 13px; font-weight: 700; fill: var(--ink); }
+.ep-leader { stroke: var(--lc); stroke-width: 1.5px; }
+.ep-name { font-size: 13px; fill: var(--text-3); }
+.ep-level:hover .ep-name { fill: var(--text-2); }
+.ep-level.is-selected .ep-name { font-weight: 600; fill: var(--ink); }
+.ep-arrows text { font-size: 12px; fill: var(--text-3); }
+.ep-arrow { stroke: var(--slate); stroke-width: 2.5px; }
+.ep-arrow.is-light { stroke: var(--rule-3); }
+.ep-arrow-head { fill: var(--slate); }
+.ep-arrow-head.is-light { fill: var(--rule-3); }
+
+.ep-detail { min-width: 0; padding: 18px 20px 16px; background: #fff; border: 1px solid var(--rule); border-radius: var(--r-lg); box-shadow: var(--sh-1); }
+.ep-detail:focus { outline: none; }
+.ep-detail:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.ep-kicker { margin: 0 0 6px; font: 600 var(--fs-xs)/1.3 var(--font-sans); color: var(--teal-ink); }
+.ep-title { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; font: 600 1.2rem/1.3 var(--font-serif); font-variation-settings: 'opsz' 18; color: var(--ink); }
+.ep-badge {
+  display: inline-flex; align-items: center; justify-content: center; flex: none; min-width: 40px; height: 28px; padding: 0 8px;
+  border: 2px solid var(--lc); border-radius: 8px; background: #fff; color: var(--ink); font: 700 var(--fs-sm)/1 var(--font-sans);
+}
+.ep-sentence { margin: 0 0 14px; line-height: 1.6; }
+.ep-sub { margin: 0 0 6px; font: 600 var(--fs-xs)/1.4 var(--font-sans); color: var(--text-3); }
+.ep-sub.ep-none { font-weight: 400; }
+.ep-bench-list { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
+.ep-bench-list li { display: inline-flex; align-items: stretch; overflow: hidden; border: 1px solid var(--rule-2); border-radius: var(--r-pill); background: #fff; }
+a.cite.ep-bench { display: inline-flex; align-items: center; padding: 3px 10px; color: var(--ink); font: 600 var(--fs-xs)/1.3 var(--font-sans); text-decoration: none; }
+a.cite.ep-bench:hover { background: var(--bg-soft); text-decoration: underline; text-underline-offset: 2px; }
+a.cite.ep-bench:focus-visible { outline-offset: -3px; }
+.ep-bench-meta { display: inline-flex; align-items: center; padding: 3px 9px; background: var(--gray); color: var(--slate); font: 600 var(--fs-2xs)/1.3 var(--font-sans); white-space: nowrap; }
+.ep-foot { margin: 14px 0 0; }
+
+/* ======================================================================= taxonomy tree (#taxonomy-tree, Figure 2) */
+.tx { container-type: inline-size; }
+.tx-bar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px; }
+.tx-bar .tx-field { flex: 1 1 260px; }
+.tx-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.tx-readout { min-height: 1.5em; margin: 6px 0 4px; }
+.tx-legend { list-style: none; padding: 0; margin: 4px 0 16px; gap: 4px 14px; }
+.tx-key-gen { width: 20px; height: 12px; flex: none; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--bg-soft); }
+
+.tx-tree { display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 16px; }
+.tx-trunk { display: flex; align-items: center; justify-content: center; margin: 0; border-radius: 15px; background: var(--slate); color: #fff; font: 600 var(--fs-sm)/1.2 var(--font-sans); }
+.tx-trunk > span { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; padding: 18px 0; }
+.tx-branches { list-style: none; display: grid; gap: 10px; margin: 0; padding: 0; min-width: 0; }
+.tx-branch { position: relative; min-width: 0; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--bc); border-radius: var(--r-lg); box-shadow: var(--sh-1); }
+.tx-branch::before { content: ""; position: absolute; left: -20px; top: 27px; width: 16px; height: 2px; background: var(--slate); }
+.tx-bh { margin: 0; font: inherit; }
+.tx-btoggle {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 9px 14px 9px 12px; border: 0;
+  border-radius: 0 calc(var(--r-lg) - 1px) calc(var(--r-lg) - 1px) 0; background: transparent; color: inherit; text-align: left; cursor: pointer;
+  transition: background-color var(--dur-1);
+}
+.tx-btoggle:hover { background: var(--bg-soft); }
+.tx-branch.is-open .tx-btoggle { background: var(--bl); border-radius: 0 calc(var(--r-lg) - 1px) 0 0; }
+.tx-bnum {
+  display: inline-flex; align-items: center; justify-content: center; flex: none; width: 28px; height: 28px;
+  border: 2px solid var(--bc); border-radius: 50%; background: #fff; color: var(--ink); font: 700 var(--fs-sm)/1 var(--font-sans);
+}
+.tx-btext { display: flex; flex-direction: column; min-width: 0; }
+.tx-bname { font: 600 1.05rem/1.25 var(--font-serif); font-variation-settings: 'opsz' 18; color: var(--ink); }
+.tx-btitle { font-size: var(--fs-xs); line-height: 1.35; color: var(--text-3); }
+.tx-pv { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 3px; flex: 1 1 auto; max-width: 48%; margin-left: auto; padding-left: 8px; }
+.tx-branch.is-open .tx-pv { display: none; }
+.tx-pv-dot { width: 8px; height: 8px; flex: none; border-radius: 50%; }
+.tx-pv-dot.ev-D { background: var(--ev-D); }
+.tx-pv-dot.ev-P { background: var(--ev-P); }
+.tx-pv-dot.ev-A { background: var(--ev-A-line); }
+.tx-pv-dot.ev-NG { background: #fff; border: 1px dashed var(--ev-NG-line); }
+.tx-pv-dot.is-gen { width: 12px; border-radius: 4px; background: var(--bg-soft); box-shadow: inset 0 0 0 1px var(--rule-3); }
+.tx-pv-dot.is-bench { border-radius: 2px; background: #fff; box-shadow: inset 0 0 0 1.5px var(--slate); }
+.tx-chev { width: 18px; height: 18px; flex: none; margin-left: 8px; color: var(--text-3); transition: transform var(--dur-1); }
+.tx-branch.is-open .tx-chev { margin-left: auto; transform: rotate(180deg); }
+
+.tx-body { padding: 4px 14px 10px; border-top: 1px solid var(--rule); }
+.tx-subs { list-style: none; margin: 0; padding: 0; }
+.tx-sub { display: grid; grid-template-columns: minmax(150px, 220px) minmax(0, 1fr) auto; align-items: start; gap: 6px 14px; padding: 8px 0; border-top: 1px solid var(--rule); }
+.tx-sub:first-child { border-top: 0; }
+.tx-slabel {
+  display: inline-flex; align-items: baseline; gap: 6px; justify-self: start; max-width: 100%; margin: 0; padding: 4px 9px; border: 0;
+  border-radius: var(--r-sm); background: var(--bl); color: var(--ink); font: 600 var(--fs-sm)/1.3 var(--font-sans); text-align: left;
+}
+button.tx-slabel { cursor: pointer; }
+button.tx-slabel:hover .tx-sname { text-decoration: underline; text-underline-offset: 2px; }
+.tx-snum { color: var(--bi); font-weight: 700; font-variant-numeric: tabular-nums; }
+.tx-slabel.is-match { box-shadow: 0 0 0 2px var(--amber); }
+.tx-leaves { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 6px; min-width: 0; margin: 0; padding: 0; }
+.tx-leaves > li { display: flex; min-width: 0; max-width: 100%; }
+.tx-leaf {
+  display: inline-flex; align-items: center; gap: 5px; max-width: 100%; min-height: 28px; padding: 2px 9px;
+  border: 1px solid transparent; border-radius: var(--r-pill); background: transparent; color: var(--text);
+  font: 400 var(--fs-sm)/1.25 var(--font-sans); text-align: left; text-decoration: none; cursor: pointer;
+  transition: background-color var(--dur-1), border-color var(--dur-1), opacity var(--dur-1);
+}
+a.cite.tx-leaf { color: var(--text); text-decoration: none; }
+.tx-leaf:hover { background: var(--bl); border-color: var(--bc); }
+.tx-leaf.is-gen { background: var(--bg-soft); border-color: var(--rule-2); }
+.tx-leaf.is-gen:hover { background: var(--gray); border-color: var(--rule-3); }
+.tx-name { min-width: 0; }
+.tx-yr { color: var(--text-3); white-space: nowrap; }
+.tx-pre { margin-left: -3px; color: var(--text-3); }
+.tx-dot { width: 9px; height: 9px; flex: none; border-radius: 50%; }
+.tx-dot.ev-D { background: var(--ev-D); }
+.tx-dot.ev-P { background: var(--ev-P); }
+.tx-dot.ev-A { background: var(--ev-A-line); }   /* solid light gray, as in Figure 2; the letter badges keep --ev-A */
+.tx-dot.ev-NG { background: #fff; border: 1px dashed var(--ev-NG-line); }
+.tx-leaf.is-match { background: var(--amber-light); border-color: var(--amber); }
+/* during a search the other leaves and branches stay usable: dim them with a lighter text color (still 5.9:1 on
+   white) and faded marks, not with opacity on the text */
+.tx-leaf.is-dim { color: var(--text-3); }
+a.cite.tx-leaf.is-dim { color: var(--text-3); }
+.tx-leaf.is-dim .tx-dot { opacity: .45; }
+.tx-branch.no-hit { border-left-color: var(--rule-2); }
+.tx-branch.no-hit .tx-bnum { border-color: var(--rule-2); }
+.tx-branch.no-hit .tx-bname { color: var(--text-3); }
+.tx-branch.no-hit .tx-pv { opacity: .45; }
+.tx-xrefs { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
+.tx-xref {
+  display: inline-flex; align-items: center; gap: 3px; min-height: 26px; padding: 2px 8px; border: 1px solid var(--rule-2);
+  border-radius: var(--r-pill); background: #fff; color: var(--text-2); font: 600 var(--fs-xs)/1 var(--font-sans);
+  font-variant-numeric: tabular-nums; cursor: pointer; transition: background-color var(--dur-1), border-color var(--dur-1);
+}
+.tx-xref:hover { background: var(--bl); border-color: var(--bc); color: var(--ink); }
+
+@container (max-width: 700px) {
+  .tx-sub { grid-template-columns: minmax(0, 1fr); }
+  .tx-xrefs { justify-content: flex-start; }
+}
+@container (max-width: 560px) {
+  .tx-tree { grid-template-columns: minmax(0, 1fr); row-gap: 10px; }
+  .tx-trunk { border-radius: var(--r-md); }
+  .tx-trunk > span { writing-mode: horizontal-tb; transform: none; padding: 7px 14px; }
+  .tx-branch::before { display: none; }
+  .tx-pv { display: none; }
+  .tx-chev { margin-left: auto; }   /* the previews are hidden: keep the chevron at the right edge, open or closed */
+  .tx-btoggle { gap: 10px; padding: 8px 10px; }
+  .tx-body { padding: 4px 10px 8px; }
+}
+
+/* ======================================================================= evidence profiles (#settings-evidence-T|E|B|F) */
+.evp { container-type: inline-size; }
+.evp-bar { margin: 2px 0 12px; }
+.chart .evp-seg rect { stroke: #fff; stroke-width: 1.5px; }
+.chart .evp-seg.ev-D rect { fill: var(--ev-D-strong); }   /* white letter on it: 4.8:1 */
+.chart .evp-seg.ev-P rect { fill: var(--ev-P); }
+.chart .evp-seg.ev-A rect { fill: var(--ev-A); }
+.chart .evp-seg.ev-NG rect { fill: #fff; stroke: var(--ev-NG-line); stroke-dasharray: 3 2; }
+.chart .evp-seg text { font-size: 12px; font-weight: 700; fill: var(--slate); pointer-events: none; }
+.chart .evp-seg.ev-D text { fill: #fff; }
+.chart .evp-seg.is-link { cursor: pointer; }
+.chart .evp-seg.is-link:hover rect { opacity: .82; }
+.chart .evp-frame { fill: none; stroke: var(--rule-2); }
+.evp-legend { list-style: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px 12px; margin: 0; padding: 0; }
+@container (min-width: 540px) {
+  .evp-legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.evp-item {
+  display: flex; align-items: center; gap: 10px; width: 100%; min-height: 34px; padding: 3px 8px; border: 1px solid transparent;
+  border-radius: var(--r-md); background: transparent; color: var(--text); font: 400 var(--fs-sm)/1.25 var(--font-sans); text-align: left;
+}
+button.evp-item { cursor: pointer; transition: background-color var(--dur-1), border-color var(--dur-1); }
+button.evp-item:hover { background: var(--bg-soft); border-color: var(--rule); }
+.evp-item.is-zero { color: var(--text-3); }
+.evp-item.is-zero .evp-n { color: var(--text-3); }
+.evp-item.is-zero .badge { opacity: .5; }
+.evp-name { flex: 1 1 auto; min-width: 0; overflow-wrap: normal; }
+.evp-n { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.evp-pct { min-width: 2.8em; text-align: right; font-size: var(--fs-xs); color: var(--text-3); font-variant-numeric: tabular-nums; }
+.evp-hint { margin: 8px 0 0; font-size: var(--fs-xs); color: var(--text-3); }
+.evp-note { margin: 8px 0 0; font-size: var(--fs-xs); line-height: 1.5; color: var(--text-3); }

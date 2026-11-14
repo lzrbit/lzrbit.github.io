@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Continual Learning for Embodied AI</title>
+  <meta name="description" content="Project page of the review Continual Learning for Embodied AI: A Comprehensive Review and Perspective. Abstract and figures, the taxonomy, an explorer of the coded studies and their evidence grades, mechanism families, benchmarks, an evaluation difficulty hierarchy, research programs, and a searchable library of the cited works.">
+  <link rel="canonical" href="https://lzrbit.github.io/cl-eai/">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+
+  <!-- Open Graph: og-teaser.jpg is Figure 1 on white at 1200 x 630 (meta.og_image), written by the data builder -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zirui Li">
+  <meta property="og:title" content="Continual Learning for Embodied AI: A Comprehensive Review and Perspective">
+  <meta property="og:description" content="Project page of the review: abstract and figures, taxonomy, an explorer of the coded studies and their evidence grades, benchmarks, an evaluation difficulty hierarchy, research programs, and the library of cited works.">
+  <meta property="og:url" content="https://lzrbit.github.io/cl-eai/">
+  <meta property="og:image" content="https://lzrbit.github.io/cl-eai/assets/img/og-teaser.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Figure 1 of the review: yearly continual learning titles in DBLP, forgetting under sequential fine-tuning from small policies to vision-language-action models, and the review at a glance.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://lzrbit.github.io/cl-eai/assets/img/og-teaser.jpg">
+
+  <!-- Google Scholar: static on purpose (data/site-data.js holds the same names in people.authors) -->
+  <meta name="citation_title" content="Continual Learning for Embodied AI: A Comprehensive Review and Perspective">
+  <meta name="citation_author" content="Zirui Li">
+  <meta name="citation_author" content="Zhiqi Mao">
+  <meta name="citation_author" content="Haohan Yang">
+  <meta name="citation_author" content="Yuxin Cai">
+  <meta name="citation_author" content="Shuo Yang">
+  <meta name="citation_author" content="Heye Huang">
+  <meta name="citation_author" content="Jindou Jia">
+  <meta name="citation_author" content="Yunlong Lin">
+  <meta name="citation_author" content="Yangang Ren">
+  <meta name="citation_author" content="Yuan Ji">
+  <meta name="citation_author" content="Ziying Song">
+  <meta name="citation_author" content="Dongyue Huang">
+  <meta name="citation_author" content="Yanjun Huang">
+  <meta name="citation_author" content="Andrea Cavallaro">
+  <meta name="citation_author" content="Ziwei Liu">
+  <meta name="citation_author" content="Chen Lv">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_language" content="en">
+  <meta name="citation_keywords" content="continual learning; embodied AI; lifelong robot learning; vision-language-action model; world model; catastrophic forgetting; evaluation protocols">
+  <meta name="citation_abstract_html_url" content="https://lzrbit.github.io/cl-eai/">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='3' y='3' width='58' height='58' rx='15' fill='%232AB7B7'/%3E%3Cpath d='M41 23.5A13 13 0 1 0 45 32' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='45' cy='22' r='4.5' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- one stylesheet per module, using the tokens and components of style.css (see DESIGN.md) -->
+  <link rel="stylesheet" href="assets/css/charts.css">
+  <link rel="stylesheet" href="assets/css/explorer.css">
+  <link rel="stylesheet" href="assets/css/library.css">
+
+  <!-- data (window.CLEAI_DATA, see data/SCHEMA.md), D3, modules, then the shell, which initializes the modules -->
+  <script defer src="data/site-data.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="assets/js/charts.js"></script>
+  <script defer src="assets/js/explorer.js"></script>
+  <script defer src="assets/js/library.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+
+<!-- ======================================================================= hero
+     Static so that crawlers and the first paint see the byline; app.js re-renders it from data.meta and data.people. -->
+<header id="top" class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 class="hero-title" id="hero-title">Continual Learning for Embodied AI</h1>
+      <p class="hero-subtitle" id="hero-subtitle">A Comprehensive Review and Perspective</p>
+      <div class="byline" id="hero-byline">
+        <p class="authors">
+          <span class="author">Zirui Li<sup>1,†</sup><span class="sr-only"> (equal contribution)</span></span>,
+          <span class="author">Zhiqi Mao<sup>1,†</sup><span class="sr-only"> (equal contribution)</span></span>,
+          <span class="author">Haohan Yang<sup>1</sup></span>,
+          <span class="author">Yuxin Cai<sup>1</sup></span>,
+          <span class="author">Shuo Yang<sup>2</sup></span>,
+          <span class="author">Heye Huang<sup>3</sup></span>,
+          <span class="author">Jindou Jia<sup>1</sup></span>,
+          <span class="author">Yunlong Lin<sup>4</sup></span>,
+          <span class="author">Yangang Ren<sup>1</sup></span>,
+          <span class="author">Yuan Ji<sup>1</sup></span>,
+          <span class="author">Ziying Song<sup>1</sup></span>,
+          <span class="author">Dongyue Huang<sup>5</sup></span>,
+          <span class="author">Yanjun Huang<sup>2</sup></span>,
+          <span class="author">Andrea Cavallaro<sup>6</sup></span>,
+          <span class="author">Ziwei Liu<sup>7</sup></span>,
+          <span class="author">Chen Lv<sup>1,*</sup><span class="sr-only"> (corresponding author)</span></span>
+        </p>
+        <ol class="affils" aria-label="Affiliations">
+          <li title="School of Mechanical and Aerospace Engineering, Nanyang Technological University, Singapore"><sup>1</sup>NTU School of Mechanical and Aerospace Engineering</li>
+          <li title="School of Automotive Studies, Tongji University, Shanghai, China"><sup>2</sup>Tongji University School of Automotive Studies</li>
+          <li title="Cho Chun Shik Graduate School of Mobility, Korea Advanced Institute of Science and Technology (KAIST), Daejeon, Republic of Korea"><sup>3</sup>KAIST Cho Chun Shik Graduate School of Mobility</li>
+          <li title="School of Mechanical Engineering, Beijing Institute of Technology, Beijing, China"><sup>4</sup>Beijing Institute of Technology School of Mechanical Engineering</li>
+          <li title="School of Electrical and Electronic Engineering, Nanyang Technological University, Singapore"><sup>5</sup>NTU School of Electrical and Electronic Engineering</li>
+          <li title="École Polytechnique Fédérale de Lausanne (EPFL), Switzerland"><sup>6</sup>EPFL</li>
+          <li title="College of Computing and Data Science, Nanyang Technological University, Singapore"><sup>7</sup>NTU College of Computing and Data Science</li>
+        </ol>
+        <p class="hero-notes">
+          <span class="note-item"><sup aria-hidden="true">†</sup> Zirui Li and Zhiqi Mao contributed equally.</span>
+          <span class="note-item"><sup aria-hidden="true">*</sup> Corresponding author: Chen Lv (<a href="mailto:lyuchen@ntu.edu.sg">lyuchen@ntu.edu.sg</a>).</span>
+        </p>
+      </div>
+      <ul class="logos" id="hero-logos" aria-label="Institutions">
+        <li class="logo" title="Nanyang Technological University"><img src="assets/img/logos/ntu.webp" alt="Nanyang Technological University logo" width="128" height="46" decoding="async"></li>
+        <li class="logo" title="Tongji University"><img src="assets/img/logos/tongji.webp" alt="Tongji University logo" width="46" height="46" decoding="async"></li>
+        <li class="logo logo-name" title="Korea Advanced Institute of Science and Technology">KAIST</li>
+        <li class="logo logo-name">Beijing Institute of Technology</li>
+        <li class="logo logo-name" title="École Polytechnique Fédérale de Lausanne">EPFL</li>
+      </ul>
+      <div class="hero-actions" id="hero-actions">
+        <button type="button" class="btn" disabled><svg class="i" aria-hidden="true"><use href="#i-doc"/></svg>Paper (arXiv, coming soon)</button>
+        <a class="btn btn-primary" href="#citation"><svg class="i" aria-hidden="true"><use href="#i-braces"/></svg>BibTeX</a>
+        <a class="btn btn-primary" href="#library"><svg class="i" aria-hidden="true"><use href="#i-books"/></svg>Library</a>
+      </div>
+      <p class="hero-meta" id="hero-meta"><span class="nowrap">Manuscript version of 28 October 2026</span> · <span class="nowrap">literature reviewed to 6 October 2026</span></p>
+    </div>
+    <div class="hero-visual">
+      <figure class="hero-card" id="hero-card">
+        <img src="assets/img/hero/site-hero-1400.webp"
+             srcset="assets/img/hero/site-hero-1400.webp 1400w"
+             sizes="(min-width: 1320px) 584px, (min-width: 921px) 44vw, (min-width: 600px) 520px, calc(100vw - 62px)"
+             width="1400" height="709" fetchpriority="high" decoding="async"
+             alt="Illustration: a robot arm at a kitchen counter, a quadruped on rocky ground, a car on a city road and a humanoid robot in a room, connected by one path.">
+      </figure>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- ===================================================================== table of contents
+       Sticky sidebar from 1100 px; below that a compact bar whose button opens the same list. -->
+  <nav class="toc" id="toc" aria-label="Contents">
+    <button type="button" class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-panel">
+      <svg class="i" aria-hidden="true"><use href="#i-list"/></svg><span>Contents</span><span class="toc-current" id="toc-current"></span><svg class="i i-chev" aria-hidden="true"><use href="#i-chev-down"/></svg>
+    </button>
+    <div class="toc-panel" id="toc-panel">
+      <p class="toc-title">Contents</p>
+      <ol class="toc-list">
+        <li><a href="#overview">Abstract</a></li>
+        <li><a href="#glance">At a glance</a></li>
+        <li><a href="#formulation">Formulation</a></li>
+        <li><a href="#taxonomy">Taxonomy</a></li>
+        <li><a href="#evidence">Evidence explorer</a></li>
+        <li><a href="#propositions">Propositions</a></li>
+        <li><a href="#mechanisms">Mechanisms</a></li>
+        <li><a href="#foundation">Foundation models</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#benchmarks">Benchmarks</a></li>
+        <li><a href="#evaluation">Evaluation</a></li>
+        <li><a href="#outlook">Outlook</a></li>
+        <li><a href="#figures">Figures</a></li>
+        <li><a href="#library">Library</a></li>
+        <li><a href="#citation">Citation</a></li>
+      </ol>
+      <p class="toc-foot"><a href="#top">Back to top</a></p>
+    </div>
+  </nav>
+
+  <main id="main" class="content" tabindex="-1">
+    <noscript><p class="noscript">This page needs JavaScript for its text, figures and interactive views. The title, authors and BibTeX are shown without it.</p></noscript>
+
+    <!-- =================================================================== overview: abstract and Figure 1 -->
+    <section id="overview" class="section" aria-labelledby="overview-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <h2 id="overview-h">Abstract</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p class="abstract-text" id="abstract" data-rich="meta.abstract"></p>
+        <div class="keywords" id="keywords"></div>
+      </div>
+      <figure class="paper-fig" data-fig="1"></figure>
+    </section>
+
+    <!-- =================================================================== at a glance: Figure 1a and 1b as interactive panels -->
+    <section id="glance" class="section" aria-labelledby="glance-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Section 1 and Figure 1</p>
+          <h2 id="glance-h">The field at a glance</h2>
+        </div>
+      </header>
+      <div class="glance-grid">
+        <article class="panel" aria-labelledby="growth-title">
+          <header class="panel-head">
+            <p class="panel-kicker">Figure 1a</p>
+            <h3 class="panel-title" id="growth-title">Continual learning titles in DBLP, by year</h3>
+          </header>
+          <p class="panel-intro" data-rich="growth.summary"></p>
+          <div id="growth-chart" class="mount chart"></div>
+          <footer class="panel-foot">
+            <p data-rich="growth.method"></p>
+          </footer>
+        </article>
+        <article class="panel" aria-labelledby="forgetting-title">
+          <header class="panel-head">
+            <p class="panel-kicker">Figure 1b</p>
+            <h3 class="panel-title" id="forgetting-title">Forgetting under plain sequential fine-tuning</h3>
+          </header>
+          <p class="panel-intro" data-rich="forgetting.summary"></p>
+          <div id="forgetting-chart" class="mount chart"></div>
+          <footer class="panel-foot">
+            <p class="panel-label" id="forgetting-label"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span data-text="forgetting.label">Values from each source; not comparable across rows.</span></p>
+            <p data-rich="forgetting.note"></p>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================================================================== problem formulation -->
+    <section id="formulation" class="section" aria-labelledby="formulation-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Section 2</p>
+          <h2 id="formulation-h">Problem formulation</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="leads.2"></p>
+      </div>
+      <div class="definition">
+        <p class="definition-label">Operational definition, Section 2.1</p>
+        <p class="definition-text" data-rich="formulation.definition" data-capitalize></p>
+      </div>
+      <div class="prose">
+        <p data-rich="formulation.axes_intro"></p>
+      </div>
+      <div id="formulation-explorer" class="mount"></div>
+      <figure class="paper-fig" data-fig="3"></figure>
+    </section>
+
+    <!-- =================================================================== taxonomy (interactive Figure 2) -->
+    <section id="taxonomy" class="section" aria-labelledby="taxonomy-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Figure 2, Sections 3 to 9</p>
+          <h2 id="taxonomy-h">Taxonomy of the reviewed literature</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="grading.filing_rule"></p>
+      </div>
+      <div class="view-toggle" id="taxonomy-toggle" hidden>
+        <div class="seg" role="group" aria-label="Taxonomy view">
+          <button type="button" data-view="tree" aria-pressed="true">Interactive tree</button>
+          <button type="button" data-view="figure" aria-pressed="false">Figure 2</button>
+        </div>
+      </div>
+      <div id="taxonomy-tree" class="mount"></div>
+      <figure class="paper-fig" data-fig="2" id="taxonomy-figure"></figure>
+    </section>
+
+    <!-- =================================================================== evidence explorer -->
+    <section id="evidence" class="section" aria-labelledby="evidence-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Section 1.3 and the evidence tables</p>
+          <h2 id="evidence-h">Evidence explorer</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="grading.scope"></p>
+        <p data-rich="grading.lead"></p>
+      </div>
+      <div class="grade-grid" id="grading-levels"></div>
+      <div class="prose">
+        <p class="note" data-rich="grading.note"></p>
+        <p class="meta-line">Literature cut-off: <span data-text="grading.literature_cutoff">6 October 2026</span>.</p>
+        <p class="note scope-note" data-rich="grading.scope_note"></p>
+      </div>
+      <div id="evidence-explorer" class="mount"></div>
+    </section>
+
+    <!-- =================================================================== propositions P1-P7 -->
+    <section id="propositions" class="section" aria-labelledby="propositions-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Section 1.4</p>
+          <h2 id="propositions-h">Seven propositions</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="propositions.intro"></p>
+      </div>
+      <div class="prop-wrap"><div id="propositions-grid" class="prop-grid"></div></div>
+    </section>
+
+    <!-- =================================================================== mechanisms -->
+    <section id="mechanisms" class="section" aria-labelledby="mechanisms-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Section 3 and Table 4</p>
+          <h2 id="mechanisms-h">Algorithmic mechanisms</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="mechanisms.intro"></p>
+      </div>
+      <div id="mechanism-grid" class="mount"></div>
+      <figure class="paper-fig" data-fig="6"></figure>
+      <aside class="assessment" data-assessment="3"></aside>
+    </section>
+
+    <!-- =================================================================== foundation models and self-improving agents -->
+    <section id="foundation" class="section" aria-labelledby="foundation-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Section 4</p>
+          <h2 id="foundation-h">Foundation models and self-improving agents</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="foundation.lead"></p>
+      </div>
+      <figure class="paper-fig" data-fig="7"></figure>
+      <h3 class="subhead" id="fm-list-h">Studies with foundation-model learners</h3>
+      <div class="prose">
+        <p class="note">Coded studies whose learner builds on a pretrained VLA, VLM or LLM, or that Table 5 lists. Table 5 covers those discussed in Section 4; the others appear in Tables 6 to 11. Each entry names its table.</p>
+      </div>
+      <div id="fm-list" class="mount"></div>
+      <h3 class="subhead" id="self-improving-h" data-text="foundation.self_improving.title">Self-improving agents</h3>
+      <div class="prose">
+        <p data-rich="foundation.self_improving.lead"></p>
+      </div>
+      <aside class="assessment" data-assessment="4"></aside>
+    </section>
+
+    <!-- =================================================================== settings: tasks, environments, embodiments, feedback -->
+    <section id="settings" class="section" aria-labelledby="settings-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Sections 5 to 8</p>
+          <h2 id="settings-h">Tasks, environments, embodiments, and feedback</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p>One tab per section of the review: its opening argument, the authors’ assessment, its figure where there is one, and a profile of the coded studies filed under that axis or, for Section 8, under feedback.</p>
+      </div>
+      <div id="settings-tabs" class="tabs"></div>
+    </section>
+
+    <!-- =================================================================== benchmarks -->
+    <section id="benchmarks" class="section" aria-labelledby="benchmarks-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Sections 9.1 and 9.2, Tables 12 and 13</p>
+          <h2 id="benchmarks-h">Benchmarks and resources</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="leads.9"></p>
+      </div>
+      <div id="benchmark-explorer" class="mount"></div>
+    </section>
+
+    <!-- =================================================================== evaluation difficulty hierarchy -->
+    <section id="evaluation" class="section" aria-labelledby="evaluation-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Sections 9.3 to 9.6</p>
+          <h2 id="evaluation-h">A difficulty hierarchy for evaluation</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="evaluation.intro"></p>
+      </div>
+      <div id="eval-pyramid" class="mount"></div>
+      <div class="prose">
+        <p data-rich="evaluation.placement"></p>
+      </div>
+      <figure class="paper-fig" data-fig="10"></figure>
+      <aside class="assessment" data-assessment="9"></aside>
+    </section>
+
+    <!-- =================================================================== outlook: five research programs, conclusion -->
+    <section id="outlook" class="section" aria-labelledby="outlook-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <p class="section-kicker">Sections 10 and 11, Table 14</p>
+          <h2 id="outlook-h">Open problems and research programs</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p data-rich="outlook.intro"></p>
+      </div>
+      <figure class="paper-fig" data-fig="11"></figure>
+      <div id="programs" class="programs"></div>
+      <div class="prose">
+        <p class="note" data-rich="outlook.horizon_note"></p>
+      </div>
+      <h3 class="subhead" id="conclusion" tabindex="-1">Conclusion</h3>
+      <div class="prose">
+        <p data-rich="leads.11"></p>
+      </div>
+    </section>
+
+    <!-- =================================================================== figure gallery -->
+    <section id="figures" class="section" aria-labelledby="figures-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <h2 id="figures-h">Figures</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p>The figures of the review. Select one to open it at full resolution with its caption; the arrow keys move between figures.</p>
+      </div>
+      <ul id="figure-gallery" class="gallery"></ul>
+    </section>
+
+    <!-- =================================================================== library (rendered by library.js into #library-browser) -->
+    <section id="library" class="section" aria-labelledby="library-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <h2 id="library-h">Library</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p>The works cited in the full version of the review, with DOI or arXiv links where the bibliography records them, and BibTeX entries.</p>
+      </div>
+      <div id="library-browser" class="mount"></div>
+    </section>
+
+    <!-- =================================================================== citation -->
+    <section id="citation" class="section" aria-labelledby="citation-h">
+      <header class="section-head">
+        <div class="section-titles">
+          <h2 id="citation-h">Citation</h2>
+        </div>
+      </header>
+      <div class="prose">
+        <p>If you use this review, please cite it as follows.</p>
+      </div>
+      <div class="bib">
+        <div class="bib-bar">
+          <span class="bib-label" id="bib-label">BibTeX</span>
+          <button type="button" class="btn btn-sm" id="copy-bib" aria-describedby="bib-label"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg><span>Copy</span></button>
+        </div>
+        <pre tabindex="0" role="region" aria-labelledby="bib-label"><code id="bibtex">@misc{li2026continual,
+  title  = {{Continual Learning for Embodied AI: A Comprehensive Review
+            and Perspective}},
+  author = {Li, Zirui and Mao, Zhiqi and Yang, Haohan and Cai, Yuxin and
+            Yang, Shuo and Huang, Heye and Jia, Jindou and
+            Lin, Yunlong and Ren, Yangang and Ji, Yuan and
+            Song, Ziying and Huang, Dongyue and Huang, Yanjun and
+            Cavallaro, Andrea and Liu, Ziwei and Lv, Chen},
+  year   = {2026},
+  url    = {https://lzrbit.github.io/cl-eai/},
+  note   = {Preprint}
+}</code></pre>
+      </div>
+      <p class="sr-only" id="bib-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-main">
+      <p>Quoted passages, figures and coded data come from the manuscript sources and the literature database of the full version of the review; interface labels and short descriptions are the page’s own.</p>
+      <p>Last updated <time id="updated" datetime="2026-10-28">28 October 2026</time>.</p>
+    </div>
+    <p><a id="home-link" href="https://lzrbit.github.io/">Back to Zirui Li’s homepage</a></p>
+  </div>
+</footer>
+
+<!-- ======================================================================= overlays (owned by app.js) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" aria-describedby="lb-caption" hidden>
+  <div class="lb-backdrop" data-lb-close></div>
+  <div class="lb-frame">
+    <div class="lb-bar">
+      <div class="lb-heading">
+        <p class="lb-title" id="lb-title">Figure</p>
+        <p class="lb-sec" id="lb-sec"></p>
+      </div>
+      <div class="lb-tools">
+        <button type="button" class="btn btn-icon btn-sm" id="lb-prev" aria-label="Previous figure"><svg class="i" aria-hidden="true"><use href="#i-chev-left"/></svg></button>
+        <span class="lb-count" id="lb-count" aria-live="polite"></span>
+        <button type="button" class="btn btn-icon btn-sm" id="lb-next" aria-label="Next figure"><svg class="i" aria-hidden="true"><use href="#i-chev-right"/></svg></button>
+        <button type="button" class="btn btn-sm" id="lb-zoom" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg><span>Zoom</span></button>
+        <a class="btn btn-icon btn-sm" id="lb-open" href="#" target="_blank" rel="noopener" aria-label="Open the full-resolution image in a new tab"><svg class="i" aria-hidden="true"><use href="#i-external"/></svg></a>
+        <button type="button" class="btn btn-icon btn-sm" id="lb-close" aria-label="Close the figure viewer"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+    </div>
+    <div class="lb-stage" id="lb-stage" role="group" tabindex="0" aria-label="Figure image. When zoomed, drag or scroll to pan.">
+      <img id="lb-img" alt="" draggable="false">
+    </div>
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
+<div class="popover" id="cite-pop" role="dialog" aria-labelledby="cite-pop-title" tabindex="-1" hidden>
+  <button type="button" class="btn btn-icon btn-sm btn-ghost popover-close" id="cite-pop-close" aria-label="Close the reference"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+  <div id="cite-pop-body"></div>
+</div>
+<div class="tooltip" id="cleai-tooltip" role="tooltip" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ======================================================================= icon sprite (16 x 16 line icons; use with <svg class="i"><use href="#i-..."/></svg>) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-doc" viewBox="0 0 16 16"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8.5h5M6 11h5"/></symbol>
+  <symbol id="i-braces" viewBox="0 0 16 16"><path d="M5.5 3.5 2 8l3.5 4.5M10.5 3.5 14 8l-3.5 4.5"/></symbol>
+  <symbol id="i-books" viewBox="0 0 16 16"><path d="M2.5 2.5h3v11h-3zM6.5 2.5h3v11h-3zM10.4 3.4l2.6-.7 2 10.4-2.6.7z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 16 16"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="m3 8.5 3 3 7-7"/></symbol>
+  <symbol id="i-zoom-in" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3.5 3.5M7 5v4M5 7h4"/></symbol>
+  <symbol id="i-zoom-out" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3.5 3.5M5 7h4"/></symbol>
+  <symbol id="i-close" viewBox="0 0 16 16"><path d="m4 4 8 8M12 4l-8 8"/></symbol>
+  <symbol id="i-chev-down" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></symbol>
+  <symbol id="i-chev-left" viewBox="0 0 16 16"><path d="m10 4-4 4 4 4"/></symbol>
+  <symbol id="i-chev-right" viewBox="0 0 16 16"><path d="m6 4 4 4-4 4"/></symbol>
+  <symbol id="i-external" viewBox="0 0 16 16"><path d="M9 2.5h4.5V7M13.5 2.5l-6 6"/><path d="M11.5 9.5V13a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h3.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5"/><path d="M8 7.3v4M8 4.8v.2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 16 16"><path d="M5.5 4h8M5.5 8h8M5.5 12h8M2.5 4h.01M2.5 8h.01M2.5 12h.01"/></symbol>
+  <symbol id="i-search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3.5 3.5"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 16 16"><path d="M2.5 3.5h11l-4.2 5v4l-2.6 1.2V8.5z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 16 16"><path d="M6.5 9.5l3-3M7 4.5l1.3-1.3a2.5 2.5 0 0 1 3.5 3.5L10.5 8M9 11.5l-1.3 1.3a2.5 2.5 0 0 1-3.5-3.5L5.5 8"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 16 16"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="m2.5 4.5 5.5 4 5.5-4"/></symbol>
+</svg>
+</body>
+</html>
