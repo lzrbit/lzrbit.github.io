@@ -134,6 +134,11 @@ p { margin: 0 0 1em; }
 }
 
 /* ======================================================================= 5. hero */
+/* notice above the hero while the review is unpublished (first author's request, 14 November 2026) */
+.wip-banner { background: var(--amber); border-bottom: 1px solid #D99A1E; color: var(--ink); }   /* 8.9:1 */
+.wip-banner p { max-width: 1320px; margin: 0 auto; padding: 14px var(--gutter); text-align: center;
+  font-size: var(--fs-md); font-weight: 500; line-height: 1.45; }
+.wip-banner strong { font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-right: .35em; }
 .hero {
   position: relative;
   background:
@@ -740,6 +745,7 @@ a.cite:hover { text-decoration-style: solid; text-decoration-color: currentColor
   .btn-sm { padding: 5px 12px; }
   .btn-icon { padding: 0; }              /* after .btn: a padded 32 px icon button squeezes its icon to zero width */
   .hero-actions .btn { font-size: var(--fs-xs); }
+  .wip-banner p { font-size: var(--fs-sm); padding: 10px var(--gutter); }
   .logos { gap: 10px 20px; margin-top: 16px; }
   .logo { min-height: 34px; }
   .logo img { height: 34px; }
