@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Benchmark guide · FailPoint-X</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="wrap mast"><a class="brand" href="index.html"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>FailPoint-X</a><a class="textlink" href="index.html#resources">Project home</a></div></header>
+<main class="guide"><h1>Benchmark quick start</h1>
+<p><a href="guide-zh.html">中文使用说明</a> · <a href="citation.bib">BibTeX citation</a></p>
+<h2>Code and data</h2>
+<p>The <a href="https://github.com/yujieyan81/failpoint-x" target="_blank" rel="noopener">benchmark code on GitHub</a> includes the offline scorer, recorded example, simulation clients and post-training code. The training dataset on Hugging Face contains 2,320 accepted takeover trajectories in LeRobot format. A link to the dataset is not yet available. The <a href="index.html#dataset">dataset explorer</a> shows the task-level counts, including the 80 recoveries reserved for development.</p>
+<h2>Score the recorded example</h2>
+<p>From a checkout of the benchmark repository, run the following command with Python 3.9 or later. The scorer uses the Python standard library and the recorded Base-restart outcomes included in the repository.</p>
+<pre><code class="language-bash">python3 -m failpoint_x score \
+  --recovery examples/base_restart/rec.jsonl \
+  --nominal examples/base_restart/norm.jsonl
+</code></pre>
+<p>The example covers 1,152 recovery rollouts and 500 scheduled nominal starts. Expected recovery success is <strong>22.2%</strong> on L1–L3 and <strong>7.6%</strong> on L4–L5. Across valid nominal starts, expected success is <strong>43.9%</strong> within 1,200 steps and <strong>33.6%</strong> within the task-specific 1.1T deadline.</p>
+<h2>Evaluate a policy from nominal starts</h2>
+<p>The simulator uses Python 3.10.16. The benchmark repository lists its tested dependency versions in <code>eval/constraints.txt</code>.</p>
+<p>Install LIBERO-X at revision <code>f528726</code>, MuJoCo 2.3.0, robosuite 1.4.0 and the OpenPI client. Configure EGL and <code>LIBERO_CONFIG_PATH</code>. The LIBERO-X checkout must include the BDDL tasks and <code>libero/libero_x/LEVEL5/L5-*.jsonl</code> instruction files. Start your OpenPI-compatible policy server and run this command from the benchmark root.</p>
+<pre><code class="language-bash">python3 -m failpoint_x run --track nominal --liberox /path/to/LIBERO-X \
+  --output results/my_policy --tag my_policy --host 127.0.0.1 --port 8000
+</code></pre>
+<p>Add <code>--dry-run</code> to preview the command before starting the simulator. This track uses the nominal start schedule included in the benchmark repository.</p>
+<h2>Evaluate recovery from recorded failures</h2>
+<p>The benchmark repository provides the recovery evaluator and its manifest. The recorded simulator states required to run this track are not included in the repository. If you have those files, place them at the paths in <code>eval/test_bundle/test_manifest.json</code> under <code>eval/test_bundle/rollouts/</code>. After running the nominal track above, use the same policy checkpoint and server settings to evaluate recovery and score both tracks.</p>
+<pre><code class="language-bash">python3 -m failpoint_x run --track recovery --liberox /path/to/LIBERO-X \
+  --output results/my_policy --tag my_policy --host 127.0.0.1 --port 8000
+python3 -m failpoint_x score \
+  --recovery results/my_policy/rec.shard*.jsonl \
+  --nominal results/my_policy/norm.shard*.jsonl
+</code></pre>
+<p>Keep the generated <code>.identity.json</code> files beside the result shards so the scorer can compare the policy identities. <a href="index.html#results">Compare the reported checkpoints</a>.</p>
+</main></body></html>

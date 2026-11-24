@@ -1,0 +1,62 @@
+WEBVTT
+
+00:00:00.680 --> 00:00:03.466
+Can a robot learn to recover from its own mistakes?
+
+00:00:03.726 --> 00:00:07.605
+FailPoint-X studies offline post-training from human takeovers.
+
+00:00:08.610 --> 00:00:13.208
+The black book belongs in the front compartment of the caddy. The
+robot has already missed.
+
+00:00:13.468 --> 00:00:16.466
+Watch two policies restart from exactly that moment.
+
+00:00:16.726 --> 00:00:23.061
+In this replay, the base policy times out. The policy trained on
+human recoveries puts the book away.
+
+00:00:24.060 --> 00:00:29.026
+An overall success rate hides whether the robot avoided a mistake
+or recovered after making it.
+
+00:00:29.286 --> 00:00:33.984
+And extra training alone might help. How much do the human
+corrections contribute?
+
+00:00:34.960 --> 00:00:40.431
+We record failures from one checkpoint. An annotator marks the
+interval where each failure begins.
+
+00:00:40.691 --> 00:00:45.715
+A human takes over from sampled states in training intervals and
+finishes the original task.
+
+00:00:45.975 --> 00:00:50.505
+We match the training budget, then restart every method at the same
+held-out midpoints.
+
+00:00:51.510 --> 00:00:57.405
+Across ten task families and five levels, we collect 2,400 accepted
+human recoveries.
+
+00:00:57.665 --> 00:01:03.663
+Eighty are reserved for development. Nine methods face the same 384
+held-out failure states.
+
+00:01:04.660 --> 00:01:11.597
+Demo-continue recovers in 22.5 percent of trials. Takeover-BC
+recovers in 51.9 percent.
+
+00:01:11.857 --> 00:01:17.231
+At equal training budgets, that is a 29.4 percentage point gain on
+levels one through three.
+
+00:01:18.210 --> 00:01:24.934
+From ordinary starts, Base-restart succeeds in 43.9 percent of
+trials.
+
+00:01:25.194 --> 00:01:31.576
+Takeover-BC succeeds in 14 percent of trials. Recovery and
+retention tell different stories.

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FailPoint-X: a policy-matched, failure-anchored benchmark for offline VLA post-training from human takeovers. Selected recorded failures, task levels and same-state policy replays.">
+  <title>FailPoint-X | Benchmark Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="index.html" aria-label="Project home"><span>Fail</span>Point-X</a>
+    <span class="review-label"><span><a href="https://lzrbit.github.io/">Zirui&nbsp;Li</a><sup aria-hidden="true">*</sup><span class="sr-only"> (equal contribution)</span>, Yujie&nbsp;Yan<sup aria-hidden="true">*</sup><span class="sr-only"> (equal contribution)</span>, Jingxuan&nbsp;Qian, Yangang&nbsp;Ren, Haizhou&nbsp;Han, Haoran&nbsp;Xu, Chen&nbsp;Lv<sup aria-hidden="true">†</sup><span class="sr-only"> (corresponding author)</span> · Nanyang Technological University, Singapore · <sup>*</sup>Equal contribution · <sup>†</sup>Corresponding author</span></span>
+    <a class="release-link" href="#release">Release status <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">POLICY-MATCHED · FAILURE-ANCHORED</p>
+        <h1 id="page-title">From policy failures<br>to human recoveries.</h1>
+        <p class="summary">A benchmark for offline VLA post-training from human takeovers. <br>Inspect failure intervals, task variations and same-state policy replays.</p>
+      </div>
+      <dl class="counts" aria-label="Full benchmark snapshot counts">
+        <div><dt>629</dt><dd>Benchmark failures</dd></div>
+        <div><dt>2,400</dt><dd>Accepted takeovers</dd></div>
+        <div><dt>384</dt><dd>Held-out states</dd></div>
+        <div><dt>10</dt><dd>Task families</dd></div>
+      </dl>
+    </section>
+    <nav class="tabs" aria-label="Explore the benchmark">
+      <a href="#explorer" data-tab="explorer"><span class="tab-number">01</span> Failure explorer</a>
+      <a href="#levels" data-tab="levels"><span class="tab-number">02</span> Task levels</a>
+      <a href="#replays" data-tab="replays"><span class="tab-number">03</span> Policy replays</a>
+    </nav>
+    <section id="explorer" class="tab-panel" aria-labelledby="explorer-title">
+      <div class="section-heading"><div><p class="eyebrow">RECORDED FAILURE EXAMPLES</p><h2 id="explorer-title">Inspect the failure interval.</h2></div><span class="subtle-label">7 selected examples · not the full dataset</span></div>
+      <div class="explorer-shell">
+        <aside class="filters" aria-label="Filter selected failure examples">
+          <label for="level-filter">Level</label><select id="level-filter"><option value="all">All levels</option><option>L1</option><option>L3</option></select>
+          <label for="type-filter">Failure type</label><select id="type-filter"><option value="all">All types</option></select>
+          <p class="filter-count" id="case-count" aria-live="polite"></p>
+          <div class="case-list" id="case-list"></div>
+        </aside>
+        <article class="case-viewer" aria-live="polite">
+          <div class="case-topline"><span id="case-family" class="tag"></span><span class="case-id" id="case-id"></span></div>
+          <h3 id="case-task"></h3>
+          <div class="case-content">
+            <div class="frame-view"><img id="case-image" alt=""><span id="image-label" class="image-label"></span></div>
+            <div class="case-metadata"><p class="eyebrow">SOURCE ANNOTATION</p><dl id="case-fields"></dl><p class="interval-note" id="interval-note"></p></div>
+          </div>
+          <div class="timeline"><div class="timeline-rule"></div><div id="frame-controls" class="frame-controls" aria-label="Choose a recorded frame"></div></div>
+          <p class="viewer-footnote">Original recorded RGB frames. The later-context frame is explicitly outside the annotated interval.</p>
+        </article>
+      </div>
+    </section>
+    <section id="levels" class="tab-panel" aria-labelledby="levels-title" hidden>
+      <div class="section-heading"><div><p class="eyebrow">ONE TASK FAMILY · FIVE LEVELS</p><h2 id="levels-title">Follow the task across L1–L5.</h2></div><span class="subtle-label">Family 12 · recorded initial scenes</span></div>
+      <p class="section-copy">Representative initial scenes for placing two objects into a caddy. Source seeds: 2036 at L1/L2; 2000 at L3/L4/L5. These examples illustrate configurations, not a same-state controlled comparison.</p>
+      <div class="level-gallery" id="level-gallery"></div>
+      <div class="language-note"><span class="tag">L5 · Language variation</span><p>The L5 instruction paraphrases L4. One source wording uses “desk caddy”; the paraphrase uses “desk organizer”.</p></div>
+    </section>
+    <section id="replays" class="tab-panel" aria-labelledby="replays-title" hidden>
+      <div class="section-heading"><div><p class="eyebrow">SAME HELD-OUT FAILURE MIDPOINT</p><h2 id="replays-title">Three policies. One restored state.</h2></div><span class="subtle-label">New autonomous checkpoint replays</span></div>
+      <p class="replay-task" id="replay-task"></p>
+      <div class="replay-meta"><span>Family 0 · L1 · wrong placement</span><span>Source seed 4008 · midpoint 281</span><span>Sampling index k = 0 · first-query seed 2543567918</span></div>
+      <div class="replay-toolbar execution-toolbar"><div class="execution-actions"><button type="button" id="play-videos">Play together</button><button type="button" id="pause-videos">Pause all</button></div><label>Video camera <select id="video-camera"><option value="agentview">Overview</option><option value="wrist">Wrist</option></select></label></div>
+      <p class="video-explanation">Recorded simulator executions, rendered at 20 fps and played at 1× speed. Each video stops at its own recorded endpoint. Switching cameras resets playback.</p>
+      <div class="replay-grid execution-grid" id="execution-grid"></div>
+      <p id="video-status" class="viewer-footnote" role="status">Play together restarts all three recordings from the shared failure state.</p>
+      <details class="keyframe-details"><summary>Inspect recorded keyframes</summary>
+      <div class="replay-toolbar"><div id="replay-controls" class="segmented" aria-label="Choose common replay step or actual endpoints"></div><label>Camera <select id="replay-camera"><option value="agentview">Overview</option><option value="wrist">Wrist</option></select></label></div>
+      <div class="replay-grid" id="replay-grid"></div>
+      <p id="replay-time-note" class="viewer-footnote" aria-live="polite"></p>
+      </details>
+      <details class="provenance"><summary>Selection and reproduction notes</summary><p>The point was selected post hoc from frozen evaluations, before these new replays, for an illustrative contrast. Each evaluated actor checkpoint ran once on RTX 5090. All three restored simulator states and initial images are identical. Outcomes and both trained actors’ success steps match the original k = 0 rows. Observation traces differ: original Base-restart ended in a physics fault at step 371; the shown replay reaches 1,200 steps without a physics fault. This example carries no statistical weight.</p><p>Videos render every saved execution state through the same simulator and cameras. No policy was rerun to make the videos, and no intermediate frame was generated or interpolated. Each recording includes the restored start and its terminal state, without looping or extra terminal holds. Native resolution is 256 × 256. The original captured keyframes remain available above for interval and endpoint inspection.</p></details>
+    </section>
+    <section id="release" class="release-section" aria-labelledby="release-title"><div><p class="eyebrow">RELEASE STATUS</p><h2 id="release-title">A preview you can inspect today.</h2><p>This site contains selected recorded examples and qualitative policy replays. The benchmark code on GitHub includes the scorer, evaluation clients, post-training code and a recorded example.</p></div><ul><li><span>Full dataset &amp; restorable states</span><span class="planned">Not included in this preview</span></li><li><a href="https://github.com/yujieyan81/failpoint-x" target="_blank" rel="noopener">Benchmark code and evaluation clients</a><span class="available">Available</span></li><li><span>Evaluated policy checkpoints</span><span class="planned">Not included in this preview</span></li><li><a href="PROVENANCE.md">Example provenance</a><span class="available">Available</span></li></ul></section>
+  </main>
+  <footer><span class="wordmark"><span>Fail</span>Point-X</span><p>Selected example preview · Simulated scenes · No participant images</p></footer>
+</body>
+</html>

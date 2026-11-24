@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Benchmark 使用说明 · FailPoint-X</title><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="wrap mast"><a class="brand" href="index.html"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>FailPoint-X</a><a class="textlink" href="index.html#resources">项目首页</a></div></header>
+<main class="guide"><h1>Benchmark 使用说明</h1>
+<p><a href="guide.html">English quick start</a> · <a href="citation.bib">BibTeX 引用</a></p>
+<h2>代码与数据</h2>
+<p><a href="https://github.com/yujieyan81/failpoint-x" target="_blank" rel="noopener">GitHub 代码仓库</a> 提供离线评分器、真实示例、仿真客户端和后训练代码。Hugging Face 训练集包含 2,320 条通过验收的人类接管轨迹，采用 LeRobot 格式。数据集链接暂未提供。<a href="index.html#dataset">数据概览</a>可按任务难度查看统计，其中另有 80 条恢复轨迹留作开发。</p>
+<h2>运行离线评分</h2>
+<p>在 benchmark 代码仓库根目录，使用 Python 3.9 或更高版本执行以下命令。评分器仅依赖 Python 标准库，读取仓库中随附的 Base-restart 实际评测记录。</p>
+<pre><code class="language-bash">python3 -m failpoint_x score \
+  --recovery examples/base_restart/rec.jsonl \
+  --nominal examples/base_restart/norm.jsonl
+</code></pre>
+<p>示例覆盖 1,152 次恢复测试和 500 个计划内的常规起点。预期恢复成功率为 L1–L3 <strong>22.2%</strong>、L4–L5 <strong>7.6%</strong>。从有效常规起点出发，1,200 步内的成功率为 <strong>43.9%</strong>，在各任务的 1.1T 时限内为 <strong>33.6%</strong>。</p>
+<h2>从常规起点测试自己的策略</h2>
+<p>模拟器使用 Python 3.10.16。代码仓库的 <code>eval/constraints.txt</code> 列出了已测试的依赖版本。</p>
+<p>安装 LIBERO-X（版本 <code>f528726</code>）、MuJoCo 2.3.0、robosuite 1.4.0 和 OpenPI 客户端，配置 EGL 和 <code>LIBERO_CONFIG_PATH</code>。LIBERO-X 目录需包含 BDDL 任务与 <code>libero/libero_x/LEVEL5/L5-*.jsonl</code> 指令文件。启动兼容 OpenPI 的策略服务后，在 benchmark 根目录运行以下命令。</p>
+<pre><code class="language-bash">python3 -m failpoint_x run --track nominal --liberox /path/to/LIBERO-X \
+  --output results/my_policy --tag my_policy --host 127.0.0.1 --port 8000
+</code></pre>
+<p>加上 <code>--dry-run</code> 可以先预览命令。该评测使用代码仓库自带的常规起点清单。</p>
+<h2>从记录的失败状态测试恢复能力</h2>
+<p>代码仓库提供恢复评测客户端和清单，运行所需的模拟器状态文件未包含在代码仓库中。如已取得文件，按 <code>eval/test_bundle/test_manifest.json</code> 中的路径将其放入 <code>eval/test_bundle/rollouts/</code>。完成上面的常规评测后，使用相同的策略检查点和服务设置运行恢复评测，再汇总两条轨道的成绩。</p>
+<pre><code class="language-bash">python3 -m failpoint_x run --track recovery --liberox /path/to/LIBERO-X \
+  --output results/my_policy --tag my_policy --host 127.0.0.1 --port 8000
+python3 -m failpoint_x score \
+  --recovery results/my_policy/rec.shard*.jsonl \
+  --nominal results/my_policy/norm.shard*.jsonl
+</code></pre>
+<p>请将生成的 <code>.identity.json</code> 文件和对应的结果分片保存在一起，以便评分器核对策略身份。<a href="index.html#results">查看各检查点的报告成绩</a>。</p>
+</main></body></html>

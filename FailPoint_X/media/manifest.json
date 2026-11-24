@@ -1,0 +1,96 @@
+{
+  "description": "Every saved per-step state of previously recorded autonomous checkpoint replays is rendered at 20 fps. No new policy run or interpolation.",
+  "control_hz": 20,
+  "native_resolution": [
+    256,
+    256
+  ],
+  "source_seed": 4008,
+  "midpoint": 281,
+  "sampling_index": 0,
+  "first_query_seed": 2543567918,
+  "terminal_frame_note": "Includes one frame at the terminal timestamp, so container duration is (executed_steps + 1) / 20 seconds. No repeated terminal holds.",
+  "runs": [
+    {
+      "policy": "base_restart",
+      "executed_steps": 1200,
+      "source_npz_sha256": "0772b34f78e3d86129c5c6ba694ac86203db176d21e10e7fff6a5baca1f92d87",
+      "success": false,
+      "success_step": null,
+      "videos": {
+        "agentview": {
+          "file": "base_restart_agentview.mp4",
+          "encoded_frames": 1201,
+          "width": 256,
+          "height": 256,
+          "bytes": 1018308,
+          "sha256": "88e8fe8d37973081987ae2ca56279ab87f9ff67b3c69e6c716a3c2846f3ea2a3",
+          "duration_seconds": 60.05
+        },
+        "wrist": {
+          "file": "base_restart_wrist.mp4",
+          "encoded_frames": 1201,
+          "width": 256,
+          "height": 256,
+          "bytes": 1496098,
+          "sha256": "8193438e02278e06c2a3e33d77416d7f398d8035a29662dcd89f3ab44a4b38d9",
+          "duration_seconds": 60.05
+        }
+      }
+    },
+    {
+      "policy": "takeover_bc",
+      "executed_steps": 186,
+      "source_npz_sha256": "0ac082f921d2306fc66f31aaae329db813013dc949bd89a0ceb24ac2d8744cdb",
+      "success": true,
+      "success_step": 186,
+      "videos": {
+        "agentview": {
+          "file": "takeover_bc_agentview.mp4",
+          "encoded_frames": 187,
+          "width": 256,
+          "height": 256,
+          "bytes": 105245,
+          "sha256": "a9b940c5ce770ff56724854879b18908cc804f63b659fd350c9babe867c14cc1",
+          "duration_seconds": 9.35
+        },
+        "wrist": {
+          "file": "takeover_bc_wrist.mp4",
+          "encoded_frames": 187,
+          "width": 256,
+          "height": 256,
+          "bytes": 127212,
+          "sha256": "3b78d339086dc9a7b1cb86b273424770fd3436e1ead959e2d63c4110f29609bd",
+          "duration_seconds": 9.35
+        }
+      }
+    },
+    {
+      "policy": "iql_r2",
+      "executed_steps": 184,
+      "source_npz_sha256": "63cc0f01dc6181fc40c8dfd215eefd141591b60e2db651a284360d988247a353",
+      "success": true,
+      "success_step": 184,
+      "videos": {
+        "agentview": {
+          "file": "iql_r2_agentview.mp4",
+          "encoded_frames": 185,
+          "width": 256,
+          "height": 256,
+          "bytes": 106745,
+          "sha256": "229830149d367e5eff0866c17c37b9dc1f9dde3da70d8d875a8ae1bc3e386888",
+          "duration_seconds": 9.25
+        },
+        "wrist": {
+          "file": "iql_r2_wrist.mp4",
+          "encoded_frames": 185,
+          "width": 256,
+          "height": 256,
+          "bytes": 130942,
+          "sha256": "ef9e741efd7d69698dda319f2d28d017855fd24edffffc9543b93286a8f86e5c",
+          "duration_seconds": 9.25
+        }
+      }
+    }
+  ]
+}

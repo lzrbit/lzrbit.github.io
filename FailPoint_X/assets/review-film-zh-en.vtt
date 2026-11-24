@@ -1,0 +1,65 @@
+WEBVTT
+
+00:00:00.680 --> 00:00:03.466
+机器人能学会从自己的失误中恢复吗？
+Can a robot learn to recover from its own mistakes?
+
+00:00:03.726 --> 00:00:07.605
+FailPoint-X 研究如何利用人类接管数据，对机器人策略进行离线后训练。
+FailPoint-X studies offline post-training from human takeovers.
+
+00:00:08.610 --> 00:00:13.208
+黑色的书本该放进收纳架的前格，机器人却放偏了。
+The black book belongs in the front compartment of the caddy. The robot has already missed.
+
+00:00:13.468 --> 00:00:16.466
+看这两种策略从同一个失败状态重新开始。
+Watch two policies restart from exactly that moment.
+
+00:00:16.726 --> 00:00:23.061
+这次回放中，基础策略最终超时。用人类纠正轨迹训练过的策略把书放回了前格。
+In this replay, the base policy times out. The policy trained on human recoveries puts the book away.
+
+00:00:24.060 --> 00:00:29.026
+只看总体成功率，很难分清机器人是避开了错误，还是出错后又完成了任务。
+An overall success rate hides whether the robot avoided a mistake or recovered after making it.
+
+00:00:29.286 --> 00:00:33.984
+多训练一段时间也可能带来提升。人类纠正本身贡献了多少？
+And extra training alone might help. How much do the human corrections contribute?
+
+00:00:34.960 --> 00:00:40.431
+我们记录同一个策略检查点产生的失败轨迹，由标注者圈出每次失败开始的时间区间。
+We record failures from one checkpoint. An annotator marks the interval where each failure begins.
+
+00:00:40.691 --> 00:00:45.715
+训练时，我们从这些区间内抽取状态，让操作者接管机器人，完成原任务。
+A human takes over from sampled states in training intervals and finishes the original task.
+
+00:00:45.975 --> 00:00:50.505
+各方法采用相同的训练预算，评测时都从同一组留出失败区间的中点重新开始。
+We match the training budget, then restart every method at the same held-out midpoints.
+
+00:00:51.510 --> 00:00:57.405
+数据覆盖 10 个任务族、5 个难度等级，共收录 2,400 条通过验收的人类恢复轨迹。
+Across ten task families and five levels, we collect 2,400 accepted human recoveries.
+
+00:00:57.665 --> 00:01:03.663
+其中 80 条留作开发。9 种方法在相同的 384 个留出失败状态上接受评测。
+Eighty are reserved for development. Nine methods face the same 384 held-out failure states.
+
+00:01:04.660 --> 00:01:11.597
+在恢复评测中，Demo-continue 的成功率为 22.5%，Takeover-BC 为 51.9%。
+Demo-continue recovers in 22.5 percent of trials. Takeover-BC recovers in 51.9 percent.
+
+00:01:11.857 --> 00:01:17.231
+两者训练预算相同，在 L1–L3 的恢复成功率相差 29.4 个百分点。
+At equal training budgets, that is a 29.4 percentage point gain on levels one through three.
+
+00:01:18.210 --> 00:01:24.934
+从常规起点出发，Base-restart 的成功率为 43.9%。
+From ordinary starts, Base-restart succeeds in 43.9 percent of trials.
+
+00:01:25.194 --> 00:01:31.576
+Takeover-BC 的常规起点成功率为 14%。恢复能力提高了，常规任务表现却下降了。
+Takeover-BC succeeds in 14 percent of trials. Recovery and retention tell different stories.

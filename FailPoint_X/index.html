@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#122b25">
+  <meta name="description" content="Explore FailPoint-X, a benchmark for offline VLA post-training from human takeovers. Watch the project film and compare recovery and nominal success across nine policies.">
+  <link rel="canonical" href="https://lzrbit.github.io/FailPoint_X/">
+  <script>
+    // Send links to the explorer tabs (for example index.html#replays) to explorer.html.
+    if (["#explorer", "#levels", "#replays", "#release"].includes(location.hash)) {
+      location.replace("explorer.html" + location.hash);
+    }
+  </script>
+  <title>FailPoint-X — Learning from robot failures</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="paper-data.js"></script><script defer src="review-captions.js"></script><script defer src="presentation.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap mast">
+  <a class="brand" href="#main" aria-label="FailPoint-X home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>FailPoint<span class="brand-x">-X</span></a>
+  <nav aria-label="Sections"><a href="#framework">Framework</a><a href="#dataset">Dataset</a><a href="#results">Results</a><a href="#resources">Resources</a><a href="#cite">Cite</a></nav>
+</div></header>
+<main id="main">
+<section class="wrap hero" aria-labelledby="title">
+  <div class="hero-media">
+    <div class="player" id="player">
+      <video id="film" playsinline preload="metadata" poster="assets/review-film.jpg" controls aria-label="FailPoint-X project film">
+        <source src="assets/review-film-player.mp4" type="video/mp4">
+        <a href="assets/review-film-player.mp4" download="FailPoint-X_Project_Video.mp4">Download the project film</a>
+      </video>
+      <button id="play" type="button" hidden aria-label="Play project film"><span aria-hidden="true"></span></button>
+    </div>
+    <div class="film-legend"><span><i class="camera-icon" aria-hidden="true"></i>Project film · 1:32</span><div class="film-downloads" aria-label="Download 1080p MP4"><a href="assets/review-film-player.mp4" download="FailPoint-X_Project_Video.mp4">English MP4</a></div></div>
+  </div>
+  <div class="intro"><p class="kicker">Offline VLA post-training</p>
+    <h1 id="title">FailPoint<span>-X</span></h1>
+    <p class="dek">Can robots learn to recover<br class="desktop-br"> from their own failures?</p>
+    <p class="lead">One policy generates the failures. Humans take over. Every method returns to the same held-out states for a direct comparison.</p>
+    <div class="actions"><a class="btn dark" href="#results">Explore results</a><a class="btn light" href="#resources">Code &amp; data</a></div>
+  </div>
+  <div class="paper">
+    <p class="paper-title">FailPoint-X: A Policy-Matched, Failure-Anchored Benchmark for Offline VLA Post-Training from Human Takeovers</p>
+    <p class="authors"><a href="https://lzrbit.github.io/">Zirui&nbsp;Li</a><sup aria-hidden="true">*</sup><span class="sr-only"> (equal contribution)</span>, Yujie&nbsp;Yan<sup aria-hidden="true">*</sup><span class="sr-only"> (equal contribution)</span>, Jingxuan&nbsp;Qian, Yangang&nbsp;Ren, Haizhou&nbsp;Han, Haoran&nbsp;Xu, Chen&nbsp;Lv<sup aria-hidden="true">†</sup><span class="sr-only"> (corresponding author)</span></p>
+    <p class="sub">Nanyang Technological University, Singapore</p>
+    <p class="fine"><sup>*</sup>Equal contribution · <sup>†</sup>Corresponding author</p>
+    <div class="actions"><button type="button" class="btn light" disabled>Paper (arXiv, coming soon)</button><a class="btn dark" href="https://github.com/yujieyan81/failpoint-x" target="_blank" rel="noopener">Code (GitHub)<span class="sr-only"> (opens in a new tab)</span></a></div>
+  </div>
+</section>
+<div class="metrics"><dl class="wrap stat-row"><div><dt>629</dt><dd>Natural policy failures</dd></div><div><dt>2,400</dt><dd>Accepted human recoveries</dd></div><div><dt>384</dt><dd>Held-out failure states</dd></div><div><dt>9</dt><dd>Evaluated methods</dd></div></dl></div>
+<section id="framework" class="wrap section">
+  <div class="section-head"><div><p class="kicker">Figure 1 · Framework</p><h2>From failure to recovery</h2></div><a class="textlink" href="assets/paper/figure-1.webp" target="_blank" rel="noopener">Open original figure</a></div>
+  <div class="figure-shell">
+    <div class="step-rail" id="steps" aria-label="Figure 1 stages"></div>
+    <div class="stage">
+      <div class="stage-art"><img id="stage-image" src="assets/paper/step-1.webp" alt=""></div>
+      <div class="stage-body"><span class="mono small" id="stage-counter"></span><h3 id="stage-title"></h3><p id="stage-copy"></p><p id="stage-metric"></p><button type="button" class="motion-btn" id="figure-play"><span class="tri" aria-hidden="true"></span><span id="figure-label">Play sequence</span></button></div>
+    </div>
+  </div>
+</section>
+<section id="dataset" class="tinted"><div class="wrap section">
+  <div class="section-head"><div><p class="kicker">Dataset · Table 2</p><h2>Explore the five task levels</h2></div><label class="field">Task level<select id="level" aria-controls="dataset-panel"><option value="all">All levels</option></select></label></div>
+  <div class="data-shell" id="dataset-panel">
+    <div class="data-summary"><span class="kicker" id="data-label"></span><h3 id="data-heading"></h3><dl id="data-stats"></dl><p class="fine" id="data-footnote"></p></div>
+    <div class="scene-side">
+      <figure class="level-replay">
+        <div id="preview-levels" class="preview-levels" role="group" aria-label="Choose a level to preview"><span>Preview</span></div>
+        <video id="level-replay" controls muted playsinline preload="none" width="1080" height="1080" aria-describedby="scene-caption replay-phase"></video>
+        <img id="final-placement" alt="" width="1080" height="1080" hidden>
+        <figcaption>
+          <p class="fine" id="scene-caption"></p>
+          <div class="replay-actions"><strong id="replay-phase"></strong><button id="view-final" type="button">View final placement</button></div>
+          <ul id="replay-goals" aria-label="Placement goals at the current frame"></ul>
+          <p class="fine" id="goal-note" hidden>Goal status is checked every frame. Near the end of L2, the mug briefly leaves its target region before settling.</p>
+          <details class="replay-prompt"><summary>Original task instruction</summary><p id="level-instruction"></p></details>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <a class="textlink inline-link" href="explorer.html#explorer">Inspect seven recorded failures and dual-camera replays</a>
+</div></section>
+<section id="results" class="wrap section">
+  <div class="section-head"><div><p class="kicker">Results · Table 3</p><h2>What changed after post-training?</h2></div></div>
+  <div class="findings">
+    <div class="finding-tabs" aria-label="Select a finding"><button type="button" data-story="0">Human takeovers</button><button type="button" data-story="1">Value weighting</button><button type="button" data-story="2">Nominal retention</button></div>
+    <div class="finding-content"><div><p class="story-kicker" id="story-label"></p><p class="delta" id="story-number"></p><h3 id="story-title"></h3><p class="story-text" id="story-detail"></p></div>
+      <div class="story-comparison"><span class="story-kicker" id="story-unit"></span><div id="story-bars"></div><p id="story-interval"></p></div>
+    </div>
+  </div>
+  <div class="section-head ranking-head"><div><h3>Method rankings</h3><p class="sub">Methods are ranked by their estimated success within 1,200 control steps.</p></div><div class="fields"><label class="field">Metric<select id="metric"><option value="recovery">Failure recovery</option><option value="nominal">Nominal success</option></select></label><label class="field">Evaluation levels<select id="rank-level"></select></label></div></div>
+  <div class="ranking"><table><caption class="sr-only" id="rank-caption">Method rankings</caption><thead><tr><th scope="col">Rank</th><th scope="col">Method</th><th scope="col">Success rate</th></tr></thead><tbody id="rank-rows"></tbody></table><p id="rank-note" class="fine"></p></div>
+  <p class="fine"><span class="exp-mark" aria-hidden="true">†</span> Exploratory arm. Reported scores describe these checkpoints, with one training seed per trained arm. Equal displayed scores share a rank. Small differences in rank can fall within sampling uncertainty.</p>
+</section>
+<section id="resources" class="tinted"><div class="wrap section">
+  <div class="section-head"><div><p class="kicker">Code &amp; data</p><h2>Run the benchmark</h2></div></div>
+  <div class="res-grid">
+    <article class="resource"><h3>Benchmark code</h3><p>Score the recorded Base-restart run, inspect the evaluation clients, and explore the post-training code.</p><div class="res-links"><a href="https://github.com/yujieyan81/failpoint-x" target="_blank" rel="noopener">Benchmark code on GitHub</a><a href="guide.html">English quick start</a><a lang="zh-CN" href="guide-zh.html">中文使用说明</a></div></article>
+    <article class="resource"><h3>Training dataset</h3><p>The Hugging Face dataset contains 2,320 accepted human takeover trajectories for post-training. A link to the dataset is not yet available.</p><div class="res-links"><a href="#dataset">Explore the dataset by task level</a></div></article>
+    <article class="resource"><h3>Recorded examples</h3><p>Inspect the failure intervals and watch three policies restart from the same held-out state, with overview and wrist cameras.</p><div class="res-links"><a href="explorer.html#replays">Watch policy replays</a></div></article>
+  </div>
+</div></section>
+<section id="cite" class="wrap section citation">
+  <div><h2>Citation</h2><p class="sub">arXiv preprint, 2026 (arXiv link coming soon).</p></div>
+  <div class="bib"><div class="bib-tools"><span class="mono">BibTeX</span><div><button id="copy-bib" type="button">Copy</button><a href="citation.bib" download>Download .bib</a></div></div><pre id="bib-text"></pre><span role="status" class="sr-only" id="copy-status"></span></div>
+</section>
+</main>
+<footer class="wrap"><a class="brand" href="#main"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>FailPoint-X</a><a href="#main">Back to top</a></footer>
+</body></html>
