@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ContinualDrive: Deployment-Anchored Continual Updates of Learned Driving Planners</title>
+<meta name="description" content="ContinualDrive is a deployment-anchored, multi-axis benchmark for continual updates of learned driving planners on real-world nuPlan logs.">
+
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a href="#" class="wordmark">ContinualDrive</a>
+  <div class="links">
+    <a href="#video">Video</a><a href="#method">Method</a><a href="#findings">Findings</a><a href="#explorer">Explorer</a><a href="#bibtex">BibTeX</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="video"><div class="wrap">
+  <div class="video-frame">
+    <video controls playsinline preload="metadata" poster="assets/video/poster.jpg">
+      <source src="assets/video/ContinualDrive_overview.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-meta"><span>Overview video · 1 min 51 s · voice-over with subtitles</span><span><a href="assets/video/ContinualDrive_overview.mp4" download>Download MP4</a></span></div>
+</div></header>
+
+<section class="titleblock" style="padding-top:40px"><div class="wrap">
+  <div class="wordmark">ContinualDrive</div>
+  <h1>A Deployment-Anchored, Multi-Axis Benchmark<br>for Continual Updates of Learned Driving Planners</h1>
+  <div class="authors"><span>Zirui Li<sup>1*</sup></span><span>Zhiqi Mao<sup>1*</sup></span><span>Yangang Ren<sup>1</sup></span><span>Heye Huang<sup>2</sup></span><span>Haohan Yang<sup>3</sup></span><span>Qihang Huang<sup>1</sup></span><span>Zhan Chen<sup>1</sup></span><span>Chen Lv<sup>1†</sup></span></div><div class="affils"><div class="aff"><sup>1</sup><img class="ntu" src="assets/img/ntu_white.png" alt="Nanyang Technological University" title="Nanyang Technological University"></div><div class="aff"><sup>2</sup><img class="kaist" src="assets/img/kaist_white.png" alt="KAIST" title="KAIST"></div><div class="aff"><sup>3</sup><img class="ucla" src="assets/img/ucla_white.png" alt="UCLA" title="UCLA"></div></div><div class="notes">*Equal contribution · †Corresponding author</div>
+  <div class="buttons"><span class="btn soon" title="arXiv preprint coming soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5M9 13h8M9 17h8M9 9h3"/></svg>arXiv</span><a class="btn" href="https://github.com/continualdrive/benchmark" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>Code</a><a class="btn" href="#video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Video</a></div>
+</div></section>
+
+<section id="tldr" style="padding-top:36px"><div class="wrap reveal">
+  <div class="tldr">
+    <div class="k">TL;DR</div>
+    <p>Learned driving planners keep being updated after deployment. <b>ContinualDrive</b> updates a deployed planner on real-world nuPlan logs one scenario group at a time, scores the <b>same checkpoints</b> in open and closed loop, makes four measurement axes explicit, and anchors a three-valued release verdict to the deployed checkpoint C<sub>0</sub>. Verdicts can reverse when one axis changes, and in the core suite no update regime measurably improved on C<sub>0</sub> in closed loop.</p>
+  </div>
+  <details class="abstract"><summary>Abstract</summary>
+    <p>Learned driving planners keep being updated after deployment as new logs arrive, yet continual learning evaluations rarely ask whether an update improves on the deployed model, and their verdicts rest on unstated evaluation choices. We present ContinualDrive, a deployment-anchored benchmark for post-deployment continual learning of driving planners. It updates a deployed planner on real-world nuPlan logs one scenario-type group at a time, evaluates the same checkpoints in open and closed loop, makes four measurement axes explicit (evaluation loop, reference checkpoint, temporal aggregation and stream protocol), and anchors a three-valued release verdict to the deployed checkpoint. We study two planners (PlanTF and Diffusion Planner) under full fine-tuning and adapter or LoRA updates, with and without replay or gradient projection, in three task orders. Verdicts can reverse or vanish when one axis changes: open-loop ADE ranks the final PlanTF model above the deployed one in half of its core-suite runs, whereas every closed-loop score ranks it below; backward transfer misses this loss, which on average is already present when each group has just been learned; and regime rankings vary far less across training seeds than across task orders. In the core suite of full and adapter updates, no regime measurably improved on the deployed planner in closed loop; on a panel more than ten times larger every evaluated final checkpoint trails it, and joint training on all groups recovers much of the loss without exceeding its nuPlan closed-loop score. We distill these findings into a reporting contract and will release the code and all checkpoints.</p>
+  </details>
+</div></section>
+
+<section id="method"><div class="wrap">
+  <div class="eyebrow">How it works</div>
+  <h2>Deployment is not the end</h2>
+  <p class="lede">Five steps from a deployed planner to a release verdict. The schematic follows Fig. 1 of the paper; click a step or let it play.</p>
+  <div class="stepper" id="stepper"></div>
+  <div class="stage">
+    <div class="schem" id="schem"><div class="hud">ContinualDrive · <b id="hud-act">act 1/5</b></div><button class="playbtn" id="playbtn">❚❚ pause</button></div>
+    <div class="caption" id="caption"></div>
+  </div>
+</div></section>
+
+<section id="findings"><div class="wrap">
+  <div class="eyebrow">Main results</div>
+  <h2>Same checkpoints, different verdicts</h2>
+  <p class="lede">Change one measurement axis at a time, starting from the deployment reading (closed loop, C<sub>0</sub> reference, final checkpoint). Every number below is plotted in the paper (Figs. 2–4).</p>
+  <div class="ftabs" id="ftabs"></div>
+  <div class="fpanel" id="fpanel"><div class="fcopy" id="fcopy"></div><div class="fchart" id="fchart"></div></div>
+</div></section>
+
+<section id="explorer"><div class="wrap">
+  <div class="eyebrow">Results explorer</div>
+  <h2>Rankings depend on the reading</h2>
+  <p class="lede">Pick a planner, a score and a stream setting: regimes re-rank as the reading changes. These are benchmark readings, not a leaderboard of methods — the paper proposes no new method. Bars show the change from the deployed C<sub>0</sub> (right = better).</p>
+  <div class="controls" id="controls"></div>
+  <div class="explorer">
+    <div class="board"><div class="head"><span>#</span><span>Regime</span><span>Stream</span><span id="valhead">Value · Δ vs C<sub>0</sub></span><span>Verdict</span></div><div class="rows" id="rows"></div></div>
+    <div class="side">
+      <div class="panel"><h4>Rank across stream settings</h4><p class="hint" id="bumphint">Core regimes, same planner and score.</p><div id="bump"></div></div>
+      <div class="panel" id="c0panel"></div>
+    </div>
+  </div>
+  <p class="note" id="explnote"></p>
+</div></section>
+
+<section id="bibtex"><div class="wrap reveal">
+  <div class="eyebrow">Citation</div>
+  <h2>BibTeX</h2>
+  <div class="bib"><button class="copy" id="copybib">Copy</button><pre id="bibtext"><span class="k">@article</span>{li2026continualdrive,
+  <span class="f">title    </span> = {{ContinualDrive}: A Deployment-Anchored, Multi-Axis Benchmark for Continual Updates of Learned Driving Planners},
+  <span class="f">author   </span> = {Li, Zirui and Mao, Zhiqi and Ren, Yangang and Huang, Heye and Yang, Haohan and Huang, Qihang and Chen, Zhan and Lv, Chen},
+  <span class="f">journal  </span> = {arXiv preprint arXiv:XXXX.XXXXX},
+  <span class="f">year     </span> = {2026}
+}</pre></div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="wordmark">ContinualDrive</div>
+  <p>Nanyang Technological University · KAIST · UCLA</p>
+</div></footer>
+
+<script src="data/site_data.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
