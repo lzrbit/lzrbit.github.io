@@ -627,4 +627,4 @@ const paper = {
     "arms": 9
   }
 };
-const citation = "@article{li2026failpointx,\n  title   = {{FailPoint-X}: A Policy-Matched, Failure-Anchored Benchmark for Offline {VLA} Post-Training from Human Takeovers},\n  author  = {Li, Zirui and Yan, Yujie and Qian, Jingxuan and Ren, Yangang and Han, Haizhou and Xu, Haoran and Lv, Chen},\n  journal = {arXiv preprint},\n  year    = {2026}\n}";
+const citation = "@article{li2026failpointx,\n  title   = {{FailPoint-X}: A Policy-Matched, Failure-Anchored Benchmark for Offline {VLA} Post-Training from Human Takeovers},\n  author  = {Li, Zirui and Yan, Yujie and Qian, Jingxuan and Ren, Yangang and Yin, Haizhou and Xu, Haoran and Lv, Chen},\n  journal = {arXiv preprint},\n  year    = {2026}\n}";

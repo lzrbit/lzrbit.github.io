@@ -2,7 +2,7 @@
 
 Project page of FailPoint-X (https://lzrbit.github.io/FailPoint_X/) with selected recorded examples. Open index.html for the film, framework, task-level data, results, and bilingual guides. Open explorer.html for the seven failure intervals and camera replays. All image paths are relative and all assets are local. No analytics or external fonts.
 
-Authors: Zirui Li\*, Yujie Yan\*, Jingxuan Qian, Yangang Ren, Haizhou Han, Haoran Xu and Chen Lv† (Nanyang Technological University, Singapore). \*Equal contribution. †Corresponding author.
+Authors: Zirui Li\*, Yujie Yan\*, Jingxuan Qian, Yangang Ren, Haizhou Yin, Haoran Xu and Chen Lv† (Nanyang Technological University, Singapore). \*Equal contribution. †Corresponding author.
 
 The failure explorer contains 7 selected examples, not the full dataset. Task-level gallery uses family 12 with source seeds 2036 and 2000. Policy replays show one post hoc selected held-out point and k0. Original Base failed through a physics fault at step 371; the new replay times out at 1,200 steps. These are qualitative new replays, not exact original trajectory reproduction or new aggregate estimates.
 
